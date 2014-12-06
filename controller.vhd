@@ -37,7 +37,7 @@ case PAUSE is
             A  <= "101";
             B  <= "0101";
             ALU <= "001";
-            MEM <= 'Z';
+            MEM <= '0';
             WDATA <= 'Z';
             RADDR <= "01";
             RWDATA <= "00";
@@ -52,7 +52,7 @@ case PAUSE is
             A   <= "101";
             B   <= "0111";
             ALU <= "001";
-            MEM <= 'Z';
+            MEM <= '0';
             WDATA <= 'Z';
             RADDR <= "10";
             RWDATA <= "00";
@@ -90,7 +90,7 @@ case PAUSE is
                             A  <= "ZZZ";
                             B  <= "ZZZZ";
                             ALU <= "ZZZ";
-                            MEM <= 'Z';
+                            MEM <='0';
                             WDATA <= 'Z';
                             RADDR <= "ZZ";
                             RWDATA <= "ZZ";
@@ -105,7 +105,7 @@ case PAUSE is
                             A   <= "000";
                             B   <= "ZZZZ";
                             ALU <= "011";
-                            MEM <= 'Z';
+                            MEM <='0';
                             WDATA <= 'Z';
                             RADDR <= "01";
                             RWDATA  <= "10";
@@ -120,7 +120,7 @@ case PAUSE is
                             A   <= "ZZZ";
                             B   <= "ZZZZ";
                             ALU <= "ZZZ";
-                            MEM <= 'Z';
+                            MEM <='0';
                             WDATA <= 'Z';
                             RADDR <= "ZZ";
                             RWDATA  <= "ZZ";
@@ -135,7 +135,7 @@ case PAUSE is
                             A  <= "ZZZ";
                             B  <= "0000";
                             ALU <= "ZZZ";
-                            MEM <= 'Z';
+                            MEM <='0';
                             WDATA <= 'Z';
                             RADDR <= "ZZ";
                             RWDATA  <= "ZZ";
@@ -150,7 +150,7 @@ case PAUSE is
 									A  <= "ZZZ";
 									B  <= "ZZZZ";
 									ALU <= "ZZZ";
-									MEM <= 'Z';
+									MEM <='0';
 									WDATA <= 'Z';
 									RADDR <= "ZZ";
 									RWDATA <= "ZZ";
@@ -166,7 +166,7 @@ case PAUSE is
                     A  <= "101";
                     B  <= "0010";
                     ALU<= "111";
-                    MEM <= 'Z';
+                    MEM <='0';
                     WDATA <= 'Z';
                     RADDR <= "ZZ";
                     RWDATA  <= "ZZ";
@@ -185,7 +185,7 @@ case PAUSE is
                         when "01101" => ALU <= "100";
 								when others => ALU <= "000";
                     end case;
-                    MEM <= 'Z';
+                    MEM <='0';
                     WDATA <= 'Z';
                     RADDR <= "01";
                     RWDATA <= "00";
@@ -200,7 +200,7 @@ case PAUSE is
 							A  <= "ZZZ";
 							B  <= "ZZZZ";
 							ALU <= "ZZZ";
-							MEM <= 'Z';
+							MEM <='0';
 							WDATA <= 'Z';
 							RADDR <= "ZZ";
 							RWDATA <= "ZZ";
@@ -216,7 +216,7 @@ case PAUSE is
             A  <= "ZZZ";
             B  <= "0011";
             ALU<= "ZZZ";
-            MEM <= 'Z';
+            MEM <='0';
             WDATA <= 'Z';
             RADDR <= "ZZ";
             RWDATA  <= "ZZ";
@@ -231,7 +231,7 @@ case PAUSE is
             A  <= "101";
             B  <= "0101"; -- edited by lfw
             ALU <= "011";
-            MEM <= 'Z';
+            MEM <='0';
             WDATA <= 'Z';
             RADDR <= "ZZ";
             RWDATA  <= "ZZ";
@@ -246,7 +246,7 @@ case PAUSE is
             A  <= "101";
             B  <= "0101";	-- edited by lfw
             ALU <= "011";
-            MEM <= 'Z';
+            MEM <='0';
             WDATA <= 'Z';
             RADDR <= "ZZ";
             RWDATA  <= "ZZ";
@@ -262,16 +262,16 @@ case PAUSE is
                 when "000"|"001" =>     --BTEQZ,BTNEZ
                     case INSTRUCTION(10 downto 8) is
                        when "000" => 
-                            PC <= "011";
-                       when "001" =>
                             PC <= "010";
+                       when "001" =>
+                            PC <= "011";
 							  when others =>
 									PC <= "000";
                     end case;
                     A <= "011";
                     B <= "0101";
                     ALU <= "011";
-                    MEM <= 'Z';
+                    MEM <='0';
                     WDATA <= 'Z';
                     RADDR <= "ZZ";
                     RWDATA  <= "ZZ";
@@ -286,7 +286,7 @@ case PAUSE is
                      A  <= "ZZZ";
                      B  <= "ZZZZ";
                      ALU <= "ZZZ";
-                     MEM <= 'Z';
+                     MEM <='0';
                      WDATA <= 'Z';
                      RADDR <= "ZZ";
                      RWDATA  <= "ZZ";
@@ -315,7 +315,7 @@ case PAUSE is
 						A  <= "ZZZ";
 						B  <= "ZZZZ";
 						ALU <= "ZZZ";
-						MEM <= 'Z';
+						MEM <='0';
 						WDATA <= 'Z';
 						RADDR <= "ZZ";
 						RWDATA <= "ZZ";
@@ -331,7 +331,7 @@ case PAUSE is
             A  <= "100";
             B  <= "0100";
             ALU <= "001";
-            MEM <= 'Z';
+            MEM <='0';
             WDATA <= 'Z';
             RADDR <= "01";
             RWDATA <= "00";
@@ -374,7 +374,7 @@ case PAUSE is
         when "11110"=> --MFIH,MTIH
             PC <= "000";
             B <= "ZZZZ";
-            MEM <= 'Z';
+            MEM <='0';
             WDATA <= 'Z';
             SP  <= '0';
             RA  <= '0';
@@ -408,7 +408,7 @@ case PAUSE is
             A  <= "ZZZ";
             B  <= "ZZZZ";
             ALU <= "ZZZ";
-            MEM <= 'Z';
+            MEM <='0';
             WDATA <= 'Z';
             RADDR <= "ZZ";
             RWDATA <= "ZZ";
@@ -422,7 +422,7 @@ case PAUSE is
             PC <= "000";
             A  <= "110";
             B  <= "1000";
-            MEM <= 'Z';
+            MEM <='0';
             WDATA <= 'Z';
             RADDR <= "01";
             RWDATA <= "00";
@@ -475,7 +475,7 @@ case PAUSE is
             A <= "110";
             B <= "ZZZZ";
             ALU <= "011";
-            MEM <= 'Z';
+            MEM <='0';
             WDATA <= 'Z';
             RADDR <= "01";
             RWDATA <= "00";
@@ -490,7 +490,7 @@ case PAUSE is
             A  <= "ZZZ";
             B  <= "ZZZZ";
             ALU <= "ZZZ";
-            MEM <= 'Z';
+            MEM <='0';
             WDATA <= 'Z';
             RADDR <= "ZZ";
             RWDATA <= "ZZ";
@@ -506,7 +506,7 @@ case PAUSE is
         A  <= "ZZZ";
         B  <= "ZZZZ";
         ALU <= "ZZZ";
-        MEM <= 'Z';
+        MEM <='0';
         WDATA <= 'Z';
         RADDR <= "ZZ";
         RWDATA <= "ZZ";
@@ -521,7 +521,7 @@ case PAUSE is
 			A  <= "ZZZ";
 			B  <= "ZZZZ";
 			ALU <= "ZZZ";
-			MEM <= 'Z';
+			MEM <='0';
 			WDATA <= 'Z';
 			RADDR <= "ZZ";
 			RWDATA <= "ZZ";

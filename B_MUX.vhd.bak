@@ -38,7 +38,7 @@ case RB is
                     when "0110" => OUTPUT<= IMM_4;
                     when "0111" => OUTPUT<= IMM_3;
                     when "1000" => OUTPUT<= ADDR42;
-						  when others => OUTPUT<=X"0000";
+						  when others => NULL;
                  end case;
     when others => OUTPUT <= "0000000000000000";
 end case;

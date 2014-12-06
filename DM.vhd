@@ -41,11 +41,11 @@ begin
 	begin
 		case cur_state is
 			when Start =>
+				RamAddr <= Address;
 				case Address is
 					when "00"&X"BF00" => --write/read to/from com
 						if (MEM = '1') then
 							next_state <= comWrite1 ; --write to com
-							RamData <= WriteData;
 	            RamEN <= '1';
 	            RamOE <= '1';
 	            RamWE <= '1';
@@ -66,7 +66,6 @@ begin
             RamWE <= '1';
 		        RamOE <= '1';
 		        RamEN <= '0';
-		        RamAddr <= Address;
 		        RamData <= WriteData;
 						wrn <= '1';
 						rdn <= '1';
@@ -117,14 +116,23 @@ begin
 			
       when comWrite1 =>
         RamData <= WriteData;
+        RamEN <= '1';
+        RamOE <= '1';
+        RamWE <= '1';
         wrn <= '0';
         next_state <= comWrite2;
       when comWrite2 =>
+        RamEN <= '1';
+        RamOE <= '1';
+        RamWE <= '1';
         wrn <= '1';
         next_state <= Start;
       
       when comRead =>
         Data(7 downto 0) <= RamData(7 downto 0);
+        RamEN <= '1';
+        RamOE <= '1';
+        RamWE <= '1';
         next_state <= Start;
       
 			when others =>

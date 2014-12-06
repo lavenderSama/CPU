@@ -11,8 +11,8 @@
 <msg type="info" file="Xst" num="1739" delta="old" >HDL ADVISOR - &quot;<arg fmt="%s" index="1">E:/Thinpand/CPU/project/CPU/CPU/CPU.vhd</arg>&quot; line <arg fmt="%d" index="2">17</arg>: declaration of a buffer port will make it difficult for you to validate this design by simulation. It is preferable to declare it as output.
 </msg>
 
-<msg type="warning" file="Xst" num="819" delta="old" >&quot;<arg fmt="%s" index="1">E:/Thinpand/CPU/project/CPU/CPU/CPU.vhd</arg>&quot; line <arg fmt="%d" index="2">510</arg>: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
-<arg fmt="%s" index="3">&lt;debug_data&gt;, &lt;IF_PC_Data_Out&gt;, &lt;IF_PC_in&gt;, &lt;IF_INS_15_0_in&gt;, &lt;EXE_A_MUX_Out&gt;, &lt;EXE_B_MUX_Out&gt;, &lt;ID_RF_WD&gt;, &lt;MEM_Control_RF_out&gt;, &lt;MEM_Control_RWData_out&gt;, &lt;EXE_Control_RF_out&gt;, &lt;ID_Control_SP_S_out&gt;, &lt;MEM_RAddr_out&gt;, &lt;ID_Control_Raddr_out&gt;, &lt;ID_Control_ALU_out&gt;, &lt;EXE_ALU_FLAG_ZERO&gt;, &lt;EXE_Control_MEM_out&gt;, &lt;EXE_Control_RA&gt;, &lt;EXE_Control_RB&gt;, &lt;ID_Control_A_out&gt;, &lt;ID_Control_B_out&gt;, &lt;ID_Control_Pause&gt;, &lt;ID_Control_MEM_out&gt;, &lt;ID_Control_PC_out&gt;, &lt;EXE_PCAdder_Out&gt;, &lt;EXE_MWD_in&gt;</arg>
+<msg type="warning" file="Xst" num="819" delta="new" >&quot;<arg fmt="%s" index="1">E:/Thinpand/CPU/project/CPU/CPU/CPU.vhd</arg>&quot; line <arg fmt="%d" index="2">510</arg>: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+<arg fmt="%s" index="3">&lt;debug_data&gt;, &lt;IF_PC_Data_Out&gt;, &lt;IF_PC_in&gt;, &lt;IF_INS_15_0_in&gt;, &lt;EXE_A_MUX_Out&gt;, &lt;EXE_B_MUX_Out&gt;, &lt;ID_RF_WD&gt;, &lt;MEM_Control_RF_out&gt;, &lt;MEM_Control_RWData_out&gt;, &lt;EXE_Control_RF_out&gt;, &lt;ID_Control_SP_S_out&gt;, &lt;MEM_RAddr_out&gt;, &lt;ID_Control_Raddr_out&gt;, &lt;ID_Control_ALU_out&gt;, &lt;EXE_ALU_FLAG_ZERO&gt;, &lt;EXE_Control_MEM_out&gt;, &lt;EXE_Control_RA&gt;, &lt;EXE_Control_RB&gt;, &lt;ID_Control_A_out&gt;, &lt;ID_Control_B_out&gt;, &lt;ID_Control_Pause&gt;, &lt;ID_Control_MEM_out&gt;, &lt;ID_Control_PC_out&gt;, &lt;EXE_PCAdder_Out&gt;, &lt;EXE_MWD_in&gt;, &lt;EXE_RAddr_in&gt;, &lt;ID_Control_Raddr_in&gt;, &lt;ID_Control_ALU_in&gt;, &lt;IF_INS_15_0_out&gt;</arg>
 </msg>
 
 <msg type="info" file="Xst" num="1739" delta="old" >HDL ADVISOR - &quot;<arg fmt="%s" index="1">E:/Thinpand/CPU/project/CPU/CPU/CPU.vhd</arg>&quot; line <arg fmt="%d" index="2">17</arg>: declaration of a buffer port will make it difficult for you to validate this design by simulation. It is preferable to declare it as output.
@@ -21,7 +21,7 @@
 <msg type="info" file="Xst" num="1739" delta="old" >HDL ADVISOR - &quot;<arg fmt="%s" index="1">E:/Thinpand/CPU/project/CPU/CPU/CPU.vhd</arg>&quot; line <arg fmt="%d" index="2">29</arg>: declaration of a buffer port will make it difficult for you to validate this design by simulation. It is preferable to declare it as output.
 </msg>
 
-<msg type="warning" file="Xst" num="752" delta="old" >&quot;<arg fmt="%s" index="1">E:/Thinpand/CPU/project/CPU/CPU/CPU.vhd</arg>&quot; line <arg fmt="%d" index="2">626</arg>: Unconnected input port &apos;<arg fmt="%s" index="3">in_raddr</arg>&apos; of component &apos;<arg fmt="%s" index="4">mux_rwdata</arg>&apos; is tied to default value.
+<msg type="warning" file="Xst" num="752" delta="new" >&quot;<arg fmt="%s" index="1">E:/Thinpand/CPU/project/CPU/CPU/CPU.vhd</arg>&quot; line <arg fmt="%d" index="2">628</arg>: Unconnected input port &apos;<arg fmt="%s" index="3">in_raddr</arg>&apos; of component &apos;<arg fmt="%s" index="4">mux_rwdata</arg>&apos; is tied to default value.
 </msg>
 
 <msg type="warning" file="Xst" num="819" delta="old" >&quot;<arg fmt="%s" index="1">E:/Thinpand/CPU/project/CPU/CPU/IFReg.vhd</arg>&quot; line <arg fmt="%d" index="2">37</arg>: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
@@ -80,8 +80,8 @@
 <msg type="info" file="Xst" num="2679" delta="old" >Register &lt;<arg fmt="%s" index="1">RamData</arg>&gt; in unit &lt;<arg fmt="%s" index="2">IM</arg>&gt; has a constant value of <arg fmt="%s" index="3">ZZZZZZZZZZZZZZZZ</arg> during circuit operation. The register is replaced by logic.
 </msg>
 
-<msg type="warning" file="Xst" num="819" delta="new" >&quot;<arg fmt="%s" index="1">E:/Thinpand/CPU/project/CPU/CPU/DM.vhd</arg>&quot; line <arg fmt="%d" index="2">40</arg>: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
-<arg fmt="%s" index="3">&lt;cur_state&gt;, &lt;Address&gt;, &lt;MEM&gt;, &lt;WriteData&gt;, &lt;data_ready&gt;, &lt;tsre&gt;</arg>
+<msg type="warning" file="Xst" num="819" delta="old" >&quot;<arg fmt="%s" index="1">E:/Thinpand/CPU/project/CPU/CPU/DM.vhd</arg>&quot; line <arg fmt="%d" index="2">40</arg>: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+<arg fmt="%s" index="3">&lt;cur_state&gt;, &lt;Address&gt;, &lt;MEM&gt;, &lt;data_ready&gt;, &lt;tsre&gt;, &lt;WriteData&gt;</arg>
 </msg>
 
 <msg type="info" file="Xst" num="2679" delta="old" >Register &lt;<arg fmt="%s" index="1">rdn</arg>&gt; in unit &lt;<arg fmt="%s" index="2">DM</arg>&gt; has a constant value of <arg fmt="%s" index="3">1</arg> during circuit operation. The register is replaced by logic.
@@ -150,18 +150,6 @@
 <msg type="warning" file="Xst" num="647" delta="old" >Input &lt;<arg fmt="%s" index="1">OLD_PC</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 </msg>
 
-<msg type="warning" file="Xst" num="737" delta="old" >Found <arg fmt="%d" index="1">16</arg>-bit latch for signal &lt;<arg fmt="%s" index="2">OUTPUT</arg>&gt;. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-</msg>
-
-<msg type="info" file="Xst" num="2371" delta="old" >HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
-</msg>
-
-<msg type="warning" file="Xst" num="737" delta="old" >Found <arg fmt="%d" index="1">16</arg>-bit latch for signal &lt;<arg fmt="%s" index="2">OUTPUT</arg>&gt;. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-</msg>
-
-<msg type="info" file="Xst" num="2371" delta="old" >HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
-</msg>
-
 <msg type="warning" file="Xst" num="647" delta="old" >Input &lt;<arg fmt="%s" index="1">in_raddr</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 </msg>
 
@@ -174,13 +162,13 @@
 <msg type="warning" file="Xst" num="737" delta="old" >Found <arg fmt="%d" index="1">16</arg>-bit latch for signal &lt;<arg fmt="%s" index="2">Data$mux0000</arg>&gt;. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
 </msg>
 
-<msg type="warning" file="Xst" num="736" delta="new" >Found <arg fmt="%d" index="1">16</arg>-bit latch for signal &lt;<arg fmt="%s" index="2">Mtridata_RamData</arg>&gt; created at line <arg fmt="%d" index="3">48</arg>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+<msg type="warning" file="Xst" num="736" delta="old" >Found <arg fmt="%d" index="1">16</arg>-bit latch for signal &lt;<arg fmt="%s" index="2">Mtridata_RamData</arg>&gt; created at line <arg fmt="%d" index="3">60</arg>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
 </msg>
 
 <msg type="info" file="Xst" num="2371" delta="old" >HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
 </msg>
 
-<msg type="warning" file="Xst" num="736" delta="new" >Found <arg fmt="%d" index="1">1</arg>-bit latch for signal &lt;<arg fmt="%s" index="2">Mtrien_RamData</arg>&gt; created at line <arg fmt="%d" index="3">48</arg>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+<msg type="warning" file="Xst" num="736" delta="old" >Found <arg fmt="%d" index="1">1</arg>-bit latch for signal &lt;<arg fmt="%s" index="2">Mtrien_RamData</arg>&gt; created at line <arg fmt="%d" index="3">60</arg>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
 </msg>
 
 <msg type="info" file="Xst" num="2371" delta="old" >HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.

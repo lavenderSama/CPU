@@ -523,6 +523,8 @@ begin
 			when "1010" => L <= ID_Control_Pause&"000"&ID_Control_MEM_out&"000"&ID_Control_PC_out&"0"&EXE_ALU_FLAG_ZERO&"000";
 			when "1011" => L <= EXE_PCAdder_Out;
 			when "1100" => L <= EXE_MWD_in;
+			when "1101" => L <= "0000"&"0000"&"0000"&EXE_RAddr_in&"0";
+			when "1110" => L <= ID_Control_RAddr_in&"00"&ID_Control_ALU_in&"0"&IF_INS_15_0_out(7 downto 0);
 			when others => L <= (others => '0');
 		end case;
 	end process;

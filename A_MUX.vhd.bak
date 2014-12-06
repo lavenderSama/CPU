@@ -33,7 +33,7 @@ BEGIN
                         when "100" => OUTPUT<="0000000000000000";
                         when "101" => OUTPUT<=RX;
                         when "110" => OUTPUT<=RY;
-								when others => OUTPUT<=X"0000";
+								when others => OUTPUT<=X"000";
 							end case;
         when others => OUTPUT<= "0000000000000000";
     end case;

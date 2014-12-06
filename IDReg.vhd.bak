@@ -81,16 +81,16 @@ begin
 			Control_A_out <= (others => '0');
 			Control_B_out <= (others => '0');
 			Control_ALU_out <= (others => '0');
-			Control_MEM_out <= '0';
-			Control_WData_out <= '0';
+			Control_MEM_out <= (others => '0');
+			Control_WData_out <= (others => '0')
 			Control_RAddr_out <= (others => '0');
 			Control_RWData_out <= (others => '0');
-			Control_IH_out <= '0';
-			Control_SP_out <= '0';
-			Control_RA_out <= '0';
-			Control_T_out <= '0';
-			Control_RF_out <= '0';
-			Control_SP_S_out <= '0';
+			Control_IH_out <= (others => '0');
+			Control_SP_out <= (others => '0');
+			Control_RA_out <= (others => '0');
+			Control_T_out <= (others => '0');
+			Control_RF_out <= (others => '0');
+			Control_SP_S_out <= (others => '0');
 			PC_1_out <= (others => '0');
 			IH_out <= (others => '0');
 			SP_out <= (others => '0');

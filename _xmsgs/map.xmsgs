@@ -8,12 +8,12 @@
 <msg type="info" file="LIT" num="243" delta="old" >Logical network <arg fmt="%s" index="1">tbre_IBUF</arg> has no load.
 </msg>
 
-<msg type="info" file="LIT" num="395" delta="old" >The above <arg fmt="%s" index="1">info</arg> message is repeated <arg fmt="%d" index="2">13</arg> more times for the following (max. 5 shown):
-<arg fmt="%s" index="3">SW&lt;15&gt;_IBUF,
-SW&lt;14&gt;_IBUF,
-SW&lt;13&gt;_IBUF,
-SW&lt;12&gt;_IBUF,
-SW&lt;11&gt;_IBUF</arg>
+<msg type="info" file="LIT" num="395" delta="old" >The above <arg fmt="%s" index="1">info</arg> message is repeated <arg fmt="%d" index="2">9</arg> more times for the following (max. 5 shown):
+<arg fmt="%s" index="3">SW&lt;11&gt;_IBUF,
+SW&lt;10&gt;_IBUF,
+SW&lt;9&gt;_IBUF,
+SW&lt;8&gt;_IBUF,
+SW&lt;7&gt;_IBUF</arg>
 To see the details of these <arg fmt="%s" index="4">info</arg> messages, please use the -detail switch.
 </msg>
 
@@ -23,19 +23,16 @@ To see the details of these <arg fmt="%s" index="4">info</arg> messages, please 
 <msg type="info" file="LIT" num="244" delta="old" >All of the single ended outputs in this design are using slew rate limited output drivers. The delay on speed critical single ended outputs can be dramatically reduced by designating them as fast outputs.
 </msg>
 
-<msg type="warning" file="Pack" num="266" delta="old" >The function generator <arg fmt="%s" index="1">EXE_ALU/c_mux0003&lt;0&gt;42</arg> failed to merge with F5 multiplexer <arg fmt="%s" index="2">EXE_ALU/c_mux0003&lt;0&gt;2_SW1_f5</arg>.  <arg fmt="%z" index="3">There is a conflict for the FXMUX.</arg>  The design will exhibit suboptimal timing.
+<msg type="warning" file="Pack" num="266" delta="old" >The function generator <arg fmt="%s" index="1">EXE_ALU/c_mux0003&lt;1&gt;61</arg> failed to merge with F5 multiplexer <arg fmt="%s" index="2">EXE_ALU/c_mux0003&lt;1&gt;51_f5</arg>.  <arg fmt="%z" index="3">There is a conflict for the FXMUX.</arg>  The design will exhibit suboptimal timing.
 </msg>
 
-<msg type="warning" file="Pack" num="266" delta="old" >The function generator <arg fmt="%s" index="1">EXE_ALU/c_mux0003&lt;0&gt;351</arg> failed to merge with F5 multiplexer <arg fmt="%s" index="2">EXE_ALU/c_mux0003&lt;0&gt;34_f5</arg>.  <arg fmt="%z" index="3">There is a conflict for the FXMUX.</arg>  The design will exhibit suboptimal timing.
-</msg>
-
-<msg type="warning" file="Pack" num="266" delta="old" >The function generator <arg fmt="%s" index="1">EXE_ALU/c_mux0003&lt;13&gt;81</arg> failed to merge with F5 multiplexer <arg fmt="%s" index="2">EXE_ALU/c_mux0003&lt;1&gt;2_f5</arg>.  <arg fmt="%z" index="3">There is a conflict for the FXMUX.</arg>  The design will exhibit suboptimal timing.
-</msg>
-
-<msg type="warning" file="Pack" num="266" delta="old" >The function generator <arg fmt="%s" index="1">EXE_ALU/c_mux0003&lt;0&gt;291</arg> failed to merge with F5 multiplexer <arg fmt="%s" index="2">EXE_ALU/c_mux0003&lt;2&gt;19_f5</arg>.  <arg fmt="%z" index="3">There is a conflict for the FXMUX.</arg>  The design will exhibit suboptimal timing.
+<msg type="warning" file="Pack" num="266" delta="old" >The function generator <arg fmt="%s" index="1">EXE_ALU/c_mux0004&lt;11&gt;1110</arg> failed to merge with F5 multiplexer <arg fmt="%s" index="2">EXE_ALU/c_mux0004&lt;11&gt;138_f5</arg>.  <arg fmt="%z" index="3">There is a conflict for the FXMUX.</arg>  The design will exhibit suboptimal timing.
 </msg>
 
 <msg type="warning" file="Pack" num="266" delta="old" >The function generator <arg fmt="%s" index="1">EXE_B_MUX/Mmux_OUTPUT_mux0000_151</arg> failed to merge with F5 multiplexer <arg fmt="%s" index="2">EXE_B_MUX/Mmux_OUTPUT_mux0000_14_f5_14</arg>.  <arg fmt="%z" index="3">There is a conflict for the FXMUX.</arg>  The design will exhibit suboptimal timing.
+</msg>
+
+<msg type="warning" file="Pack" num="266" delta="old" >The function generator <arg fmt="%s" index="1">EXE_ALU/c_mux0004&lt;12&gt;41</arg> failed to merge with F5 multiplexer <arg fmt="%s" index="2">EXE_ALU/c_mux0004&lt;12&gt;164_f5</arg>.  <arg fmt="%z" index="3">There is a conflict for the FXMUX.</arg>  The design will exhibit suboptimal timing.
 </msg>
 
 <msg type="warning" file="PhysDesignRules" num="372" delta="old" >Gated clock. Clock net <arg fmt="%s" index="1">IF_MEM_MEMMgr/DM_unit/RamAddr_not0001</arg> is sourced by a combinatorial pin. This is not good design practice. Use the CE pin to control the loading of data into the flip-flop.
@@ -62,16 +59,19 @@ To see the details of these <arg fmt="%s" index="4">info</arg> messages, please 
 <msg type="warning" file="PhysDesignRules" num="372" delta="old" >Gated clock. Clock net <arg fmt="%s" index="1">EXE_A_MUX/OUTPUT_not0001</arg> is sourced by a combinatorial pin. This is not good design practice. Use the CE pin to control the loading of data into the flip-flop.
 </msg>
 
-<msg type="warning" file="PhysDesignRules" num="372" delta="old" >Gated clock. Clock net <arg fmt="%s" index="1">ID_Controller/Mtridata_RWDATA_not0001</arg> is sourced by a combinatorial pin. This is not good design practice. Use the CE pin to control the loading of data into the flip-flop.
+<msg type="warning" file="PhysDesignRules" num="372" delta="new" >Gated clock. Clock net <arg fmt="%s" index="1">Forward_unit/RMWD_not0001</arg> is sourced by a combinatorial pin. This is not good design practice. Use the CE pin to control the loading of data into the flip-flop.
 </msg>
 
 <msg type="warning" file="PhysDesignRules" num="372" delta="old" >Gated clock. Clock net <arg fmt="%s" index="1">IF_MEM_MEMMgr/DM_unit/Data_9_or0000</arg> is sourced by a combinatorial pin. This is not good design practice. Use the CE pin to control the loading of data into the flip-flop.
 </msg>
 
+<msg type="warning" file="PhysDesignRules" num="372" delta="old" >Gated clock. Clock net <arg fmt="%s" index="1">ID_Control_SP_S_in</arg> is sourced by a combinatorial pin. This is not good design practice. Use the CE pin to control the loading of data into the flip-flop.
+</msg>
+
 <msg type="warning" file="PhysDesignRules" num="372" delta="old" >Gated clock. Clock net <arg fmt="%s" index="1">IF_MEM_MEMMgr/DM_unit/Data_7_or0000</arg> is sourced by a combinatorial pin. This is not good design practice. Use the CE pin to control the loading of data into the flip-flop.
 </msg>
 
-<msg type="warning" file="PhysDesignRules" num="372" delta="old" >Gated clock. Clock net <arg fmt="%s" index="1">ID_Control_SP_S_in</arg> is sourced by a combinatorial pin. This is not good design practice. Use the CE pin to control the loading of data into the flip-flop.
+<msg type="warning" file="PhysDesignRules" num="372" delta="old" >Gated clock. Clock net <arg fmt="%s" index="1">ID_Controller/Mtridata_RWDATA_not0001</arg> is sourced by a combinatorial pin. This is not good design practice. Use the CE pin to control the loading of data into the flip-flop.
 </msg>
 
 <msg type="warning" file="PhysDesignRules" num="367" delta="old" >The signal &lt;<arg fmt="%s" index="1">SW&lt;3&gt;_IBUF</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
@@ -102,18 +102,6 @@ To see the details of these <arg fmt="%s" index="4">info</arg> messages, please 
 </msg>
 
 <msg type="warning" file="PhysDesignRules" num="367" delta="old" >The signal &lt;<arg fmt="%s" index="1">SW&lt;11&gt;_IBUF</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
-</msg>
-
-<msg type="warning" file="PhysDesignRules" num="367" delta="old" >The signal &lt;<arg fmt="%s" index="1">SW&lt;12&gt;_IBUF</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
-</msg>
-
-<msg type="warning" file="PhysDesignRules" num="367" delta="old" >The signal &lt;<arg fmt="%s" index="1">SW&lt;13&gt;_IBUF</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
-</msg>
-
-<msg type="warning" file="PhysDesignRules" num="367" delta="old" >The signal &lt;<arg fmt="%s" index="1">SW&lt;14&gt;_IBUF</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
-</msg>
-
-<msg type="warning" file="PhysDesignRules" num="367" delta="old" >The signal &lt;<arg fmt="%s" index="1">SW&lt;15&gt;_IBUF</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
 </msg>
 
 </messages>

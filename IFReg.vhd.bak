@@ -37,16 +37,16 @@ begin
 	process (clk)
 	begin
 		if (rst = '0') then
-			PC_1_out <= (others => '0');
-			PC_out <= (others => '0');
-			INS_15_0_out <= (others => '0');
-			INS_10_8_out <= (others => '0');
-			INS_7_5_out <= (others => '0');
-			INS_10_0_out <= (others => '0');
-			INS_7_0_out <= (others => '0');
-			INS_4_0_out <= (others => '0');
-			INS_3_0_out <= (others => '0');
-			INS_4_2_out <= (others => '0');
+			PC_1_out <= '0';
+			PC_out <= '0';
+			INS_15_0_out <= '0';
+			INS_10_8_out <= '0';
+			INS_7_5_out <= '0';
+			INS_10_0_out <= '0';
+			INS_7_0_out <= '0';
+			INS_4_0_out <= '0';
+			INS_3_0_out <= '0';
+			INS_4_2_out <= '0';
 		elsif (clk'event and clk = '1') then
 			PC_1_out <= PC_1_in;
 			PC_out <= PC_in;

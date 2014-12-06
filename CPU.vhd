@@ -78,6 +78,7 @@ architecture Behavioral of CPU is
 	
 	signal EXE_Control_RA: std_logic_vector(1 downto 0);
 	signal EXE_Control_RB: std_logic_vector(1 downto 0);
+	signal EXE_Control_RMWD: std_logic_vector(1 downto 0);
 	signal EXE_A_MUX_Out: std_logic_vector(15 downto 0);
 	signal EXE_B_MUX_Out: std_logic_vector(15 downto 0);
 	signal EXE_PCAdder_Out: std_logic_vector(15 downto 0);
@@ -90,16 +91,12 @@ architecture Behavioral of CPU is
 	signal EXE_Control_RF_in: std_logic;
 	signal EXE_ALU_in: std_logic_vector(15 downto 0);
 	signal EXE_MWD_in: std_logic_vector(15 downto 0);
-	signal EXE_B_in: std_logic_vector(15 downto 0);
-	signal EXE_RX_in: std_logic_vector(15 downto 0);
 	signal EXE_RAddr_in: std_logic_vector(2 downto 0);
 	
 	signal MEM_Control_RWData_in: std_logic_vector(1 downto 0);
 	signal MEM_Control_RF_in: std_logic;
 	signal MEM_ALU_in: std_logic_vector(15 downto 0);
 	signal MEM_Data_in: std_logic_vector(15 downto 0);
-	signal MEM_B_in: std_logic_vector(15 downto 0);
-	signal MEM_RX_in: std_logic_vector(15 downto 0);
 	signal MEM_RAddr_in: std_logic_vector(2 downto 0);
 	
 	
@@ -150,16 +147,12 @@ architecture Behavioral of CPU is
 	signal EXE_Control_RF_out: std_logic;
 	signal EXE_ALU_out: std_logic_vector(15 downto 0);
 	signal EXE_MWD_out: std_logic_vector(15 downto 0);
-	signal EXE_B_out: std_logic_vector(15 downto 0);
-	signal EXE_RX_out: std_logic_vector(15 downto 0);
 	signal EXE_RAddr_out: std_logic_vector(2 downto 0);
 	
 	signal MEM_Control_RWData_out: std_logic_vector(1 downto 0);
 	signal MEM_Control_RF_out: std_logic;
 	signal MEM_ALU_out: std_logic_vector(15 downto 0);
 	signal MEM_Data_out: std_logic_vector(15 downto 0);
-	signal MEM_B_out: std_logic_vector(15 downto 0);
-	signal MEM_RX_out: std_logic_vector(15 downto 0);
 	signal MEM_RAddr_out: std_logic_vector(2 downto 0);
 	
 	component QReg is
@@ -175,6 +168,7 @@ architecture Behavioral of CPU is
 	component IFReg is
 		port(
 					clk: in std_logic;
+					rst: in std_logic;
 					
 					PC_1_in: in std_logic_vector(15 downto 0);
 					PC_in: in std_logic_vector(15 downto 0);
@@ -203,6 +197,7 @@ architecture Behavioral of CPU is
 	component IDReg is
 		port(
 					clk: in std_logic;
+					rst: in std_logic;
 					
 					Control_PC_in: in std_logic_vector(2 downto 0);
 					Control_A_in: in std_logic_vector(2 downto 0);
@@ -271,14 +266,13 @@ architecture Behavioral of CPU is
 	component EXEReg is
 		port(
 					clk: in std_logic;
+					rst: in std_logic;
 					
 					Control_MEM_in: in std_logic;
 					Control_RWData_in: in std_logic_vector(1 downto 0);
 					Control_RF_in: in std_logic;
 					ALU_in: in std_logic_vector(15 downto 0);
 					MWD_in: in std_logic_vector(15 downto 0);
-					B_in: in std_logic_vector(15 downto 0);
-					RX_in: in std_logic_vector(15 downto 0);
 					RAddr_in: in std_logic_vector(2 downto 0);
 					
 					Control_MEM_out: out std_logic;
@@ -286,8 +280,6 @@ architecture Behavioral of CPU is
 					Control_RF_out: out std_logic;
 					ALU_out: out std_logic_vector(15 downto 0);
 					MWD_out: out std_logic_vector(15 downto 0);
-					B_out: out std_logic_vector(15 downto 0);
-					RX_out: out std_logic_vector(15 downto 0);
 					RAddr_out: out std_logic_vector(2 downto 0)
 				);
 	end component;
@@ -295,21 +287,18 @@ architecture Behavioral of CPU is
 	component MEMReg is
 		port(
 					clk: in std_logic;
+					rst: in std_logic;
 					
 					Control_RWData_in: in std_logic_vector(1 downto 0);
 					Control_RF_in: in std_logic;
 					ALU_in: in std_logic_vector(15 downto 0);
 					Data_in: in std_logic_vector(15 downto 0);
-					B_in: in std_logic_vector(15 downto 0);
-					RX_in: in std_logic_vector(15 downto 0);
 					RAddr_in: in std_logic_vector(2 downto 0);
 					
 					Control_RWData_out: out std_logic_vector(1 downto 0);
 					Control_RF_out: out std_logic;
 					ALU_out: out std_logic_vector(15 downto 0);
 					Data_out: out std_logic_vector(15 downto 0);
-					B_out: out std_logic_vector(15 downto 0);
-					RX_out: out std_logic_vector(15 downto 0);
 					RAddr_out: out std_logic_vector(2 downto 0)
 				);
 	end component;
@@ -415,15 +404,17 @@ architecture Behavioral of CPU is
 	component Foward IS
     PORT (
 						A :  IN  STD_LOGIC_VECTOR (2 DOWNTO 0);
-						B :  IN  STD_LOGIC_VECTOR (3 DOWNTO 0);
-                        RAddr1 : IN STD_LOGIC_VECTOR (2 downto 0);
-                        RAddr2 : IN STD_LOGIC_VECTOR (2 downto 0);
-						ADDR7_5: IN  STD_LOGIC_VECTOR (2 DOWNTO 0);
-						ADDR10_8: IN  STD_LOGIC_VECTOR (2 DOWNTO 0);
-						RF1   : IN STD_LOGIC;
-						RF2   : IN STD_LOGIC;
-						RA    : OUT STD_LOGIC_VECTOR(1 downto 0);
-						RB    : OUT STD_LOGIC_VECTOR(1 downto 0)
+          B :  IN  STD_LOGIC_VECTOR (3 DOWNTO 0);
+          WDATA	 : IN STD_LOGIC;
+          ADDR7_5: IN  STD_LOGIC_VECTOR (2 DOWNTO 0);
+          ADDR10_8: IN  STD_LOGIC_VECTOR (2 DOWNTO 0);
+          RF1   : IN STD_LOGIC;
+          RF2   : IN STD_LOGIC;
+			 		RAddr1 : IN STD_LOGIC_VECTOR(2 downto 0);
+					RAddr2 : IN STD_LOGIC_VECTOR(2 downto 0);
+          RA    : OUT STD_LOGIC_VECTOR(1 downto 0);
+          RB    : OUT STD_LOGIC_VECTOR(1 downto 0);
+          RMWD	: OUT STD_LOGIC_VECTOR(1 downto 0)
 	       );
 	end component;
 	
@@ -485,10 +476,13 @@ architecture Behavioral of CPU is
 	end component;
 	
 	component mux_wdata IS
-    PORT ( rx : IN  STD_LOGIC_VECTOR (15 DOWNTO 0);
-           ry : IN  STD_LOGIC_VECTOR (15 DOWNTO 0);
+    PORT ( in_rx : IN  STD_LOGIC_VECTOR (15 DOWNTO 0);
+           in_ry : IN  STD_LOGIC_VECTOR (15 DOWNTO 0);
+           in_alu : IN STD_LOGIC_VECTOR (15 DOWNTO 0);
+           in_rwdata : IN STD_LOGIC_VECTOR (15 DOWNTO 0);
            option : IN  STD_LOGIC;
-           out_wdata : OUT  STD_LOGIC_VECTOR (15 DOWNTO 0));
+           out_wdata : OUT  STD_LOGIC_VECTOR (15 DOWNTO 0);
+           rmwd : IN STD_LOGIC_VECTOR (1 DOWNTO 0));
 	end component;
 	
 	component mux_sp_s IS
@@ -501,8 +495,6 @@ architecture Behavioral of CPU is
 	component mux_rwdata IS
     PORT ( in_alu : IN  STD_LOGIC_VECTOR (15 DOWNTO 0);
            in_data : IN  STD_LOGIC_VECTOR (15 DOWNTO 0);
-           in_b : IN STD_LOGIC_VECTOR (15 DOWNTO 0);
-           in_rx : IN STD_LOGIC_VECTOR (15 DOWNTO 0);
            option : IN  STD_LOGIC_VECTOR (1 DOWNTO 0);
            out_rwdata : OUT  STD_LOGIC_VECTOR (15 DOWNTO 0));
 	end component;
@@ -510,9 +502,30 @@ architecture Behavioral of CPU is
 	signal clk_stage: std_logic_vector(2 downto 0):= (others => '0');
 	signal clk_down: std_logic:= '0';
 	
+	signal debug_data: std_logic_vector(15 downto 0);
 begin
 	DYP0 <= (others => '0');
 	DYP1 <= (others => '0');
+	
+	process (SW)
+	begin
+		case SW(15 downto 12) is
+			when "0000" => L <= debug_data;
+			when "0001" => L <= IF_PC_Data_Out;
+			when "0010" => L <= IF_PC_in;
+			when "0011" => L <= IF_INS_15_0_in;
+			when "0100" => L <= EXE_A_MUX_Out;
+			when "0101" => L <= EXE_B_MUX_Out;
+			when "0110" => L <= ID_RF_WD;
+			when "0111" => L <= MEM_Control_RF_out&"00"&MEM_Control_RWData_out&"00"&EXE_Control_RF_out&"00"&ID_Control_SP_S_out&"00"&MEM_RAddr_out;
+			when "1000" => L <= ID_Control_RAddr_out&"00"&ID_Control_ALU_out&"0"&EXE_ALU_FLAG_ZERO&"000"&EXE_Control_MEM_out&"000";
+			when "1001" => L <= EXE_Control_RA&"00"&EXE_Control_RB&"00"&ID_Control_A_out&"0"&ID_Control_B_out;
+			when "1010" => L <= ID_Control_Pause&"000"&ID_Control_MEM_out&"000"&ID_Control_PC_out&"0"&EXE_ALU_FLAG_ZERO&"000";
+			when "1011" => L <= EXE_PCAdder_Out;
+			when "1100" => L <= MEM_Data_in;
+			when others => L <= (others => '0');
+		end case;
+	end process;
 	
 	clk_down <= clk_stage(1);
 	
@@ -539,30 +552,30 @@ begin
 		(clk,	rst, ID_Control_T_out, EXE_ALU_FLAG_ZERO_extend, ID_T_in);
 
 	IF_ID_Reg: IFReg port map
-		(clk_down,
+		(clk_down, rst,
 		 IF_PC_1_in, IF_PC_in, IF_INS_15_0_in, IF_INS_10_8_in, IF_INS_7_5_in, IF_INS_10_0_in, IF_INS_7_0_in, IF_INS_4_0_in, IF_INS_3_0_in, IF_INS_4_2_in,
 		 IF_PC_1_out, IF_PC_out, IF_INS_15_0_out, IF_INS_10_8_out, IF_INS_7_5_out, IF_INS_10_0_out, IF_INS_7_0_out, IF_INS_4_0_out, IF_INS_3_0_out, IF_INS_4_2_out);
 
 	ID_EXE_Reg: IDReg port map
-		(clk_down,
+		(clk_down, rst,
 		 ID_Control_PC_in, ID_Control_A_in, ID_Control_B_in, ID_Control_ALU_in, ID_Control_MEM_in, ID_Control_WData_in, ID_Control_Raddr_in, ID_Control_RWData_in, ID_Control_IH_in, ID_Control_SP_in, ID_Control_RA_in, ID_Control_T_in, ID_Control_RF_in, ID_Control_SP_S_in, ID_PC_1_in, ID_IH_in, ID_SP_in, ID_RA_in, ID_T_in, ID_RX_in, ID_RY_in, ID_IM_10_0_in, ID_IM_7_0_zero_in, ID_IM_7_0_sign_in, ID_IM_4_0_in, ID_IM_3_0_in, ID_IM_4_2_in, ID_Addr_RX_in, ID_Addr_RY_in, ID_Addr_RZ_in,
 		 ID_Control_PC_out, ID_Control_A_out, ID_Control_B_out, ID_Control_ALU_out, ID_Control_MEM_out, ID_Control_WData_out, ID_Control_Raddr_out, ID_Control_RWData_out, ID_Control_IH_out, ID_Control_SP_out, ID_Control_RA_out, ID_Control_T_out, ID_Control_RF_out, ID_Control_SP_S_out, ID_PC_1_out, ID_IH_out, ID_SP_out, ID_RA_out, ID_T_out, ID_RX_out, ID_RY_out, ID_IM_10_0_out, ID_IM_7_0_zero_out, ID_IM_7_0_sign_out, ID_IM_4_0_out, ID_IM_3_0_out, ID_IM_4_2_out, ID_Addr_RX_out, ID_Addr_RY_out, ID_Addr_RZ_out);
 	
 	EXE_MEM_Reg: EXEReg port map
-		(clk_down, 
-		 EXE_Control_MEM_in, EXE_Control_RWData_in, EXE_Control_RF_in, EXE_ALU_in, EXE_MWD_in, EXE_B_in, EXE_RX_in, EXE_RAddr_in,
-		 EXE_Control_MEM_out, EXE_Control_RWData_out, EXE_Control_RF_out, EXE_ALU_out, EXE_MWD_out, EXE_B_out, EXE_RX_out, EXE_RAddr_out);
+		(clk_down,  rst,
+		 EXE_Control_MEM_in, EXE_Control_RWData_in, EXE_Control_RF_in, EXE_ALU_in, EXE_MWD_in, EXE_RAddr_in,
+		 EXE_Control_MEM_out, EXE_Control_RWData_out, EXE_Control_RF_out, EXE_ALU_out, EXE_MWD_out, EXE_RAddr_out);
 	
 	MEM_WB_Reg: MEMReg port map
-		(clk_down,
-		 MEM_Control_RWData_in, MEM_Control_RF_in, MEM_ALU_in, MEM_Data_in, MEM_B_in, MEM_RX_in, MEM_RAddr_in,
-		 MEM_Control_RWData_out, MEM_Control_RF_out, MEM_ALU_out, MEM_Data_out, MEM_B_out, MEM_RX_out, MEM_RAddr_out);
+		(clk_down, rst,
+		 MEM_Control_RWData_in, MEM_Control_RF_in, MEM_ALU_in, MEM_Data_in, MEM_RAddr_in,
+		 MEM_Control_RWData_out, MEM_Control_RF_out, MEM_ALU_out, MEM_Data_out, MEM_RAddr_out);
 
 	ID_RF: RF port map
 		(clk, rst,
 		 MEM_Control_RF_out, IF_INS_10_8_out, IF_INS_7_5_out, ID_RX_in, ID_RY_in,
 		 MEM_RAddr_out, ID_RF_WD,
-		 SW(2 downto 0), L);
+		 SW(2 downto 0), debug_data);
 
 	IF_MEM_MEMMgr: memMgr port map
 		(clk, EXE_Control_MEM_out, Ram1Addr, Ram1Data, Ram1OE, Ram1WE, Ram1EN, wrn, rdn, Ram2Addr, Ram2Data, Ram2OE, Ram2WE, Ram2EN, IF_PC_in, IF_INS_15_0_in, EXE_ALU_out, EXE_MWD_out, MEM_Data_in, data_ready, tbre, tsre);
@@ -571,7 +584,7 @@ begin
 		(IF_PC_in, X"0001", IF_PC_1_in);
   
 	EXE_PC_Adder: Adder port map
-		(ID_PC_1_out, EXE_B_out, EXE_PCAdder_Out);
+		(ID_PC_1_out, EXE_B_MUX_out, EXE_PCAdder_Out);
 	
 	EXE_SP_Adder: Adder port map
 		(ID_SP_out, EXE_SPAdder_Out, ID_IM_7_0_sign_out);
@@ -587,7 +600,7 @@ begin
 		 ID_IM_10_0_in, ID_IM_7_0_sign_in, ID_IM_7_0_zero_in, ID_IM_4_0_in, ID_IM_3_0_in, ID_IM_4_2_in);
 
 	Forward_unit: Foward port map
-		( ID_Control_A_out, ID_Control_B_out,EXE_RAddr_out, MEM_RAddr_out, ID_Addr_RY_out, ID_Addr_RX_out, EXE_Control_RF_out, MEM_Control_RF_out, EXE_Control_RA, EXE_Control_RB);
+		(ID_Control_A_out, ID_Control_B_out, ID_Control_WData_out, ID_Addr_RY_out, ID_Addr_RX_out, EXE_Control_RF_out, MEM_Control_RF_out, EXE_RAddr_out, MEM_RAddr_out, EXE_Control_RA, EXE_Control_RB, EXE_Control_RMWD);
 	
 	Pause_unit: Pause port map
 		(ID_Control_MEM_out, EXE_RAddr_out, IF_INS_10_8_out, IF_INS_7_5_out, IF_INS_15_0_out, ID_Control_Pause);
@@ -596,22 +609,22 @@ begin
 		(IF_PC_Data_Out, EXE_PCAdder_Out, IF_PC_out, ID_RX_out, ID_RA_out, EXE_ALU_FLAG_ZERO, ID_Control_PC_out, IF_PC_in);
 
 	EXE_A_MUX: A_MUX port map
-		(ID_PC_1_out, ID_IH_out, ID_SP_out, ID_T_out, ID_RX_out, ID_RY_out, EXE_ALU_out, MEM_Data_out, EXE_A_MUX_Out, ID_Control_A_out, EXE_Control_RA);
+		(ID_PC_1_out, ID_IH_out, ID_SP_out, ID_T_out, ID_RX_out, ID_RY_out, EXE_ALU_out, ID_RF_WD, EXE_A_MUX_Out, ID_Control_A_out, EXE_Control_RA);
 	
 	EXE_B_MUX: B_MUX port map
-		(ID_RY_out, ID_IM_10_0_out, ID_IM_7_0_zero_out, ID_IM_7_0_sign_out, ID_IM_4_0_out, ID_IM_3_0_out, ID_IM_4_2_out, EXE_ALU_out, MEM_Data_out, ID_Control_B_out, EXE_Control_RB, EXE_B_MUX_Out);
+		(ID_RY_out, ID_IM_10_0_out, ID_IM_7_0_zero_out, ID_IM_7_0_sign_out, ID_IM_4_0_out, ID_IM_3_0_out, ID_IM_4_2_out, EXE_ALU_out, ID_RF_WD, ID_Control_B_out, EXE_Control_RB, EXE_B_MUX_Out);
 	
 	EXE_RAddr_MUX: mux_raddr port map
 		(ID_Addr_RX_out, ID_Addr_RY_out, ID_Addr_RZ_out, ID_Control_Raddr_out, EXE_RAddr_in);
 	
 	EXE_WData_MUX: mux_wdata port map
-		(ID_RX_out, ID_RY_out, ID_Control_WData_out, EXE_MWD_in);
+		(ID_RX_out, ID_RY_out, EXE_ALU_out, ID_RF_WD, ID_Control_WData_out, EXE_MWD_in, EXE_Control_RMWD);
 	
 	EXE_SP_S_MUX: mux_sp_s port map
 		(EXE_SPAdder_Out, ID_RY_out, ID_Control_SP_out, EXE_SP_S_Out);
 	
 	WB_RWData: mux_rwdata port map
-		(MEM_ALU_out, MEM_Data_out, MEM_B_out, MEM_RX_out, MEM_Control_RWData_out, ID_RF_WD);
+		(MEM_ALU_out, MEM_Data_out, MEM_Control_RWData_out, ID_RF_WD);
 	
 	IF_INS_10_8_in <= IF_INS_15_0_in(10 downto 8);
 	IF_INS_7_5_in <= IF_INS_15_0_in(7 downto 5);
@@ -629,13 +642,10 @@ begin
 	EXE_Control_MEM_in <= ID_Control_MEM_out;
   EXE_Control_RWData_in <= ID_Control_RWData_out;
   EXE_Control_RF_in <= ID_Control_RF_out;
-  EXE_RX_in <= ID_RX_out;
   
   MEM_Control_RWData_in <= EXE_Control_RWData_out;
   MEM_Control_RF_in     <= EXE_Control_RF_out;
   MEM_ALU_in            <= EXE_ALU_out;
-  MEM_B_in              <= EXE_B_out;
-  MEM_RX_in             <= EXE_RX_out;
   MEM_RAddr_in          <= EXE_RAddr_out;
 
 end architecture;

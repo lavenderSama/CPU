@@ -41,10 +41,10 @@ BEGIN
 END FUNCTION to_stdlogic;
 
 BEGIN
-zero <= to_stdlogic(c = X"0000");
 
 PROCESS (option, a, b)
 BEGIN
+		zero <= to_stdlogic(c = X"0000");
 		CASE (option) IS
 		WHEN "000" =>
 			c <= X"0000";

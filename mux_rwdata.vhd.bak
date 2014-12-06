@@ -33,5 +33,7 @@ ARCHITECTURE behavioral OF mux_rwdata IS
 BEGIN
 out_rwdata <= in_alu WHEN (option="00") ELSE
 			  in_data WHEN (option="01") ElSE
+			  in_b WHEN (option="10") ELSE
+			  in_rx WHEN (option="11") ElSE
 			  X"0000";
 END behavioral;

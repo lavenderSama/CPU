@@ -6,21 +6,18 @@ USE IEEE.STD_LOGIC_UNSIGNED.ALL;
 entity MEMReg is
 	port(
 				clk: in std_logic;
+				rst: in std_logic;
 				
 				Control_RWData_in: in std_logic_vector(1 downto 0);
 				Control_RF_in: in std_logic;
 				ALU_in: in std_logic_vector(15 downto 0);
 				Data_in: in std_logic_vector(15 downto 0);
-				B_in: in std_logic_vector(15 downto 0);
-				RX_in: in std_logic_vector(15 downto 0);
 				RAddr_in: in std_logic_vector(2 downto 0);
 				
 				Control_RWData_out: out std_logic_vector(1 downto 0);
 				Control_RF_out: out std_logic;
 				ALU_out: out std_logic_vector(15 downto 0);
 				Data_out: out std_logic_vector(15 downto 0);
-				B_out: out std_logic_vector(15 downto 0);
-				RX_out: out std_logic_vector(15 downto 0);
 				RAddr_out: out std_logic_vector(2 downto 0)
 			);
 end entity;
@@ -29,13 +26,17 @@ architecture Behavioral of MEMReg is
 begin
 	process (clk)
 	begin
-		if (clk'event and clk = '1') then
+		if (rst = '0') then
+			Control_RWData_out <= (others => '0');
+			Control_RF_out <= '0';
+			ALU_out <= (others => '0');
+			Data_out <= (others => '0');
+			RAddr_out <= (others => '0');
+		elsif (clk'event and clk = '1') then
 			Control_RWData_out <= Control_RWData_in;
 			Control_RF_out <= Control_RF_in;
 			ALU_out <= ALU_in;
 			Data_out <= Data_in;
-			B_out <= B_in;
-			RX_out <= RX_in;
 			RAddr_out <= RAddr_in;
 		end if;
 	end process;

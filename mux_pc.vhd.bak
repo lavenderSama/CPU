@@ -48,7 +48,7 @@ case option is
         case zero is
             when '0' => pc<=normal;
             when '1' => pc<=PCadder;
-						when others => pc<=normal;
+				when others => NULL;
         end case;
     when "011" =>  --BNEZ,BTNEZ
         case zero is

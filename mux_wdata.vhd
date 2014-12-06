@@ -7,9 +7,6 @@
 -- Module Name:    mux_wdata 
 -- Description:  
 -- mux for wdata
--- when option="00" set out_wdata to X"0000"
--- when option="01" set out_wdata = rx
--- when option="10" set out_wdata = ry
 ----------------------------------------------------------------------------------
 LIBRARY IEEE;
 USE IEEE.STD_LOGIC_1164.ALL;
@@ -17,16 +14,35 @@ USE IEEE.STD_LOGIC_ARITH.ALL;
 USE IEEE.STD_LOGIC_SIGNED.ALL;
 
 ENTITY mux_wdata IS
-    PORT ( rx : IN  STD_LOGIC_VECTOR (15 DOWNTO 0);
-           ry : IN  STD_LOGIC_VECTOR (15 DOWNTO 0);
+    PORT ( in_rx : IN  STD_LOGIC_VECTOR (15 DOWNTO 0);
+           in_ry : IN  STD_LOGIC_VECTOR (15 DOWNTO 0);
+           in_alu : IN STD_LOGIC_VECTOR (15 DOWNTO 0);
+           in_rwdata : IN STD_LOGIC_VECTOR (15 DOWNTO 0);
            option : IN  STD_LOGIC;
-           out_wdata : OUT  STD_LOGIC_VECTOR (15 DOWNTO 0));
+           out_wdata : OUT  STD_LOGIC_VECTOR (15 DOWNTO 0);
+           rmwd : IN STD_LOGIC_VECTOR (1 DOWNTO 0));
 END mux_wdata;
 
 ARCHITECTURE behavioral OF mux_wdata IS
 
 BEGIN
-out_wdata <= rx WHEN (option='0') ELSE
-			 ry WHEN (option='1') ElSE
-			 X"0000";
+
+PROCESS (in_rx, in_ry, in_alu, in_rwdata, option)
+BEGIN
+	CASE rmwd IS
+		when "01" =>
+			out_wdata <= in_rwdata;
+		when "10" =>
+			out_wdata <= in_alu;
+		when others =>
+			IF option='0' THEN
+				out_wdata <= in_rx;
+			ElSIF option='1' THEN
+				out_wdata <= in_ry;
+			ElSE
+				out_wdata<=X"0000";
+			END IF;
+	END CASE;
+END PROCESS;
+
 END behavioral;

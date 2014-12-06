@@ -3,10 +3,10 @@
 <!--The data in this file is primarily intended for consumption by Xilinx tools.
 The structure and the elements are likely to change over the next few releases.
 This means code written to parse this file will need to be revisited each subsequent release.-->
-<application name="pn" timeStamp="Sat Dec 06 22:27:19 2014">
+<application name="pn" timeStamp="Sun Dec 07 04:41:29 2014">
 <section name="Project Information" visible="false">
 <property name="ProjectID" value="F51E4B2E45144E24B1BA9C593D535063" type="project"/>
-<property name="ProjectIteration" value="5" type="project"/>
+<property name="ProjectIteration" value="19" type="project"/>
 <property name="ProjectFile" value="E:/Thinpand/CPU/project/CPU/CPU/CPU.xise" type="project"/>
 <property name="ProjectCreationTimestamp" value="2014-12-06T18:43:52" type="project"/>
 </section>
@@ -24,11 +24,12 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="PROP_UserConstraintEditorPreference" value="Text Editor" type="process"/>
 <property name="PROP_intProjectCreationTimestamp" value="2014-12-06T18:43:52" type="design"/>
 <property name="PROP_intWbtProjectID" value="F51E4B2E45144E24B1BA9C593D535063" type="design"/>
-<property name="PROP_intWbtProjectIteration" value="5" type="process"/>
+<property name="PROP_intWbtProjectIteration" value="19" type="process"/>
 <property name="PROP_intWorkingDirLocWRTProjDir" value="Same" type="design"/>
 <property name="PROP_intWorkingDirUsed" value="No" type="design"/>
 <property name="PROP_AutoTop" value="true" type="design"/>
 <property name="PROP_DevFamily" value="Spartan3E" type="design"/>
+<property name="PROP_xilxPAReffortLevel" value="Standard" type="process"/>
 <property name="PROP_DevDevice" value="xc3s1200e" type="design"/>
 <property name="PROP_DevFamilyPMName" value="spartan3e" type="design"/>
 <property name="PROP_DevPackage" value="fg320" type="design"/>

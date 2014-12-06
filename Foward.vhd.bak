@@ -14,8 +14,8 @@ ENTITY Foward IS
 			 		RAddr1 : IN STD_LOGIC_VECTOR(2 downto 0);
 					RAddr2 : IN STD_LOGIC_VECTOR(2 downto 0);
           RA    : OUT STD_LOGIC_VECTOR(1 downto 0);
-          RB    : OUT STD_LOGIC_VECTOR(1 downto 0);
-          RMWD	: OUT STD_LOGIC_VECTOR(1 downto 0));
+          RB    : OUT STD_LOGIC_VECTOR(1 downto 0));
+          RMWD	: OUT STD_LOGIC_VECTOR(1 downto 0);
 END Foward;
 
 ARCHITECTURE behavior OF Foward IS

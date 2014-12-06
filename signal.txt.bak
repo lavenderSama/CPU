@@ -39,9 +39,9 @@ ID_IM_7_0_sign 16
 ID_IM_4_0 16
 ID_IM_3_0 16
 ID_IM_4_2 16
-ID_INS_4_2 3
-ID_INS_7_5 3
-ID_INS_10_8 3
+ID_Addr_RZ 3
+ID_Addr_RY 3
+ID_Addr_RX 3
 
 :EXE_Control_RA 2
 :EXE_Control_RB 2
@@ -57,14 +57,10 @@ EXE_Control_RWData 2
 EXE_Control_RF 1
 EXE_ALU 16
 EXE_MWD 16
-EXE_B 16
-EXE_RX 16
 EXE_RAddr 3
 
 MEM_Control_RWData 2
 MEM_Control_RF 1
 MEM_ALU 16
 MEM_Data 16
-MEM_B 16
-MEM_RX 16
 MEM_RAddr 3

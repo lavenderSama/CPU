@@ -9,26 +9,23 @@ Target Device  : xc3s1200e
 Target Package : fg320
 Target Speed   : -4
 Mapper Version : spartan3e -- $Revision: 1.52 $
-Mapped Date    : Sat Dec 06 22:26:49 2014
+Mapped Date    : Sun Dec 07 04:41:03 2014
 
 Mapping design into LUTs...
 Running directed packing...
-WARNING:Pack:266 - The function generator EXE_ALU/c_mux0003<0>42 failed to merge
-   with F5 multiplexer EXE_ALU/c_mux0003<0>2_SW1_f5.  There is a conflict for
-   the FXMUX.  The design will exhibit suboptimal timing.
-WARNING:Pack:266 - The function generator EXE_ALU/c_mux0003<0>351 failed to
-   merge with F5 multiplexer EXE_ALU/c_mux0003<0>34_f5.  There is a conflict for
-   the FXMUX.  The design will exhibit suboptimal timing.
-WARNING:Pack:266 - The function generator EXE_ALU/c_mux0003<13>81 failed to
-   merge with F5 multiplexer EXE_ALU/c_mux0003<1>2_f5.  There is a conflict for
-   the FXMUX.  The design will exhibit suboptimal timing.
-WARNING:Pack:266 - The function generator EXE_ALU/c_mux0003<0>291 failed to
-   merge with F5 multiplexer EXE_ALU/c_mux0003<2>19_f5.  There is a conflict for
-   the FXMUX.  The design will exhibit suboptimal timing.
+WARNING:Pack:266 - The function generator EXE_ALU/c_mux0003<1>61 failed to merge
+   with F5 multiplexer EXE_ALU/c_mux0003<1>51_f5.  There is a conflict for the
+   FXMUX.  The design will exhibit suboptimal timing.
+WARNING:Pack:266 - The function generator EXE_ALU/c_mux0004<11>1110 failed to
+   merge with F5 multiplexer EXE_ALU/c_mux0004<11>138_f5.  There is a conflict
+   for the FXMUX.  The design will exhibit suboptimal timing.
 WARNING:Pack:266 - The function generator EXE_B_MUX/Mmux_OUTPUT_mux0000_151
    failed to merge with F5 multiplexer EXE_B_MUX/Mmux_OUTPUT_mux0000_14_f5_14. 
    There is a conflict for the FXMUX.  The design will exhibit suboptimal
    timing.
+WARNING:Pack:266 - The function generator EXE_ALU/c_mux0004<12>41 failed to
+   merge with F5 multiplexer EXE_ALU/c_mux0004<12>164_f5.  There is a conflict
+   for the FXMUX.  The design will exhibit suboptimal timing.
 Running delay-based LUT packing...
 Running related packing...
 Updating timing models...
@@ -62,21 +59,24 @@ WARNING:PhysDesignRules:372 - Gated clock. Clock net EXE_B_MUX/OUTPUT_not0001 is
 WARNING:PhysDesignRules:372 - Gated clock. Clock net EXE_A_MUX/OUTPUT_not0001 is
    sourced by a combinatorial pin. This is not good design practice. Use the CE
    pin to control the loading of data into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   ID_Controller/Mtridata_RWDATA_not0001 is sourced by a combinatorial pin. This
-   is not good design practice. Use the CE pin to control the loading of data
-   into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net Forward_unit/RMWD_not0001
+   is sourced by a combinatorial pin. This is not good design practice. Use the
+   CE pin to control the loading of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
    IF_MEM_MEMMgr/DM_unit/Data_9_or0000 is sourced by a combinatorial pin. This
-   is not good design practice. Use the CE pin to control the loading of data
-   into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   IF_MEM_MEMMgr/DM_unit/Data_7_or0000 is sourced by a combinatorial pin. This
    is not good design practice. Use the CE pin to control the loading of data
    into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net ID_Control_SP_S_in is
    sourced by a combinatorial pin. This is not good design practice. Use the CE
    pin to control the loading of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   IF_MEM_MEMMgr/DM_unit/Data_7_or0000 is sourced by a combinatorial pin. This
+   is not good design practice. Use the CE pin to control the loading of data
+   into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   ID_Controller/Mtridata_RWDATA_not0001 is sourced by a combinatorial pin. This
+   is not good design practice. Use the CE pin to control the loading of data
+   into the flip-flop.
 WARNING:PhysDesignRules:367 - The signal <SW<3>_IBUF> is incomplete. The signal
    does not drive any load pins in the design.
 WARNING:PhysDesignRules:367 - The signal <SW<4>_IBUF> is incomplete. The signal
@@ -97,35 +97,26 @@ WARNING:PhysDesignRules:367 - The signal <SW<10>_IBUF> is incomplete. The signal
    does not drive any load pins in the design.
 WARNING:PhysDesignRules:367 - The signal <SW<11>_IBUF> is incomplete. The signal
    does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <SW<12>_IBUF> is incomplete. The signal
-   does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <SW<13>_IBUF> is incomplete. The signal
-   does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <SW<14>_IBUF> is incomplete. The signal
-   does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <SW<15>_IBUF> is incomplete. The signal
-   does not drive any load pins in the design.
 
 Design Summary
 --------------
 
 Design Summary:
 Number of errors:      0
-Number of warnings:   31
+Number of warnings:   27
 Logic Utilization:
-  Total Number Slice Registers:         515 out of  17,344    2%
-    Number used as Flip Flops:          464
-    Number used as Latches:              51
-  Number of 4 input LUTs:             1,159 out of  17,344    6%
+  Total Number Slice Registers:         504 out of  17,344    2%
+    Number used as Flip Flops:          451
+    Number used as Latches:              53
+  Number of 4 input LUTs:             1,385 out of  17,344    7%
 Logic Distribution:
-  Number of occupied Slices:            759 out of   8,672    8%
-    Number of Slices containing only related logic:     759 out of     759 100%
-    Number of Slices containing unrelated logic:          0 out of     759   0%
+  Number of occupied Slices:            861 out of   8,672    9%
+    Number of Slices containing only related logic:     861 out of     861 100%
+    Number of Slices containing unrelated logic:          0 out of     861   0%
       *See NOTES below for an explanation of the effects of unrelated logic.
-  Total Number of 4 input LUTs:       1,198 out of  17,344    6%
-    Number used as logic:             1,141
-    Number used as a route-thru:         39
-    Number used as Shift registers:      18
+  Total Number of 4 input LUTs:       1,390 out of  17,344    8%
+    Number used as logic:             1,385
+    Number used as a route-thru:          5
 
   The Slice Logic Distribution report is not meaningful if the design is
   over-mapped for a non-slice resource or if Placement fails.
@@ -134,9 +125,9 @@ Logic Distribution:
     IOB Latches:                         70
   Number of BUFGMUXs:                     2 out of      24    8%
 
-Average Fanout of Non-Clock Nets:                3.83
+Average Fanout of Non-Clock Nets:                4.00
 
-Peak Memory Usage:  257 MB
+Peak Memory Usage:  259 MB
 Total REAL time to MAP completion:  2 secs 
 Total CPU time to MAP completion:   2 secs 
 

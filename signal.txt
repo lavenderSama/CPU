@@ -45,6 +45,7 @@ ID_Addr_RX 3
 
 :EXE_Control_RA 2
 :EXE_Control_RB 2
+:EXE_Control_RMWD 2
 :EXE_A_MUX_Out 16
 :EXE_B_MUX_Out 16
 :EXE_PCAdder_Out 16
@@ -57,14 +58,10 @@ EXE_Control_RWData 2
 EXE_Control_RF 1
 EXE_ALU 16
 EXE_MWD 16
-EXE_B 16
-EXE_RX 16
 EXE_RAddr 3
 
 MEM_Control_RWData 2
 MEM_Control_RF 1
 MEM_ALU 16
 MEM_Data 16
-MEM_B 16
-MEM_RX 16
 MEM_RAddr 3

@@ -1,14 +1,16 @@
 Release 12.3 par M.70d (nt64)
 Copyright (c) 1995-2010 Xilinx, Inc.  All rights reserved.
 
-FLYING-GARDEN::  Sat Dec 06 22:26:52 2014
+FLYING-GARDEN::  Sun Dec 07 04:41:07 2014
 
-par -w -intstyle ise -ol high -t 1 CPU_map.ncd CPU.ncd CPU.pcf 
+par -w -intstyle ise -ol std -t 1 CPU_map.ncd CPU.ncd CPU.pcf 
 
 
 Constraints file: CPU.pcf.
 Loading device for application Rf_Device from file '3s1200e.nph' in environment D:\Xilinx\12.3\ISE_DS\ISE\.
    "CPU" is an NCD, version 3.2, device xc3s1200e, package fg320, speed -4
+INFO:Par:469 - Although the Overall Effort Level (-ol) for this implementation has been set to Standard, Placer will run
+   at effort level High. To override this, please set the Placer Effort Level (-pl) to Standard.
 
 Initializing temperature to 85.000 Celsius. (default - Range: -40.000 to 100.000 Celsius)
 Initializing voltage to 1.140 Volts. (default - Range: 1.140 to 1.320 Volts)
@@ -45,15 +47,15 @@ Design Summary Report:
 
 
    Number of BUFGMUXs                        2 out of 24      8%
-   Number of Slices                        759 out of 8672    8%
-      Number of SLICEMs                      9 out of 4336    1%
+   Number of Slices                        861 out of 8672    9%
+      Number of SLICEMs                      0 out of 4336    0%
 
 
 
-Overall effort level (-ol):   High 
+Overall effort level (-ol):   Standard 
 Placer effort level (-pl):    High 
 Placer cost table entry (-t): 1
-Router effort level (-rl):    High 
+Router effort level (-rl):    Standard 
 
 Starting initial Timing Analysis.  REAL time: 1 secs 
 Finished initial Timing Analysis.  REAL time: 1 secs 
@@ -68,50 +70,46 @@ WARNING:Par:288 - The signal SW<9>_IBUF has no load.  PAR will not attempt to ro
 WARNING:Par:288 - The signal tbre_IBUF has no load.  PAR will not attempt to route this signal.
 WARNING:Par:288 - The signal SW<10>_IBUF has no load.  PAR will not attempt to route this signal.
 WARNING:Par:288 - The signal SW<11>_IBUF has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal SW<12>_IBUF has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal SW<13>_IBUF has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal SW<14>_IBUF has no load.  PAR will not attempt to route this signal.
-WARNING:Par:288 - The signal SW<15>_IBUF has no load.  PAR will not attempt to route this signal.
 
 Starting Placer
 Total REAL time at the beginning of Placer: 1 secs 
 Total CPU  time at the beginning of Placer: 1 secs 
 
 Phase 1.1  Initial Placement Analysis
-Phase 1.1  Initial Placement Analysis (Checksum:fb3f28b5) REAL time: 1 secs 
+Phase 1.1  Initial Placement Analysis (Checksum:7c1bd484) REAL time: 1 secs 
 
 Phase 2.7  Design Feasibility Check
-Phase 2.7  Design Feasibility Check (Checksum:fb3f28b5) REAL time: 1 secs 
+Phase 2.7  Design Feasibility Check (Checksum:7c1bd484) REAL time: 1 secs 
 
 Phase 3.31  Local Placement Optimization
-Phase 3.31  Local Placement Optimization (Checksum:fb3f28b5) REAL time: 1 secs 
+Phase 3.31  Local Placement Optimization (Checksum:7c1bd484) REAL time: 1 secs 
 
 Phase 4.2  Initial Clock and IO Placement
 
-Phase 4.2  Initial Clock and IO Placement (Checksum:1ff5a4e) REAL time: 6 secs 
+Phase 4.2  Initial Clock and IO Placement (Checksum:50cc7cfd) REAL time: 6 secs 
 
 Phase 5.30  Global Clock Region Assignment
-Phase 5.30  Global Clock Region Assignment (Checksum:1ff5a4e) REAL time: 6 secs 
+Phase 5.30  Global Clock Region Assignment (Checksum:50cc7cfd) REAL time: 6 secs 
 
 Phase 6.36  Local Placement Optimization
-Phase 6.36  Local Placement Optimization (Checksum:1ff5a4e) REAL time: 6 secs 
+Phase 6.36  Local Placement Optimization (Checksum:50cc7cfd) REAL time: 6 secs 
 
 Phase 7.8  Global Placement
-.......................................
-...............................
-.....................................
-...............................
-...............................
-Phase 7.8  Global Placement (Checksum:952c7dc6) REAL time: 7 secs 
+..........................
+..............................
+.........................
+............................
+...................................
+Phase 7.8  Global Placement (Checksum:e7dc9c48) REAL time: 6 secs 
 
 Phase 8.5  Local Placement Optimization
-Phase 8.5  Local Placement Optimization (Checksum:952c7dc6) REAL time: 7 secs 
+Phase 8.5  Local Placement Optimization (Checksum:e7dc9c48) REAL time: 7 secs 
 
 Phase 9.18  Placement Optimization
-Phase 9.18  Placement Optimization (Checksum:a0a78759) REAL time: 7 secs 
+Phase 9.18  Placement Optimization (Checksum:68c54027) REAL time: 7 secs 
 
 Phase 10.5  Local Placement Optimization
-Phase 10.5  Local Placement Optimization (Checksum:a0a78759) REAL time: 7 secs 
+Phase 10.5  Local Placement Optimization (Checksum:68c54027) REAL time: 7 secs 
 
 Total REAL time to Placer completion: 8 secs 
 Total CPU  time to Placer completion: 7 secs 
@@ -122,42 +120,38 @@ Writing design to file CPU.ncd
 Starting Router
 
 
-Phase  1  : 5434 unrouted;      REAL time: 14 secs 
+Phase  1  : 6240 unrouted;      REAL time: 13 secs 
 
-Phase  2  : 4976 unrouted;      REAL time: 14 secs 
+Phase  2  : 5849 unrouted;      REAL time: 14 secs 
 
-Phase  3  : 1377 unrouted;      REAL time: 14 secs 
+Phase  3  : 1791 unrouted;      REAL time: 14 secs 
 
-Phase  4  : 1397 unrouted; (Par is working to improve performance)     REAL time: 15 secs 
+Phase  4  : 1791 unrouted; (Par is working to improve performance)     REAL time: 15 secs 
 
-Phase  5  : 0 unrouted; (Par is working to improve performance)     REAL time: 16 secs 
+Phase  5  : 0 unrouted; (Par is working to improve performance)     REAL time: 15 secs 
 
 Updating file: CPU.ncd with current fully routed design.
 
 Phase  6  : 0 unrouted; (Par is working to improve performance)     REAL time: 16 secs 
 
-Phase  7  : 0 unrouted; (Par is working to improve performance)     REAL time: 21 secs 
+Phase  7  : 0 unrouted; (Par is working to improve performance)     REAL time: 16 secs 
 
-Phase  8  : 0 unrouted; (Par is working to improve performance)     REAL time: 21 secs 
+Phase  8  : 0 unrouted; (Par is working to improve performance)     REAL time: 16 secs 
 
-Phase  9  : 0 unrouted; (Par is working to improve performance)     REAL time: 21 secs 
+Phase  9  : 0 unrouted; (Par is working to improve performance)     REAL time: 16 secs 
 
-Phase 10  : 0 unrouted; (Par is working to improve performance)     REAL time: 21 secs 
-WARNING:Route:455 - CLK Net:IF_MEM_MEMMgr/DM_unit/RamAddr_not0001 may have excessive skew because 
-      2 CLK pins and 0 NON_CLK pins failed to route using a CLK template.
+Phase 10  : 0 unrouted; (Par is working to improve performance)     REAL time: 16 secs 
 WARNING:Route:455 - CLK Net:IF_MEM_MEMMgr/DM_unit/cur_state_cmp_eq0001 may have excessive skew because 
       1 CLK pins and 1 NON_CLK pins failed to route using a CLK template.
-WARNING:Route:455 - CLK Net:EXE_A_MUX/OUTPUT_not0001 may have excessive skew because 
-      8 CLK pins and 0 NON_CLK pins failed to route using a CLK template.
+WARNING:Route:455 - CLK Net:Forward_unit/RMWD_not0001 may have excessive skew because 
+      2 CLK pins and 0 NON_CLK pins failed to route using a CLK template.
 WARNING:Route:455 - CLK Net:ID_Controller/Mtridata_RWDATA_not0001 may have excessive skew because 
-      0 CLK pins and 1 NON_CLK pins failed to route using a CLK template.
-WARNING:Route:455 - CLK Net:IF_MEM_MEMMgr/DM_unit/Data_7_or0000 may have excessive skew because 
-      5 CLK pins and 0 NON_CLK pins failed to route using a CLK template.
+      0 CLK pins and 2 NON_CLK pins failed to route using a CLK template.
 WARNING:Route:455 - CLK Net:IF_MEM_MEMMgr/IM_unit/cur_state<0> may have excessive skew because 
       0 CLK pins and 2 NON_CLK pins failed to route using a CLK template.
 
-Total REAL time to Router completion: 21 secs 
-Total CPU time to Router completion: 21 secs 
+Total REAL time to Router completion: 16 secs 
+Total CPU time to Router completion: 16 secs 
 
 Partition Implementation Status
 -------------------------------
@@ -175,49 +169,52 @@ Generating Clock Report
 +---------------------+--------------+------+------+------------+-------------+
 |        Clock Net    |   Resource   |Locked|Fanout|Net Skew(ns)|Max Delay(ns)|
 +---------------------+--------------+------+------+------------+-------------+
-|        clk_stage<1> | BUFGMUX_X1Y10| No   |  183 |  0.195     |  0.367      |
+|        clk_stage<1> | BUFGMUX_X1Y10| No   |  183 |  0.133     |  0.303      |
 +---------------------+--------------+------+------+------------+-------------+
-|           clk_BUFGP |  BUFGMUX_X1Y1| No   |  107 |  0.158     |  0.337      |
-+---------------------+--------------+------+------+------------+-------------+
-|IF_MEM_MEMMgr/DM_uni |              |      |      |            |             |
-|   t/RamAddr_not0001 |         Local|      |   16 |  0.713     |  2.888      |
+|           clk_BUFGP |  BUFGMUX_X1Y1| No   |  106 |  0.130     |  0.299      |
 +---------------------+--------------+------+------+------------+-------------+
 |IF_MEM_MEMMgr/DM_uni |              |      |      |            |             |
-|     t/RamOE_not0001 |         Local|      |    2 |  0.003     |  1.548      |
+|   t/RamAddr_not0001 |         Local|      |   16 |  0.239     |  1.938      |
++---------------------+--------------+------+------+------------+-------------+
+|IF_MEM_MEMMgr/DM_uni |              |      |      |            |             |
+|     t/RamOE_not0001 |         Local|      |    2 |  0.149     |  1.844      |
 +---------------------+--------------+------+------+------------+-------------+
 |IF_MEM_MEMMgr/IM_uni |              |      |      |            |             |
 |      t/cur_state<0> |         Local|      |   18 |  0.590     |  2.491      |
 +---------------------+--------------+------+------+------------+-------------+
 |IF_MEM_MEMMgr/DM_uni |              |      |      |            |             |
 |t/Mtridata_RamData_n |              |      |      |            |             |
-|              ot0001 |         Local|      |   16 |  0.385     |  2.078      |
+|              ot0001 |         Local|      |   16 |  0.375     |  2.047      |
 +---------------------+--------------+------+------+------------+-------------+
 |IF_MEM_MEMMgr/DM_uni |              |      |      |            |             |
 |t/cur_state_cmp_eq00 |              |      |      |            |             |
-|                  01 |         Local|      |    3 |  0.256     |  2.929      |
+|                  01 |         Local|      |    3 |  0.165     |  2.825      |
 +---------------------+--------------+------+------+------------+-------------+
 |IF_MEM_MEMMgr/DM_uni |              |      |      |            |             |
-|       t/wrn_not0001 |         Local|      |    1 |  0.000     |  3.329      |
+|       t/wrn_not0001 |         Local|      |    1 |  0.000     |  3.627      |
 +---------------------+--------------+------+------+------------+-------------+
 |EXE_B_MUX/OUTPUT_not |              |      |      |            |             |
-|                0001 |         Local|      |   16 |  0.163     |  1.878      |
+|                0001 |         Local|      |   16 |  0.099     |  1.816      |
 +---------------------+--------------+------+------+------------+-------------+
 |EXE_A_MUX/OUTPUT_not |              |      |      |            |             |
-|                0001 |         Local|      |   16 |  1.726     |  2.726      |
+|                0001 |         Local|      |   16 |  0.111     |  1.850      |
 +---------------------+--------------+------+------+------------+-------------+
-|ID_Controller/Mtrida |              |      |      |            |             |
-|   ta_RWDATA_not0001 |         Local|      |    3 |  0.077     |  1.919      |
-+---------------------+--------------+------+------+------------+-------------+
-|IF_MEM_MEMMgr/DM_uni |              |      |      |            |             |
-|     t/Data_9_or0000 |         Local|      |    4 |  0.190     |  2.191      |
+|Forward_unit/RMWD_no |              |      |      |            |             |
+|               t0001 |         Local|      |    2 |  0.197     |  0.638      |
 +---------------------+--------------+------+------+------------+-------------+
 |IF_MEM_MEMMgr/DM_uni |              |      |      |            |             |
-|     t/Data_7_or0000 |         Local|      |    5 |  0.543     |  1.437      |
+|     t/Data_9_or0000 |         Local|      |    4 |  0.305     |  1.817      |
 +---------------------+--------------+------+------+------------+-------------+
 |  ID_Control_SP_S_in |         Local|      |    1 |  0.000     |  1.125      |
 +---------------------+--------------+------+------+------------+-------------+
 |IF_MEM_MEMMgr/DM_uni |              |      |      |            |             |
-|     t/RamEN_not0001 |         Local|      |    1 |  0.000     |  1.259      |
+|     t/Data_7_or0000 |         Local|      |    5 |  0.025     |  1.707      |
++---------------------+--------------+------+------+------------+-------------+
+|ID_Controller/Mtrida |              |      |      |            |             |
+|   ta_RWDATA_not0001 |         Local|      |    4 |  0.209     |  2.115      |
++---------------------+--------------+------+------+------------+-------------+
+|IF_MEM_MEMMgr/DM_uni |              |      |      |            |             |
+|     t/RamEN_not0001 |         Local|      |    1 |  0.000     |  1.840      |
 +---------------------+--------------+------+------+------------+-------------+
 
 * Net Skew is the difference between the minimum and maximum routing
@@ -234,10 +231,10 @@ Asterisk (*) preceding a constraint indicates it was not met.
   Constraint                                |    Check    | Worst Case |  Best Case | Timing |   Timing   
                                             |             |    Slack   | Achievable | Errors |    Score   
 ----------------------------------------------------------------------------------------------------------
-  Autotimespec constraint for clock net clk | SETUP       |         N/A|    15.638ns|     N/A|           0
-  _stage<1>                                 | HOLD        |     0.714ns|            |       0|           0
+  Autotimespec constraint for clock net clk | SETUP       |         N/A|    16.411ns|     N/A|           0
+  _stage<1>                                 | HOLD        |     0.931ns|            |       0|           0
 ----------------------------------------------------------------------------------------------------------
-  Autotimespec constraint for clock net clk | SETUP       |         N/A|     2.749ns|     N/A|           0
+  Autotimespec constraint for clock net clk | SETUP       |         N/A|     3.061ns|     N/A|           0
   _BUFGP                                    | HOLD        |     1.033ns|            |       0|           0
 ----------------------------------------------------------------------------------------------------------
 
@@ -254,19 +251,19 @@ Generating Pad Report.
 
 All signals are completely routed.
 
-WARNING:Par:283 - There are 14 loadless signals in this design. This design will cause Bitgen to issue DRC warnings.
+WARNING:Par:283 - There are 10 loadless signals in this design. This design will cause Bitgen to issue DRC warnings.
 
-Total REAL time to PAR completion: 22 secs 
-Total CPU time to PAR completion: 22 secs 
+Total REAL time to PAR completion: 16 secs 
+Total CPU time to PAR completion: 16 secs 
 
-Peak Memory Usage:  303 MB
+Peak Memory Usage:  302 MB
 
 Placement: Completed - No errors found.
 Routing: Completed - No errors found.
 
 Number of error messages: 0
-Number of warning messages: 22
-Number of info messages: 1
+Number of warning messages: 16
+Number of info messages: 2
 
 Writing design to file CPU.ncd
 

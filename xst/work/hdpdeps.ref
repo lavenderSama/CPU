@@ -22,144 +22,144 @@ FL D:/project/vhdl/xilinx/CPU/mux_wdata.vhd 2014/12/05.21:38:10 M.70d
 FL D:/project/vhdl/xilinx/CPU/QReg.vhd 2014/12/05.21:45:52 M.70d
 FL D:/project/vhdl/xilinx/CPU/RF.vhd 2014/12/05.02:23:30 M.70d
 FL E:/Thinpand/CPU/project/CPU/CPU/Adder.vhd 2014/12/05.21:52:27 M.70d
-EN work/Adder 1417876005 FL E:/Thinpand/CPU/project/CPU/CPU/Adder.vhd \
+EN work/Adder 1417898459 FL E:/Thinpand/CPU/project/CPU/CPU/Adder.vhd \
       PB ieee/std_logic_1164 1284609568 PB ieee/std_logic_arith 1284609569 \
       PB ieee/STD_LOGIC_SIGNED 1284609570
-AR work/Adder/behavioral 1417876006 \
-      FL E:/Thinpand/CPU/project/CPU/CPU/Adder.vhd EN work/Adder 1417876005
-FL E:/Thinpand/CPU/project/CPU/CPU/ALU.vhd 2014/12/06.19:20:05 M.70d
-EN work/ALU 1417876007 FL E:/Thinpand/CPU/project/CPU/CPU/ALU.vhd \
+AR work/Adder/behavioral 1417898460 \
+      FL E:/Thinpand/CPU/project/CPU/CPU/Adder.vhd EN work/Adder 1417898459
+FL E:/Thinpand/CPU/project/CPU/CPU/ALU.vhd 2014/12/07.03:53:54 M.70d
+EN work/ALU 1417898461 FL E:/Thinpand/CPU/project/CPU/CPU/ALU.vhd \
       PB ieee/std_logic_1164 1284609568 PB ieee/std_logic_arith 1284609569 \
       PB ieee/STD_LOGIC_SIGNED 1284609570
-AR work/ALU/behavioral 1417876008 \
-      FL E:/Thinpand/CPU/project/CPU/CPU/ALU.vhd EN work/ALU 1417876007
+AR work/ALU/behavioral 1417898462 \
+      FL E:/Thinpand/CPU/project/CPU/CPU/ALU.vhd EN work/ALU 1417898461
 FL E:/Thinpand/CPU/project/CPU/CPU/A_MUX.vhd 2014/12/06.20:31:45 M.70d
-EN work/A_MUX 1417876019 FL E:/Thinpand/CPU/project/CPU/CPU/A_MUX.vhd \
+EN work/A_MUX 1417898473 FL E:/Thinpand/CPU/project/CPU/CPU/A_MUX.vhd \
       PB ieee/std_logic_1164 1284609568 PB ieee/std_logic_arith 1284609569 \
       PB ieee/STD_LOGIC_SIGNED 1284609570
-AR work/A_MUX/behavior 1417876020 \
-      FL E:/Thinpand/CPU/project/CPU/CPU/A_MUX.vhd EN work/A_MUX 1417876019
+AR work/A_MUX/behavior 1417898474 \
+      FL E:/Thinpand/CPU/project/CPU/CPU/A_MUX.vhd EN work/A_MUX 1417898473
 FL E:/Thinpand/CPU/project/CPU/CPU/B_MUX.vhd 2014/12/06.20:34:10 M.70d
-EN work/B_MUX 1417876021 FL E:/Thinpand/CPU/project/CPU/CPU/B_MUX.vhd \
+EN work/B_MUX 1417898475 FL E:/Thinpand/CPU/project/CPU/CPU/B_MUX.vhd \
       PB ieee/std_logic_1164 1284609568 PB ieee/std_logic_arith 1284609569 \
       PB ieee/STD_LOGIC_SIGNED 1284609570
-AR work/B_MUX/behavior 1417876022 \
-      FL E:/Thinpand/CPU/project/CPU/CPU/B_MUX.vhd EN work/B_MUX 1417876021
-FL E:/Thinpand/CPU/project/CPU/CPU/controller.vhd 2014/12/06.22:11:07 M.70d
-EN work/controller 1417876009 FL E:/Thinpand/CPU/project/CPU/CPU/controller.vhd \
+AR work/B_MUX/behavior 1417898476 \
+      FL E:/Thinpand/CPU/project/CPU/CPU/B_MUX.vhd EN work/B_MUX 1417898475
+FL E:/Thinpand/CPU/project/CPU/CPU/controller.vhd 2014/12/07.01:07:52 M.70d
+EN work/controller 1417898463 FL E:/Thinpand/CPU/project/CPU/CPU/controller.vhd \
       PB ieee/std_logic_1164 1284609568 PB ieee/std_logic_arith 1284609569 \
       PB ieee/STD_LOGIC_SIGNED 1284609570
-AR work/controller/behavior 1417876010 \
-      FL E:/Thinpand/CPU/project/CPU/CPU/controller.vhd EN work/controller 1417876009
-FL E:/Thinpand/CPU/project/CPU/CPU/CPU.vhd 2014/12/06.22:26:15 M.70d
-EN work/CPU 1417876031 FL E:/Thinpand/CPU/project/CPU/CPU/CPU.vhd \
+AR work/controller/behavior 1417898464 \
+      FL E:/Thinpand/CPU/project/CPU/CPU/controller.vhd EN work/controller 1417898463
+FL E:/Thinpand/CPU/project/CPU/CPU/CPU.vhd 2014/12/07.04:40:35 M.70d
+EN work/CPU 1417898485 FL E:/Thinpand/CPU/project/CPU/CPU/CPU.vhd \
       PB ieee/std_logic_1164 1284609568 PB ieee/std_logic_arith 1284609569 \
       PB ieee/STD_LOGIC_UNSIGNED 1284609570
-AR work/CPU/Behavioral 1417876032 \
-      FL E:/Thinpand/CPU/project/CPU/CPU/CPU.vhd EN work/CPU 1417876031 CP QReg \
+AR work/CPU/Behavioral 1417898486 \
+      FL E:/Thinpand/CPU/project/CPU/CPU/CPU.vhd EN work/CPU 1417898485 CP QReg \
       CP IFReg CP IDReg CP EXEReg CP MEMReg CP RF CP memMgr CP Adder CP ALU \
       CP controller CP extension CP Foward CP Pause CP mux_pc CP A_MUX CP B_MUX \
       CP mux_raddr CP mux_wdata CP mux_sp_s CP mux_rwdata
 FL E:/Thinpand/CPU/project/CPU/CPU/DM.vhd 2014/12/06.18:46:54 M.70d
-EN work/DM 1417875989 FL E:/Thinpand/CPU/project/CPU/CPU/DM.vhd \
+EN work/DM 1417898443 FL E:/Thinpand/CPU/project/CPU/CPU/DM.vhd \
       PB ieee/std_logic_1164 1284609568 PB ieee/std_logic_arith 1284609569 \
       PB ieee/STD_LOGIC_UNSIGNED 1284609570
-AR work/DM/Behavioral 1417875990 \
-      FL E:/Thinpand/CPU/project/CPU/CPU/DM.vhd EN work/DM 1417875989
-FL E:/Thinpand/CPU/project/CPU/CPU/EXEReg.vhd 2014/12/05.02:15:14 M.70d
-EN work/EXEReg 1417875997 FL E:/Thinpand/CPU/project/CPU/CPU/EXEReg.vhd \
+AR work/DM/Behavioral 1417898444 \
+      FL E:/Thinpand/CPU/project/CPU/CPU/DM.vhd EN work/DM 1417898443
+FL E:/Thinpand/CPU/project/CPU/CPU/EXEReg.vhd 2014/12/07.04:19:09 M.70d
+EN work/EXEReg 1417898451 FL E:/Thinpand/CPU/project/CPU/CPU/EXEReg.vhd \
       PB ieee/std_logic_1164 1284609568 PB ieee/std_logic_arith 1284609569 \
       PB ieee/STD_LOGIC_UNSIGNED 1284609570
-AR work/EXEReg/Behavioral 1417875998 \
-      FL E:/Thinpand/CPU/project/CPU/CPU/EXEReg.vhd EN work/EXEReg 1417875997
+AR work/EXEReg/Behavioral 1417898452 \
+      FL E:/Thinpand/CPU/project/CPU/CPU/EXEReg.vhd EN work/EXEReg 1417898451
 FL E:/Thinpand/CPU/project/CPU/CPU/extension.vhd 2014/12/05.23:30:40 M.70d
-EN work/extension 1417876011 FL E:/Thinpand/CPU/project/CPU/CPU/extension.vhd \
+EN work/extension 1417898465 FL E:/Thinpand/CPU/project/CPU/CPU/extension.vhd \
       PB ieee/std_logic_1164 1284609568 PB ieee/std_logic_arith 1284609569 \
       PB ieee/STD_LOGIC_SIGNED 1284609570
-AR work/extension/behavioral 1417876012 \
-      FL E:/Thinpand/CPU/project/CPU/CPU/extension.vhd EN work/extension 1417876011
-FL E:/Thinpand/CPU/project/CPU/CPU/Foward.vhd 2014/12/06.22:05:40 M.70d
-EN work/Foward 1417876013 FL E:/Thinpand/CPU/project/CPU/CPU/Foward.vhd \
+AR work/extension/behavioral 1417898466 \
+      FL E:/Thinpand/CPU/project/CPU/CPU/extension.vhd EN work/extension 1417898465
+FL E:/Thinpand/CPU/project/CPU/CPU/Foward.vhd 2014/12/07.04:26:05 M.70d
+EN work/Foward 1417898467 FL E:/Thinpand/CPU/project/CPU/CPU/Foward.vhd \
       PB ieee/std_logic_1164 1284609568 PB ieee/std_logic_arith 1284609569 \
       PB ieee/STD_LOGIC_SIGNED 1284609570
-AR work/Foward/behavior 1417876014 \
-      FL E:/Thinpand/CPU/project/CPU/CPU/Foward.vhd EN work/Foward 1417876013
-FL E:/Thinpand/CPU/project/CPU/CPU/IDReg.vhd 2014/12/05.16:15:17 M.70d
-EN work/IDReg 1417875995 FL E:/Thinpand/CPU/project/CPU/CPU/IDReg.vhd \
+AR work/Foward/behavior 1417898468 \
+      FL E:/Thinpand/CPU/project/CPU/CPU/Foward.vhd EN work/Foward 1417898467
+FL E:/Thinpand/CPU/project/CPU/CPU/IDReg.vhd 2014/12/07.00:25:00 M.70d
+EN work/IDReg 1417898449 FL E:/Thinpand/CPU/project/CPU/CPU/IDReg.vhd \
       PB ieee/std_logic_1164 1284609568 PB ieee/std_logic_arith 1284609569 \
       PB ieee/STD_LOGIC_UNSIGNED 1284609570
-AR work/IDReg/Behavioral 1417875996 \
-      FL E:/Thinpand/CPU/project/CPU/CPU/IDReg.vhd EN work/IDReg 1417875995
-FL E:/Thinpand/CPU/project/CPU/CPU/IFReg.vhd 2014/12/06.18:47:06 M.70d
-EN work/IFReg 1417875993 FL E:/Thinpand/CPU/project/CPU/CPU/IFReg.vhd \
+AR work/IDReg/Behavioral 1417898450 \
+      FL E:/Thinpand/CPU/project/CPU/CPU/IDReg.vhd EN work/IDReg 1417898449
+FL E:/Thinpand/CPU/project/CPU/CPU/IFReg.vhd 2014/12/07.00:22:41 M.70d
+EN work/IFReg 1417898447 FL E:/Thinpand/CPU/project/CPU/CPU/IFReg.vhd \
       PB ieee/std_logic_1164 1284609568 PB ieee/std_logic_arith 1284609569 \
       PB ieee/STD_LOGIC_UNSIGNED 1284609570
-AR work/IFReg/Behavioral 1417875994 \
-      FL E:/Thinpand/CPU/project/CPU/CPU/IFReg.vhd EN work/IFReg 1417875993
+AR work/IFReg/Behavioral 1417898448 \
+      FL E:/Thinpand/CPU/project/CPU/CPU/IFReg.vhd EN work/IFReg 1417898447
 FL E:/Thinpand/CPU/project/CPU/CPU/IM.vhd 2014/12/06.17:43:26 M.70d
-EN work/IM 1417875987 FL E:/Thinpand/CPU/project/CPU/CPU/IM.vhd \
+EN work/IM 1417898441 FL E:/Thinpand/CPU/project/CPU/CPU/IM.vhd \
       PB ieee/std_logic_1164 1284609568 PB ieee/std_logic_arith 1284609569 \
       PB ieee/STD_LOGIC_UNSIGNED 1284609570
-AR work/IM/Behavioral 1417875988 \
-      FL E:/Thinpand/CPU/project/CPU/CPU/IM.vhd EN work/IM 1417875987
+AR work/IM/Behavioral 1417898442 \
+      FL E:/Thinpand/CPU/project/CPU/CPU/IM.vhd EN work/IM 1417898441
 FL E:/Thinpand/CPU/project/CPU/CPU/memMgr.vhd 2014/12/06.19:11:25 M.70d
-EN work/memMgr 1417876003 FL E:/Thinpand/CPU/project/CPU/CPU/memMgr.vhd \
+EN work/memMgr 1417898457 FL E:/Thinpand/CPU/project/CPU/CPU/memMgr.vhd \
       PB ieee/std_logic_1164 1284609568 PB ieee/std_logic_arith 1284609569 \
       PB ieee/STD_LOGIC_UNSIGNED 1284609570
-AR work/memMgr/Behavioral 1417876004 \
-      FL E:/Thinpand/CPU/project/CPU/CPU/memMgr.vhd EN work/memMgr 1417876003 \
+AR work/memMgr/Behavioral 1417898458 \
+      FL E:/Thinpand/CPU/project/CPU/CPU/memMgr.vhd EN work/memMgr 1417898457 \
       CP IM CP DM
-FL E:/Thinpand/CPU/project/CPU/CPU/MEMReg.vhd 2014/12/05.16:57:01 M.70d
-EN work/MEMReg 1417875999 FL E:/Thinpand/CPU/project/CPU/CPU/MEMReg.vhd \
+FL E:/Thinpand/CPU/project/CPU/CPU/MEMReg.vhd 2014/12/07.04:18:43 M.70d
+EN work/MEMReg 1417898453 FL E:/Thinpand/CPU/project/CPU/CPU/MEMReg.vhd \
       PB ieee/std_logic_1164 1284609568 PB ieee/std_logic_arith 1284609569 \
       PB ieee/STD_LOGIC_UNSIGNED 1284609570
-AR work/MEMReg/Behavioral 1417876000 \
-      FL E:/Thinpand/CPU/project/CPU/CPU/MEMReg.vhd EN work/MEMReg 1417875999
-FL E:/Thinpand/CPU/project/CPU/CPU/mux_pc.vhd 2014/12/06.20:29:02 M.70d
-EN work/mux_pc 1417876017 FL E:/Thinpand/CPU/project/CPU/CPU/mux_pc.vhd \
+AR work/MEMReg/Behavioral 1417898454 \
+      FL E:/Thinpand/CPU/project/CPU/CPU/MEMReg.vhd EN work/MEMReg 1417898453
+FL E:/Thinpand/CPU/project/CPU/CPU/mux_pc.vhd 2014/12/07.02:55:22 M.70d
+EN work/mux_pc 1417898471 FL E:/Thinpand/CPU/project/CPU/CPU/mux_pc.vhd \
       PB ieee/std_logic_1164 1284609568 PB ieee/std_logic_arith 1284609569 \
       PB ieee/STD_LOGIC_SIGNED 1284609570
-AR work/mux_pc/behavioral 1417876018 \
-      FL E:/Thinpand/CPU/project/CPU/CPU/mux_pc.vhd EN work/mux_pc 1417876017
+AR work/mux_pc/behavioral 1417898472 \
+      FL E:/Thinpand/CPU/project/CPU/CPU/mux_pc.vhd EN work/mux_pc 1417898471
 FL E:/Thinpand/CPU/project/CPU/CPU/mux_raddr.vhd 2014/12/05.21:37:38 M.70d
-EN work/mux_raddr 1417876023 FL E:/Thinpand/CPU/project/CPU/CPU/mux_raddr.vhd \
+EN work/mux_raddr 1417898477 FL E:/Thinpand/CPU/project/CPU/CPU/mux_raddr.vhd \
       PB ieee/std_logic_1164 1284609568 PB ieee/std_logic_arith 1284609569 \
       PB ieee/STD_LOGIC_SIGNED 1284609570
-AR work/mux_raddr/behavioral 1417876024 \
-      FL E:/Thinpand/CPU/project/CPU/CPU/mux_raddr.vhd EN work/mux_raddr 1417876023
-FL E:/Thinpand/CPU/project/CPU/CPU/mux_rwdata.vhd 2014/12/05.21:38:11 M.70d
-EN work/mux_rwdata 1417876029 FL E:/Thinpand/CPU/project/CPU/CPU/mux_rwdata.vhd \
+AR work/mux_raddr/behavioral 1417898478 \
+      FL E:/Thinpand/CPU/project/CPU/CPU/mux_raddr.vhd EN work/mux_raddr 1417898477
+FL E:/Thinpand/CPU/project/CPU/CPU/mux_rwdata.vhd 2014/12/07.04:21:32 M.70d
+EN work/mux_rwdata 1417898483 FL E:/Thinpand/CPU/project/CPU/CPU/mux_rwdata.vhd \
       PB ieee/std_logic_1164 1284609568 PB ieee/std_logic_arith 1284609569 \
       PB ieee/STD_LOGIC_SIGNED 1284609570
-AR work/mux_rwdata/behavioral 1417876030 \
-      FL E:/Thinpand/CPU/project/CPU/CPU/mux_rwdata.vhd EN work/mux_rwdata 1417876029
+AR work/mux_rwdata/behavioral 1417898484 \
+      FL E:/Thinpand/CPU/project/CPU/CPU/mux_rwdata.vhd EN work/mux_rwdata 1417898483
 FL E:/Thinpand/CPU/project/CPU/CPU/mux_sp_s.vhd 2014/12/05.21:37:34 M.70d
-EN work/mux_sp_s 1417876027 FL E:/Thinpand/CPU/project/CPU/CPU/mux_sp_s.vhd \
+EN work/mux_sp_s 1417898481 FL E:/Thinpand/CPU/project/CPU/CPU/mux_sp_s.vhd \
       PB ieee/std_logic_1164 1284609568 PB ieee/std_logic_arith 1284609569 \
       PB ieee/STD_LOGIC_SIGNED 1284609570
-AR work/mux_sp_s/behavioral 1417876028 \
-      FL E:/Thinpand/CPU/project/CPU/CPU/mux_sp_s.vhd EN work/mux_sp_s 1417876027
-FL E:/Thinpand/CPU/project/CPU/CPU/mux_wdata.vhd 2014/12/05.21:38:10 M.70d
-EN work/mux_wdata 1417876025 FL E:/Thinpand/CPU/project/CPU/CPU/mux_wdata.vhd \
+AR work/mux_sp_s/behavioral 1417898482 \
+      FL E:/Thinpand/CPU/project/CPU/CPU/mux_sp_s.vhd EN work/mux_sp_s 1417898481
+FL E:/Thinpand/CPU/project/CPU/CPU/mux_wdata.vhd 2014/12/07.04:33:48 M.70d
+EN work/mux_wdata 1417898479 FL E:/Thinpand/CPU/project/CPU/CPU/mux_wdata.vhd \
       PB ieee/std_logic_1164 1284609568 PB ieee/std_logic_arith 1284609569 \
       PB ieee/STD_LOGIC_SIGNED 1284609570
-AR work/mux_wdata/behavioral 1417876026 \
-      FL E:/Thinpand/CPU/project/CPU/CPU/mux_wdata.vhd EN work/mux_wdata 1417876025
+AR work/mux_wdata/behavioral 1417898480 \
+      FL E:/Thinpand/CPU/project/CPU/CPU/mux_wdata.vhd EN work/mux_wdata 1417898479
 FL E:/Thinpand/CPU/project/CPU/CPU/Pause.vhd 2014/12/06.22:03:34 M.70d
-EN work/Pause 1417876015 FL E:/Thinpand/CPU/project/CPU/CPU/Pause.vhd \
+EN work/Pause 1417898469 FL E:/Thinpand/CPU/project/CPU/CPU/Pause.vhd \
       PB ieee/std_logic_1164 1284609568 PB ieee/std_logic_arith 1284609569 \
       PB ieee/STD_LOGIC_SIGNED 1284609570
-AR work/Pause/behavior 1417876016 \
-      FL E:/Thinpand/CPU/project/CPU/CPU/Pause.vhd EN work/Pause 1417876015
+AR work/Pause/behavior 1417898470 \
+      FL E:/Thinpand/CPU/project/CPU/CPU/Pause.vhd EN work/Pause 1417898469
 FL E:/Thinpand/CPU/project/CPU/CPU/QReg.vhd 2014/12/05.21:45:52 M.70d
-EN work/QReg 1417875991 FL E:/Thinpand/CPU/project/CPU/CPU/QReg.vhd \
+EN work/QReg 1417898445 FL E:/Thinpand/CPU/project/CPU/CPU/QReg.vhd \
       PB ieee/std_logic_1164 1284609568 PB ieee/std_logic_arith 1284609569 \
       PB ieee/STD_LOGIC_UNSIGNED 1284609570
-AR work/QReg/Behavioral 1417875992 \
-      FL E:/Thinpand/CPU/project/CPU/CPU/QReg.vhd EN work/QReg 1417875991
+AR work/QReg/Behavioral 1417898446 \
+      FL E:/Thinpand/CPU/project/CPU/CPU/QReg.vhd EN work/QReg 1417898445
 FL E:/Thinpand/CPU/project/CPU/CPU/RF.vhd 2014/12/06.22:15:13 M.70d
-EN work/RF 1417876001 FL E:/Thinpand/CPU/project/CPU/CPU/RF.vhd \
+EN work/RF 1417898455 FL E:/Thinpand/CPU/project/CPU/CPU/RF.vhd \
       PB ieee/std_logic_1164 1284609568 PB ieee/std_logic_arith 1284609569 \
       PB ieee/STD_LOGIC_UNSIGNED 1284609570
-AR work/RF/Behavioral 1417876002 \
-      FL E:/Thinpand/CPU/project/CPU/CPU/RF.vhd EN work/RF 1417876001
+AR work/RF/Behavioral 1417898456 \
+      FL E:/Thinpand/CPU/project/CPU/CPU/RF.vhd EN work/RF 1417898455

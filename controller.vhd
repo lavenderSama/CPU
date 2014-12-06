@@ -328,13 +328,13 @@ case PAUSE is
             end case;
         when "01101"=> --LI
             PC <= "000";
-            A  <= "ZZZ";
+            A  <= "100";
             B  <= "0100";
-            ALU <= "ZZZ";
+            ALU <= "001";
             MEM <= 'Z';
             WDATA <= 'Z';
             RADDR <= "01";
-            RWDATA <= "10";
+            RWDATA <= "00";
             IH  <= '0';
             SP  <= '0';
             RA  <= '0';

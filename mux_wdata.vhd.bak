@@ -31,9 +31,9 @@ PROCESS (in_rx, in_ry, in_alu, in_rwdata, option)
 BEGIN
 	CASE rmwd IS
 		when "01" =>
-			out_wdata <= in_alu;
-		when "10" =>
 			out_wdata <= in_rwdata;
+		when "10" =>
+			out_wdata <= in_alu;
 		when others =>
 			IF option='0' THEN
 				out_wdata <= in_rx;

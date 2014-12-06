@@ -522,7 +522,7 @@ begin
 			when "1001" => L <= EXE_Control_RA&"00"&EXE_Control_RB&"00"&ID_Control_A_out&"0"&ID_Control_B_out;
 			when "1010" => L <= ID_Control_Pause&"000"&ID_Control_MEM_out&"000"&ID_Control_PC_out&"0"&EXE_ALU_FLAG_ZERO&"000";
 			when "1011" => L <= EXE_PCAdder_Out;
-			when "1100" => L <= MEM_Data_in;
+			when "1100" => L <= EXE_MWD_in;
 			when others => L <= (others => '0');
 		end case;
 	end process;
@@ -600,7 +600,7 @@ begin
 		 ID_IM_10_0_in, ID_IM_7_0_sign_in, ID_IM_7_0_zero_in, ID_IM_4_0_in, ID_IM_3_0_in, ID_IM_4_2_in);
 
 	Forward_unit: Foward port map
-		(ID_Control_A_out, ID_Control_B_out, ID_Control_WData_out, ID_Addr_RY_out, ID_Addr_RX_out, EXE_Control_RF_out, MEM_Control_RF_out, EXE_RAddr_out, MEM_RAddr_out, EXE_Control_RA, EXE_Control_RB, EXE_Control_RMWD);
+		(ID_Control_A_out, ID_Control_B_out, ID_Control_WData_out, ID_Addr_RY_out, ID_Addr_RX_out, EXE_Control_RF_out, MEM_Control_RF_out, EXE_RAddr_out, ID_RF_WD, EXE_Control_RA, EXE_Control_RB, EXE_Control_RMWD);
 	
 	Pause_unit: Pause port map
 		(ID_Control_MEM_out, EXE_RAddr_out, IF_INS_10_8_out, IF_INS_7_5_out, IF_INS_15_0_out, ID_Control_Pause);

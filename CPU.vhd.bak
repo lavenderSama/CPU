@@ -522,7 +522,7 @@ begin
 			when "1001" => L <= EXE_Control_RA&"00"&EXE_Control_RB&"00"&ID_Control_A_out&"0"&ID_Control_B_out;
 			when "1010" => L <= ID_Control_Pause&"000"&ID_Control_MEM_out&"000"&ID_Control_PC_out&"0"&EXE_ALU_FLAG_ZERO&"000";
 			when "1011" => L <= EXE_PCAdder_Out;
-			when "1100" => L <= MEM_Data_in;
+			when "1100" => L <= EXE_MWD_in;
 			when others => L <= (others => '0');
 		end case;
 	end process;
@@ -642,14 +642,10 @@ begin
 	EXE_Control_MEM_in <= ID_Control_MEM_out;
   EXE_Control_RWData_in <= ID_Control_RWData_out;
   EXE_Control_RF_in <= ID_Control_RF_out;
-  EXE_RX_in <= ID_RX_out;
-  EXE_B_in <= EXE_B_MUX_out;
   
   MEM_Control_RWData_in <= EXE_Control_RWData_out;
   MEM_Control_RF_in     <= EXE_Control_RF_out;
   MEM_ALU_in            <= EXE_ALU_out;
-  MEM_B_in              <= EXE_B_out;
-  MEM_RX_in             <= EXE_RX_out;
   MEM_RAddr_in          <= EXE_RAddr_out;
 
 end architecture;

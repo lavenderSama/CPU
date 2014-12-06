@@ -107,7 +107,8 @@ Slice Utilization Ratio Delta      : 5
 Compiling vhdl file "E:/Thinpand/CPU/project/CPU/CPU/IM.vhd" in Library work.
 Architecture behavioral of Entity im is up to date.
 Compiling vhdl file "E:/Thinpand/CPU/project/CPU/CPU/DM.vhd" in Library work.
-Architecture behavioral of Entity dm is up to date.
+Entity <dm> compiled.
+Entity <dm> (Architecture <behavioral>) compiled.
 Compiling vhdl file "E:/Thinpand/CPU/project/CPU/CPU/QReg.vhd" in Library work.
 Architecture behavioral of Entity qreg is up to date.
 Compiling vhdl file "E:/Thinpand/CPU/project/CPU/CPU/IFReg.vhd" in Library work.
@@ -150,8 +151,7 @@ Architecture behavioral of Entity mux_sp_s is up to date.
 Compiling vhdl file "E:/Thinpand/CPU/project/CPU/CPU/mux_rwdata.vhd" in Library work.
 Architecture behavioral of Entity mux_rwdata is up to date.
 Compiling vhdl file "E:/Thinpand/CPU/project/CPU/CPU/CPU.vhd" in Library work.
-Entity <cpu> compiled.
-Entity <cpu> (Architecture <behavioral>) compiled.
+Architecture behavioral of Entity cpu is up to date.
 
 =========================================================================
 *                     Design Hierarchy Analysis                         *
@@ -265,7 +265,7 @@ Entity <IM> analyzed. Unit <IM> generated.
 
 Analyzing Entity <DM> in library <work> (Architecture <behavioral>).
 WARNING:Xst:819 - "E:/Thinpand/CPU/project/CPU/CPU/DM.vhd" line 40: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
-   <cur_state>, <Address>, <MEM>, <data_ready>, <tsre>, <WriteData>
+   <cur_state>, <Address>, <MEM>, <WriteData>, <data_ready>, <tsre>
 INFO:Xst:2679 - Register <rdn> in unit <DM> has a constant value of 1 during circuit operation. The register is replaced by logic.
 Entity <DM> analyzed. Unit <DM> generated.
 
@@ -585,9 +585,9 @@ WARNING:Xst:647 - Input <tbre> is never used. This port will be preserved and le
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
 WARNING:Xst:737 - Found 16-bit latch for signal <Data$mux0000>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:736 - Found 16-bit latch for signal <Mtridata_RamData> created at line 59. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:736 - Found 16-bit latch for signal <Mtridata_RamData> created at line 48. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
 INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
-WARNING:Xst:736 - Found 1-bit latch for signal <Mtrien_RamData> created at line 59. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:736 - Found 1-bit latch for signal <Mtrien_RamData> created at line 48. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
 INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
 WARNING:Xst:737 - Found 1-bit latch for signal <wrn>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
 INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
@@ -987,28 +987,27 @@ Design Statistics
 # IOs                              : 127
 
 Cell Usage :
-# BELS                             : 1898
+# BELS                             : 1895
 #      GND                         : 1
-#      INV                         : 15
-#      LUT2                        : 126
-#      LUT2_D                      : 4
+#      INV                         : 18
+#      LUT2                        : 143
+#      LUT2_D                      : 3
 #      LUT2_L                      : 1
-#      LUT3                        : 601
-#      LUT3_D                      : 1
-#      LUT3_L                      : 1
-#      LUT4                        : 622
+#      LUT3                        : 592
+#      LUT3_D                      : 2
+#      LUT4                        : 606
 #      LUT4_D                      : 7
-#      LUT4_L                      : 9
+#      LUT4_L                      : 12
 #      MUXCY                       : 45
 #      MUXF5                       : 336
 #      MUXF6                       : 80
 #      VCC                         : 1
 #      XORCY                       : 48
 # FlipFlops/Latches                : 574
-#      FD                          : 7
+#      FD                          : 8
 #      FDC                         : 248
 #      FDCE                        : 192
-#      FDR                         : 3
+#      FDR                         : 2
 #      FDS                         : 1
 #      LD                          : 121
 #      LDCP                        : 2
@@ -1026,9 +1025,9 @@ Device utilization summary:
 
 Selected Device : 3s1200efg320-4 
 
- Number of Slices:                      735  out of   8672     8%  
+ Number of Slices:                      731  out of   8672     8%  
  Number of Slice Flip Flops:            504  out of  17344     2%  
- Number of 4 input LUTs:               1387  out of  17344     7%  
+ Number of 4 input LUTs:               1384  out of  17344     7%  
  Number of IOs:                         127
  Number of bonded IOBs:                 117  out of    250    46%  
     IOB Flip Flops:                      70
@@ -1052,26 +1051,26 @@ NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
 
 Clock Information:
 ------------------
---------------------------------------------------------------------------------------------------+---------------------------------------------------+-------+
-Clock Signal                                                                                      | Clock buffer(FF name)                             | Load  |
---------------------------------------------------------------------------------------------------+---------------------------------------------------+-------+
-clk                                                                                               | BUFGP                                             | 187   |
-IF_MEM_MEMMgr/IM_unit/cur_state_0                                                                 | NONE(IF_MEM_MEMMgr/IM_unit/INS_0)                 | 16    |
-EXE_A_MUX/OUTPUT_not0001(EXE_A_MUX/OUTPUT_not0001:O)                                              | NONE(*)(EXE_A_MUX/OUTPUT_0)                       | 16    |
-IF_MEM_MEMMgr/DM_unit/cur_state_cmp_eq0001(IF_MEM_MEMMgr/DM_unit/cur_state_cmp_eq00011:O)         | NONE(*)(IF_MEM_MEMMgr/DM_unit/Data_mux0000_1)     | 2     |
-IF_MEM_MEMMgr/DM_unit/Mtridata_RamData_not0001(IF_MEM_MEMMgr/DM_unit/Mtridata_RamData_not000126:O)| NONE(*)(IF_MEM_MEMMgr/DM_unit/Mtridata_RamData_15)| 32    |
-IF_MEM_MEMMgr/DM_unit/RamAddr_not0001(IF_MEM_MEMMgr/DM_unit/RamAddr_not00012:O)                   | NONE(*)(IF_MEM_MEMMgr/DM_unit/RamAddr_15)         | 16    |
-IF_MEM_MEMMgr/DM_unit/wrn_not0001(IF_MEM_MEMMgr/DM_unit/wrn_not0001_f5:O)                         | NONE(*)(IF_MEM_MEMMgr/DM_unit/wrn)                | 1     |
-IF_MEM_MEMMgr/DM_unit/RamOE_not0001(IF_MEM_MEMMgr/DM_unit/RamOE_not00011:O)                       | NONE(*)(IF_MEM_MEMMgr/DM_unit/RamOE)              | 2     |
-IF_MEM_MEMMgr/DM_unit/RamEN_not0001(IF_MEM_MEMMgr/DM_unit/RamEN_not00011:O)                       | NONE(*)(IF_MEM_MEMMgr/DM_unit/RamEN)              | 1     |
-IF_MEM_MEMMgr/DM_unit/Data_9_or0000(IF_MEM_MEMMgr/DM_unit/Data_9_or00001:O)                       | NONE(*)(IF_MEM_MEMMgr/DM_unit/Data_9)             | 8     |
-IF_MEM_MEMMgr/DM_unit/Data_7_or0000(IF_MEM_MEMMgr/DM_unit/Data_7_or00001:O)                       | NONE(*)(IF_MEM_MEMMgr/DM_unit/Data_7)             | 8     |
-clk_stage_11                                                                                      | BUFG                                              | 264   |
-ID_Controller/Mtridata_RWDATA_not0001(ID_Controller/Mtridata_RWDATA_not00011:O)                   | NONE(*)(ID_Controller/Mtridata_RWDATA_1)          | 2     |
-ID_Control_SP_S_in(ID_Controller/SP_S1:O)                                                         | NONE(*)(ID_Controller/Mtrien_RWDATA)              | 1     |
-Forward_unit/RMWD_not0001(Forward_unit/RMWD_not00011:O)                                           | NONE(*)(Forward_unit/RMWD_1)                      | 2     |
-EXE_B_MUX/OUTPUT_not0001(EXE_B_MUX/OUTPUT_not0001:O)                                              | NONE(*)(EXE_B_MUX/OUTPUT_15)                      | 16    |
---------------------------------------------------------------------------------------------------+---------------------------------------------------+-------+
+---------------------------------------------------------------------------------------------------+---------------------------------------------------+-------+
+Clock Signal                                                                                       | Clock buffer(FF name)                             | Load  |
+---------------------------------------------------------------------------------------------------+---------------------------------------------------+-------+
+clk                                                                                                | BUFGP                                             | 187   |
+IF_MEM_MEMMgr/IM_unit/cur_state_0                                                                  | NONE(IF_MEM_MEMMgr/IM_unit/INS_0)                 | 16    |
+EXE_A_MUX/OUTPUT_not0001(EXE_A_MUX/OUTPUT_not0001:O)                                               | NONE(*)(EXE_A_MUX/OUTPUT_0)                       | 16    |
+IF_MEM_MEMMgr/DM_unit/cur_state_cmp_eq0001(IF_MEM_MEMMgr/DM_unit/cur_state_cmp_eq00011:O)          | NONE(*)(IF_MEM_MEMMgr/DM_unit/Data_mux0000_1)     | 2     |
+IF_MEM_MEMMgr/DM_unit/Mtridata_RamData_not0001(IF_MEM_MEMMgr/DM_unit/Mtridata_RamData_not0001_f5:O)| NONE(*)(IF_MEM_MEMMgr/DM_unit/Mtridata_RamData_15)| 32    |
+IF_MEM_MEMMgr/DM_unit/RamAddr_not0001(IF_MEM_MEMMgr/DM_unit/RamAddr_not00012:O)                    | NONE(*)(IF_MEM_MEMMgr/DM_unit/RamAddr_15)         | 16    |
+IF_MEM_MEMMgr/DM_unit/wrn_not0001(IF_MEM_MEMMgr/DM_unit/wrn_not0001_f5:O)                          | NONE(*)(IF_MEM_MEMMgr/DM_unit/wrn)                | 1     |
+IF_MEM_MEMMgr/DM_unit/RamOE_not0001(IF_MEM_MEMMgr/DM_unit/RamOE_not00011:O)                        | NONE(*)(IF_MEM_MEMMgr/DM_unit/RamOE)              | 2     |
+IF_MEM_MEMMgr/DM_unit/RamEN_not0001(IF_MEM_MEMMgr/DM_unit/RamEN_not00011:O)                        | NONE(*)(IF_MEM_MEMMgr/DM_unit/RamEN)              | 1     |
+IF_MEM_MEMMgr/DM_unit/Data_9_or0000(IF_MEM_MEMMgr/DM_unit/Data_9_or00001:O)                        | NONE(*)(IF_MEM_MEMMgr/DM_unit/Data_9)             | 8     |
+IF_MEM_MEMMgr/DM_unit/Data_7_or0000(IF_MEM_MEMMgr/DM_unit/Data_7_or00001:O)                        | NONE(*)(IF_MEM_MEMMgr/DM_unit/Data_7)             | 8     |
+clk_stage_11                                                                                       | BUFG                                              | 264   |
+ID_Controller/Mtridata_RWDATA_not0001(ID_Controller/Mtridata_RWDATA_not00011:O)                    | NONE(*)(ID_Controller/Mtridata_RWDATA_1)          | 2     |
+ID_Control_SP_S_in(ID_Controller/SP_S1:O)                                                          | NONE(*)(ID_Controller/Mtrien_RWDATA)              | 1     |
+Forward_unit/RMWD_not0001(Forward_unit/RMWD_not00011:O)                                            | NONE(*)(Forward_unit/RMWD_1)                      | 2     |
+EXE_B_MUX/OUTPUT_not0001(EXE_B_MUX/OUTPUT_not0001:O)                                               | NONE(*)(EXE_B_MUX/OUTPUT_15)                      | 16    |
+---------------------------------------------------------------------------------------------------+---------------------------------------------------+-------+
 (*) These 13 clock signal(s) are generated by combinatorial logic,
 and XST is not able to identify which are the primary clock signals.
 Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
@@ -1095,7 +1094,7 @@ Speed Grade: -4
 
    Minimum period: 15.018ns (Maximum Frequency: 66.587MHz)
    Minimum input arrival time before clock: 2.825ns
-   Maximum output required time after clock: 28.615ns
+   Maximum output required time after clock: 28.717ns
    Maximum combinational path delay: 11.393ns
 
 Timing Detail:
@@ -1118,7 +1117,7 @@ Delay:               3.930ns (Levels of Logic = 2)
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      FD:C->Q              22   0.591   1.199  IF_MEM_MEMMgr/DM_unit/cur_state_FSM_FFd2 (IF_MEM_MEMMgr/DM_unit/cur_state_FSM_FFd2)
-     LUT3:I2->O            1   0.704   0.424  IF_MEM_MEMMgr/DM_unit/cur_state_FSM_FFd8-In_SW0 (N40)
+     LUT3:I2->O            1   0.704   0.424  IF_MEM_MEMMgr/DM_unit/cur_state_FSM_FFd8-In_SW0 (N42)
      LUT4:I3->O            1   0.704   0.000  IF_MEM_MEMMgr/DM_unit/cur_state_FSM_FFd8-In1 (IF_MEM_MEMMgr/DM_unit/cur_state_FSM_FFd8-In1)
      FDS:D                     0.308          IF_MEM_MEMMgr/DM_unit/cur_state_FSM_FFd8
     ----------------------------------------
@@ -1128,7 +1127,7 @@ Delay:               3.930ns (Levels of Logic = 2)
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk_stage_11'
   Clock period: 15.018ns (frequency: 66.587MHz)
-  Total number of paths / destination ports: 570945 / 179
+  Total number of paths / destination ports: 570955 / 179
 -------------------------------------------------------------------------
 Delay:               15.018ns (Levels of Logic = 38)
   Source:            ID_EXE_Reg/Control_ALU_out_2_1 (FF)
@@ -1235,7 +1234,7 @@ Offset:              2.729ns (Levels of Logic = 2)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IOBUF:IO->O           1   1.218   0.499  Ram1Data_9_IOBUF (N105)
+     IOBUF:IO->O           1   1.218   0.499  Ram1Data_9_IOBUF (N107)
      LUT2:I1->O            1   0.704   0.000  IF_MEM_MEMMgr/DM_unit/Data_9_mux00001 (IF_MEM_MEMMgr/DM_unit/Data_9_mux0000)
      LD:D                      0.308          IF_MEM_MEMMgr/DM_unit/Data_9
     ----------------------------------------
@@ -1255,7 +1254,7 @@ Offset:              2.825ns (Levels of Logic = 2)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IOBUF:IO->O           1   1.218   0.595  Ram1Data_7_IOBUF (N107)
+     IOBUF:IO->O           1   1.218   0.595  Ram1Data_7_IOBUF (N109)
      LUT3:I0->O            1   0.704   0.000  IF_MEM_MEMMgr/DM_unit/Data_7_mux00001 (IF_MEM_MEMMgr/DM_unit/Data_7_mux0000)
      LD:D                      0.308          IF_MEM_MEMMgr/DM_unit/Data_7
     ----------------------------------------
@@ -1324,24 +1323,24 @@ Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
   Total number of paths / destination ports: 129 / 17
 -------------------------------------------------------------------------
 Offset:              9.929ns (Levels of Logic = 9)
-  Source:            ID_RF/R0_14 (FF)
-  Destination:       L<14> (PAD)
+  Source:            ID_RF/R0_15 (FF)
+  Destination:       L<15> (PAD)
   Source Clock:      clk rising
 
-  Data Path: ID_RF/R0_14 to L<14>
+  Data Path: ID_RF/R0_15 to L<15>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDCE:C->Q             3   0.591   0.610  ID_RF/R0_14 (ID_RF/R0_14)
-     LUT3:I1->O            1   0.704   0.000  ID_RF/Mmux_Debug_Data_65 (ID_RF/Mmux_Debug_Data_65)
-     MUXF5:I0->O           1   0.321   0.000  ID_RF/Mmux_Debug_Data_4_f5_4 (ID_RF/Mmux_Debug_Data_4_f55)
-     MUXF6:I0->O           1   0.521   0.499  ID_RF/Mmux_Debug_Data_2_f6_4 (debug_data<14>)
-     LUT3:I1->O            1   0.704   0.000  Mmux_L_95 (Mmux_L_95)
-     MUXF5:I0->O           1   0.321   0.000  Mmux_L_7_f5_4 (Mmux_L_7_f55)
-     MUXF6:I0->O           1   0.521   0.420  Mmux_L_5_f6_4 (Mmux_L_5_f65)
-     INV:I->O              1   0.704   0.000  SW<15>5372_INV_0 (SW<15>5371)
-     MUXF5:I0->O           1   0.321   0.420  SW<15>537_f5 (L_14_OBUF)
-     OBUF:I->O                 3.272          L_14_OBUF (L<14>)
+     FDCE:C->Q             3   0.591   0.610  ID_RF/R0_15 (ID_RF/R0_15)
+     LUT3:I1->O            1   0.704   0.000  ID_RF/Mmux_Debug_Data_66 (ID_RF/Mmux_Debug_Data_66)
+     MUXF5:I0->O           1   0.321   0.000  ID_RF/Mmux_Debug_Data_4_f5_5 (ID_RF/Mmux_Debug_Data_4_f56)
+     MUXF6:I0->O           1   0.521   0.499  ID_RF/Mmux_Debug_Data_2_f6_5 (debug_data<15>)
+     LUT3:I1->O            1   0.704   0.000  Mmux_L_96 (Mmux_L_96)
+     MUXF5:I0->O           1   0.321   0.000  Mmux_L_7_f5_5 (Mmux_L_7_f56)
+     MUXF6:I0->O           1   0.521   0.420  Mmux_L_5_f6_5 (Mmux_L_5_f66)
+     INV:I->O              1   0.704   0.000  SW<15>6382_INV_0 (SW<15>6381)
+     MUXF5:I0->O           1   0.321   0.420  SW<15>638_f5 (L_15_OBUF)
+     OBUF:I->O                 3.272          L_15_OBUF (L<15>)
     ----------------------------------------
     Total                      9.929ns (7.980ns logic, 1.949ns route)
                                        (80.4% logic, 19.6% route)
@@ -1369,7 +1368,7 @@ Offset:              4.368ns (Levels of Logic = 1)
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk_stage_11'
   Total number of paths / destination ports: 69306 / 32
 -------------------------------------------------------------------------
-Offset:              19.979ns (Levels of Logic = 28)
+Offset:              20.221ns (Levels of Logic = 29)
   Source:            ID_EXE_Reg/Control_ALU_out_2_1 (FF)
   Destination:       L<15> (PAD)
   Source Clock:      clk_stage_11 rising
@@ -1404,34 +1403,35 @@ Offset:              19.979ns (Levels of Logic = 28)
      LUT4:I1->O            2   0.704   0.526  IF_PC_MUX/pc<15>14 (IF_PC_in<15>)
      LUT3:I1->O            1   0.704   0.000  Mmux_L_816 (Mmux_L_816)
      MUXF5:I1->O           1   0.321   0.000  Mmux_L_7_f5_5 (Mmux_L_7_f56)
-     MUXF6:I0->O           1   0.521   0.499  Mmux_L_5_f6_5 (Mmux_L_5_f66)
-     LUT3:I1->O            1   0.704   0.420  SW<15>637 (L_15_OBUF)
+     MUXF6:I0->O           1   0.521   0.420  Mmux_L_5_f6_5 (Mmux_L_5_f66)
+     INV:I->O              1   0.704   0.000  SW<15>6382_INV_0 (SW<15>6381)
+     MUXF5:I0->O           1   0.321   0.420  SW<15>638_f5 (L_15_OBUF)
      OBUF:I->O                 3.272          L_15_OBUF (L<15>)
     ----------------------------------------
-    Total                     19.979ns (14.121ns logic, 5.858ns route)
-                                       (70.7% logic, 29.3% route)
+    Total                     20.221ns (14.442ns logic, 5.779ns route)
+                                       (71.4% logic, 28.6% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'EXE_A_MUX/OUTPUT_not0001'
-  Total number of paths / destination ports: 131620 / 32
+  Total number of paths / destination ports: 130102 / 32
 -------------------------------------------------------------------------
-Offset:              23.751ns (Levels of Logic = 21)
-  Source:            EXE_A_MUX/OUTPUT_6 (LATCH)
+Offset:              23.845ns (Levels of Logic = 22)
+  Source:            EXE_A_MUX/OUTPUT_7 (LATCH)
   Destination:       L<15> (PAD)
   Source Clock:      EXE_A_MUX/OUTPUT_not0001 falling
 
-  Data Path: EXE_A_MUX/OUTPUT_6 to L<15>
+  Data Path: EXE_A_MUX/OUTPUT_7 to L<15>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     LD:G->Q              13   0.676   1.158  EXE_A_MUX/OUTPUT_6 (EXE_A_MUX/OUTPUT_6)
-     LUT3:I0->O            3   0.704   0.610  EXE_ALU/c_mux0003<0>291 (EXE_ALU/c_mux0003<0>_bdd54)
-     LUT3:I1->O            1   0.704   0.000  EXE_ALU/c_mux0003<0>2882_F (N466)
-     MUXF5:I0->O           5   0.321   0.712  EXE_ALU/c_mux0003<0>2882 (EXE_ALU/c_mux0003<0>_bdd49)
-     LUT3:I1->O            2   0.704   0.526  EXE_ALU/c_mux0003<0>251 (EXE_ALU/c_mux0003<0>_bdd1)
+     LD:G->Q              13   0.676   1.158  EXE_A_MUX/OUTPUT_7 (EXE_A_MUX/OUTPUT_7)
+     LUT3:I0->O            3   0.704   0.610  EXE_ALU/c_mux0003<0>271 (EXE_ALU/c_mux0003<0>_bdd51)
+     LUT3:I1->O            1   0.704   0.000  EXE_ALU/c_mux0003<0>2682_F (N494)
+     MUXF5:I0->O           6   0.321   0.704  EXE_ALU/c_mux0003<0>2682 (EXE_ALU/c_mux0003<0>_bdd48)
+     LUT3:I2->O            2   0.704   0.526  EXE_ALU/c_mux0003<0>251 (EXE_ALU/c_mux0003<0>_bdd1)
      LUT2:I1->O            1   0.704   0.000  EXE_ALU/c_mux0003<0>31541 (EXE_ALU/c_mux0003<0>31541)
-     MUXF5:I1->O           1   0.321   0.595  EXE_ALU/c_mux0003<0>3154_f5 (EXE_ALU/c_mux0003<0>3154)
-     LUT3:I0->O            1   0.704   0.000  EXE_ALU/c_mux0003<0>3255_G (N483)
+     MUXF5:I1->O           1   0.321   0.455  EXE_ALU/c_mux0003<0>3154_f5 (EXE_ALU/c_mux0003<0>3154)
+     LUT3:I2->O            1   0.704   0.000  EXE_ALU/c_mux0003<0>3255_G (N509)
      MUXF5:I1->O           1   0.321   0.499  EXE_ALU/c_mux0003<0>3255 (EXE_ALU/c_mux0003<0>)
      LUT3:I1->O            1   0.704   0.000  EXE_ALU/Mmux_c_4 (EXE_ALU/Mmux_c_4)
      MUXF5:I1->O           1   0.321   0.000  EXE_ALU/Mmux_c_3_f5 (EXE_ALU/Mmux_c_3_f5)
@@ -1443,18 +1443,19 @@ Offset:              23.751ns (Levels of Logic = 21)
      LUT4:I1->O            2   0.704   0.526  IF_PC_MUX/pc<15>14 (IF_PC_in<15>)
      LUT3:I1->O            1   0.704   0.000  Mmux_L_816 (Mmux_L_816)
      MUXF5:I1->O           1   0.321   0.000  Mmux_L_7_f5_5 (Mmux_L_7_f56)
-     MUXF6:I0->O           1   0.521   0.499  Mmux_L_5_f6_5 (Mmux_L_5_f66)
-     LUT3:I1->O            1   0.704   0.420  SW<15>637 (L_15_OBUF)
+     MUXF6:I0->O           1   0.521   0.420  Mmux_L_5_f6_5 (Mmux_L_5_f66)
+     INV:I->O              1   0.704   0.000  SW<15>6382_INV_0 (SW<15>6381)
+     MUXF5:I0->O           1   0.321   0.420  SW<15>638_f5 (L_15_OBUF)
      OBUF:I->O                 3.272          L_15_OBUF (L<15>)
     ----------------------------------------
-    Total                     23.751ns (15.364ns logic, 8.387ns route)
-                                       (64.7% logic, 35.3% route)
+    Total                     23.845ns (15.685ns logic, 8.160ns route)
+                                       (65.8% logic, 34.2% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'EXE_B_MUX/OUTPUT_not0001'
-  Total number of paths / destination ports: 901258 / 32
+  Total number of paths / destination ports: 887530 / 32
 -------------------------------------------------------------------------
-Offset:              28.615ns (Levels of Logic = 24)
+Offset:              28.717ns (Levels of Logic = 25)
   Source:            EXE_B_MUX/OUTPUT_14 (LATCH)
   Destination:       L<15> (PAD)
   Source Clock:      EXE_B_MUX/OUTPUT_not0001 falling
@@ -1465,15 +1466,15 @@ Offset:              28.615ns (Levels of Logic = 24)
     ----------------------------------------  ------------
      LD:G->Q               7   0.676   0.883  EXE_B_MUX/OUTPUT_14 (EXE_B_MUX/OUTPUT_14)
      LUT4:I0->O            4   0.704   0.762  EXE_ALU/c_mux0003<0>144 (EXE_ALU/c_mux0003<0>144)
-     LUT3:I0->O           31   0.704   1.341  EXE_ALU/c_mux0003<0>1420 (EXE_ALU/c_mux0003<0>_bdd28)
+     LUT3:I0->O           32   0.704   1.341  EXE_ALU/c_mux0003<0>1420 (EXE_ALU/c_mux0003<0>_bdd28)
      LUT3:I1->O           14   0.704   1.079  EXE_ALU/c_mux0003<0>181 (EXE_ALU/c_mux0003<0>_bdd25)
      LUT4:I1->O            1   0.704   0.455  EXE_ALU/c_mux0003<0>2820 (EXE_ALU/c_mux0003<0>2820)
-     LUT4:I2->O            1   0.704   0.000  EXE_ALU/c_mux0003<0>2882_G (N467)
+     LUT4:I2->O            1   0.704   0.000  EXE_ALU/c_mux0003<0>2882_G (N493)
      MUXF5:I1->O           5   0.321   0.712  EXE_ALU/c_mux0003<0>2882 (EXE_ALU/c_mux0003<0>_bdd49)
      LUT3:I1->O            2   0.704   0.526  EXE_ALU/c_mux0003<0>251 (EXE_ALU/c_mux0003<0>_bdd1)
      LUT2:I1->O            1   0.704   0.000  EXE_ALU/c_mux0003<0>31541 (EXE_ALU/c_mux0003<0>31541)
-     MUXF5:I1->O           1   0.321   0.595  EXE_ALU/c_mux0003<0>3154_f5 (EXE_ALU/c_mux0003<0>3154)
-     LUT3:I0->O            1   0.704   0.000  EXE_ALU/c_mux0003<0>3255_G (N483)
+     MUXF5:I1->O           1   0.321   0.455  EXE_ALU/c_mux0003<0>3154_f5 (EXE_ALU/c_mux0003<0>3154)
+     LUT3:I2->O            1   0.704   0.000  EXE_ALU/c_mux0003<0>3255_G (N509)
      MUXF5:I1->O           1   0.321   0.499  EXE_ALU/c_mux0003<0>3255 (EXE_ALU/c_mux0003<0>)
      LUT3:I1->O            1   0.704   0.000  EXE_ALU/Mmux_c_4 (EXE_ALU/Mmux_c_4)
      MUXF5:I1->O           1   0.321   0.000  EXE_ALU/Mmux_c_3_f5 (EXE_ALU/Mmux_c_3_f5)
@@ -1485,12 +1486,13 @@ Offset:              28.615ns (Levels of Logic = 24)
      LUT4:I1->O            2   0.704   0.526  IF_PC_MUX/pc<15>14 (IF_PC_in<15>)
      LUT3:I1->O            1   0.704   0.000  Mmux_L_816 (Mmux_L_816)
      MUXF5:I1->O           1   0.321   0.000  Mmux_L_7_f5_5 (Mmux_L_7_f56)
-     MUXF6:I0->O           1   0.521   0.499  Mmux_L_5_f6_5 (Mmux_L_5_f66)
-     LUT3:I1->O            1   0.704   0.420  SW<15>637 (L_15_OBUF)
+     MUXF6:I0->O           1   0.521   0.420  Mmux_L_5_f6_5 (Mmux_L_5_f66)
+     INV:I->O              1   0.704   0.000  SW<15>6382_INV_0 (SW<15>6381)
+     MUXF5:I0->O           1   0.321   0.420  SW<15>638_f5 (L_15_OBUF)
      OBUF:I->O                 3.272          L_15_OBUF (L<15>)
     ----------------------------------------
-    Total                     28.615ns (17.476ns logic, 11.139ns route)
-                                       (61.1% logic, 38.9% route)
+    Total                     28.717ns (17.797ns logic, 10.920ns route)
+                                       (62.0% logic, 38.0% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'IF_MEM_MEMMgr/IM_unit/cur_state_0'
@@ -1509,8 +1511,8 @@ Offset:              7.925ns (Levels of Logic = 6)
      LUT3:I2->O            1   0.704   0.000  Mmux_L_84 (Mmux_L_84)
      MUXF5:I1->O           1   0.321   0.000  Mmux_L_7_f5_0 (Mmux_L_7_f51)
      MUXF6:I0->O           1   0.521   0.420  Mmux_L_5_f6_0 (Mmux_L_5_f61)
-     INV:I->O              1   0.704   0.000  SW<15>13712_INV_0 (SW<15>13711)
-     MUXF5:I0->O           1   0.321   0.420  SW<15>1371_f5 (L_10_OBUF)
+     INV:I->O              1   0.704   0.000  SW<15>13812_INV_0 (SW<15>13811)
+     MUXF5:I0->O           1   0.321   0.420  SW<15>1381_f5 (L_10_OBUF)
      OBUF:I->O                 3.272          L_10_OBUF (L<10>)
     ----------------------------------------
     Total                      7.925ns (6.519ns logic, 1.406ns route)
@@ -1520,7 +1522,7 @@ Offset:              7.925ns (Levels of Logic = 6)
 Timing constraint: Default OFFSET OUT AFTER for Clock 'Forward_unit/RMWD_not0001'
   Total number of paths / destination ports: 64 / 16
 -------------------------------------------------------------------------
-Offset:              12.080ns (Levels of Logic = 7)
+Offset:              10.890ns (Levels of Logic = 6)
   Source:            Forward_unit/RMWD_0 (LATCH)
   Destination:       L<15> (PAD)
   Source Clock:      Forward_unit/RMWD_not0001 falling
@@ -1530,16 +1532,15 @@ Offset:              12.080ns (Levels of Logic = 7)
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      LD:G->Q              17   0.676   1.226  Forward_unit/RMWD_0 (Forward_unit/RMWD_0)
-     LUT2:I0->O           16   0.704   1.209  EXE_WData_MUX/Mmux_out_wdata4835 (EXE_WData_MUX/Mmux_out_wdata1235)
-     LUT4:I0->O            1   0.704   0.499  EXE_WData_MUX/Mmux_out_wdata4236 (EXE_WData_MUX/Mmux_out_wdata4236)
-     LUT2:I1->O            2   0.704   0.482  EXE_WData_MUX/Mmux_out_wdata4245 (EXE_MWD_in<7>)
-     LUT4:I2->O            1   0.704   0.000  SW<15>13241 (SW<15>13241)
-     MUXF5:I1->O           1   0.321   0.455  SW<15>1324_f5 (SW<15>1324)
-     LUT3:I2->O            1   0.704   0.420  SW<15>1337 (L_7_OBUF)
-     OBUF:I->O                 3.272          L_7_OBUF (L<7>)
+     LUT2:I0->O           16   0.704   1.209  EXE_WData_MUX/Mmux_out_wdata4834 (EXE_WData_MUX/Mmux_out_wdata1234)
+     LUT4:I0->O            1   0.704   0.499  EXE_WData_MUX/Mmux_out_wdata935 (EXE_WData_MUX/Mmux_out_wdata935)
+     LUT2:I1->O            2   0.704   0.451  EXE_WData_MUX/Mmux_out_wdata944 (EXE_MWD_in<11>)
+     LUT4:I3->O            1   0.704   0.000  SW<15>2381 (SW<15>238)
+     MUXF5:I1->O           1   0.321   0.420  SW<15>238_f5 (L_11_OBUF)
+     OBUF:I->O                 3.272          L_11_OBUF (L<11>)
     ----------------------------------------
-    Total                     12.080ns (7.789ns logic, 4.291ns route)
-                                       (64.5% logic, 35.5% route)
+    Total                     10.890ns (7.085ns logic, 3.805ns route)
+                                       (65.1% logic, 34.9% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'IF_MEM_MEMMgr/DM_unit/RamAddr_not0001'
@@ -1562,13 +1563,13 @@ Offset:              4.368ns (Levels of Logic = 1)
 
 =========================================================================
 Timing constraint: Default path analysis
-  Total number of paths / destination ports: 331 / 16
+  Total number of paths / destination ports: 328 / 16
 -------------------------------------------------------------------------
 Delay:               11.393ns (Levels of Logic = 10)
   Source:            SW<0> (PAD)
-  Destination:       L<14> (PAD)
+  Destination:       L<15> (PAD)
 
-  Data Path: SW<0> to L<14>
+  Data Path: SW<0> to L<15>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
@@ -1579,8 +1580,8 @@ Delay:               11.393ns (Levels of Logic = 10)
      LUT3:I1->O            1   0.704   0.000  Mmux_L_91 (Mmux_L_91)
      MUXF5:I0->O           1   0.321   0.000  Mmux_L_7_f5_0 (Mmux_L_7_f51)
      MUXF6:I0->O           1   0.521   0.420  Mmux_L_5_f6_0 (Mmux_L_5_f61)
-     INV:I->O              1   0.704   0.000  SW<15>13712_INV_0 (SW<15>13711)
-     MUXF5:I0->O           1   0.321   0.420  SW<15>1371_f5 (L_10_OBUF)
+     INV:I->O              1   0.704   0.000  SW<15>13812_INV_0 (SW<15>13811)
+     MUXF5:I0->O           1   0.321   0.420  SW<15>1381_f5 (L_10_OBUF)
      OBUF:I->O                 3.272          L_10_OBUF (L<10>)
     ----------------------------------------
     Total                     11.393ns (8.607ns logic, 2.786ns route)
@@ -1589,12 +1590,12 @@ Delay:               11.393ns (Levels of Logic = 10)
 =========================================================================
 
 
-Total REAL time to Xst completion: 18.00 secs
-Total CPU time to Xst completion: 17.46 secs
+Total REAL time to Xst completion: 17.00 secs
+Total CPU time to Xst completion: 16.58 secs
  
 --> 
 
-Total memory usage is 295532 kilobytes
+Total memory usage is 295596 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :  178 (   0 filtered)

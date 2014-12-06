@@ -4,7 +4,7 @@ Copyright (c) 1995-2010 Xilinx, Inc.  All rights reserved.
 Project Information
 --------------------
 ProjectID=F51E4B2E45144E24B1BA9C593D535063
-ProjectIteration=20
+ProjectIteration=23
 
 WebTalk Summary
 ----------------
@@ -13,4 +13,4 @@ INFO:WebTalk:2 - WebTalk is enabled.
 INFO:WebTalk:8 - WebTalk Install setting is ON.
 INFO:WebTalk:6 - WebTalk User setting is ON.
 
-INFO:WebTalk:5 - E:/Thinpand/CPU/project/CPU/CPU/usage_statistics_webtalk.html WebTalk report has not been sent to Xilinx.  Please check your network and proxy settings.  For additional details about this file, please refer to the WebTalk help file at D:/Xilinx/12.3/ISE_DS/ISE/data/reports/webtalk_introduction.html
+INFO:WebTalk:4 - E:/Thinpand/CPU/project/CPU/CPU/usage_statistics_webtalk.html WebTalk report has been successfully sent to Xilinx on 2014-12-07T05:50:17.  For additional details about this file, please refer to the WebTalk help file at D:/Xilinx/12.3/ISE_DS/ISE/data/reports/webtalk_introduction.html

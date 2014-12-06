@@ -262,9 +262,9 @@ case PAUSE is
                 when "000"|"001" =>     --BTEQZ,BTNEZ
                     case INSTRUCTION(10 downto 8) is
                        when "000" => 
-                            PC <= "011";
-                       when "001" =>
                             PC <= "010";
+                       when "001" =>
+                            PC <= "011";
 							  when others =>
 									PC <= "000";
                     end case;

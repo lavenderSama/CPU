@@ -600,7 +600,7 @@ begin
 		 ID_IM_10_0_in, ID_IM_7_0_sign_in, ID_IM_7_0_zero_in, ID_IM_4_0_in, ID_IM_3_0_in, ID_IM_4_2_in);
 
 	Forward_unit: Foward port map
-		(ID_Control_A_out, ID_Control_B_out, ID_Control_WData_out, ID_Addr_RY_out, ID_Addr_RX_out, EXE_Control_RF_out, MEM_Control_RF_out, EXE_RAddr_out, ID_RF_WD, EXE_Control_RA, EXE_Control_RB, EXE_Control_RMWD);
+		(ID_Control_A_out, ID_Control_B_out, ID_Control_WData_out, ID_Addr_RY_out, ID_Addr_RX_out, EXE_Control_RF_out, MEM_Control_RF_out, EXE_RAddr_out, MEM_RAddr_out, EXE_Control_RA, EXE_Control_RB, EXE_Control_RMWD);
 	
 	Pause_unit: Pause port map
 		(ID_Control_MEM_out, EXE_RAddr_out, IF_INS_10_8_out, IF_INS_7_5_out, IF_INS_15_0_out, ID_Control_Pause);

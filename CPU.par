@@ -1,7 +1,7 @@
 Release 12.3 par M.70d (nt64)
 Copyright (c) 1995-2010 Xilinx, Inc.  All rights reserved.
 
-FLYING-GARDEN::  Sun Dec 07 06:56:27 2014
+FLYING-GARDEN::  Sun Dec 07 07:09:57 2014
 
 par -w -intstyle ise -ol high -t 1 CPU_map.ncd CPU.ncd CPU.pcf 
 
@@ -128,11 +128,11 @@ Phase  5  : 0 unrouted; (Par is working to improve performance)     REAL time: 1
 
 Updating file: CPU.ncd with current fully routed design.
 
-Phase  6  : 0 unrouted; (Par is working to improve performance)     REAL time: 18 secs 
+Phase  6  : 0 unrouted; (Par is working to improve performance)     REAL time: 17 secs 
 
-Phase  7  : 0 unrouted; (Par is working to improve performance)     REAL time: 27 secs 
+Phase  7  : 0 unrouted; (Par is working to improve performance)     REAL time: 26 secs 
 
-Phase  8  : 0 unrouted; (Par is working to improve performance)     REAL time: 27 secs 
+Phase  8  : 0 unrouted; (Par is working to improve performance)     REAL time: 26 secs 
 
 Phase  9  : 0 unrouted; (Par is working to improve performance)     REAL time: 27 secs 
 
@@ -244,7 +244,7 @@ WARNING:Par:283 - There are 10 loadless signals in this design. This design will
 Total REAL time to PAR completion: 28 secs 
 Total CPU time to PAR completion: 28 secs 
 
-Peak Memory Usage:  308 MB
+Peak Memory Usage:  309 MB
 
 Placement: Completed - No errors found.
 Routing: Completed - No errors found.

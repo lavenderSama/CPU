@@ -71,7 +71,7 @@ case PAUSE is
                 when "11" => ALU <= "111";     --SUBU
                 when others => ALU <= "000";
             end case;
-            MEM   <= 'Z';
+            MEM   <= '0';
             WDATA   <= 'Z';
             RADDR   <= "11";
             RWDATA  <= "00";
@@ -154,11 +154,11 @@ case PAUSE is
 									WDATA <= 'Z';
 									RADDR <= "ZZ";
 									RWDATA <= "ZZ";
-									IH  <= 'Z';
-									SP  <= 'Z';
-									RA  <= 'Z';
-									T   <= 'Z';
-									RF  <= 'Z';
+									IH  <= '0';
+									SP  <= '0';
+									RA  <= '0';
+									T   <= '0';
+									RF  <= '0';
 									SP_S <= 'Z';
                     end case;
                 when "01010" =>   --CMP
@@ -204,11 +204,11 @@ case PAUSE is
 							WDATA <= 'Z';
 							RADDR <= "ZZ";
 							RWDATA <= "ZZ";
-							IH  <= 'Z';
-							SP  <= 'Z';
-							RA  <= 'Z';
-							T   <= 'Z';
-							RF  <= 'Z';
+							IH  <= '0';
+							SP  <= '0';
+							RA  <= '0';
+							T   <= '0';
+							RF  <= '0';
 							SP_S <= 'Z';
             end case;
         when "00010"=> --B
@@ -262,9 +262,9 @@ case PAUSE is
                 when "000"|"001" =>     --BTEQZ,BTNEZ
                     case INSTRUCTION(10 downto 8) is
                        when "000" => 
-                            PC <= "010";
-                       when "001" =>
                             PC <= "011";
+                       when "001" =>
+                            PC <= "010";
 							  when others =>
 									PC <= "000";
                     end case;
@@ -301,7 +301,7 @@ case PAUSE is
 		            A    <= "ZZZ";
 		            B    <= "ZZZZ";
 		            ALU  <= "ZZZ";
-		            MEM  <= 'Z';
+		            MEM  <= '0';
 		            WDATA <= 'Z';
 		            RADDR <= "ZZ";
 		            IH    <= '0';
@@ -319,11 +319,11 @@ case PAUSE is
 						WDATA <= 'Z';
 						RADDR <= "ZZ";
 						RWDATA <= "ZZ";
-						IH  <= 'Z';
-						SP  <= 'Z';
-						RA  <= 'Z';
-						T   <= 'Z';
-						RF  <= 'Z';
+						IH  <= '0';
+						SP  <= '0';
+						RA  <= '0';
+						T   <= '0';
+						RF  <= '0';
 						SP_S <= 'Z';
             end case;
         when "01101"=> --LI
@@ -400,8 +400,8 @@ case PAUSE is
 							ALU <= "ZZZ";
 							RADDR <= "ZZ";
 							RWDATA <= "ZZ";
-							IH  <= 'Z';
-							RF  <= 'Z';
+							IH  <= '0';
+							RF  <= '0';
             end case;
         when "00001"=> --NOP
             PC <= "000";
@@ -412,11 +412,11 @@ case PAUSE is
             WDATA <= 'Z';
             RADDR <= "ZZ";
             RWDATA <= "ZZ";
-            IH  <= 'Z';
-            SP  <= 'Z';
-            RA  <= 'Z';
-            T   <= 'Z';
-            RF  <= 'Z';
+            IH  <= '0';
+            SP  <= '0';
+            RA  <= '0';
+            T   <= '0';
+            RF  <= '0';
             SP_S <= 'Z';
         when "00110"=> --SLL,SRA
             PC <= "000";
@@ -494,11 +494,11 @@ case PAUSE is
             WDATA <= 'Z';
             RADDR <= "ZZ";
             RWDATA <= "ZZ";
-            IH  <= 'Z';
-            SP  <= 'Z';
-            RA  <= 'Z';
-            T   <= 'Z';
-            RF  <= 'Z';
+            IH  <= '0';
+            SP  <= '0';
+            RA  <= '0';
+            T   <= '0';
+            RF  <= '0';
             SP_S <= 'Z';
     end case;
   when '1' =>
@@ -510,11 +510,11 @@ case PAUSE is
         WDATA <= 'Z';
         RADDR <= "ZZ";
         RWDATA <= "ZZ";
-        IH  <= 'Z';
-        SP  <= 'Z';
-        RA  <= 'Z';
-        T   <= 'Z';
-        RF  <= 'Z';
+        IH  <= '0';
+        SP  <= '0';
+        RA  <= '0';
+        T   <= '0';
+        RF  <= '0';
         SP_S <= 'Z';
 	when others =>
 			PC <= "000";
@@ -525,11 +525,11 @@ case PAUSE is
 			WDATA <= 'Z';
 			RADDR <= "ZZ";
 			RWDATA <= "ZZ";
-			IH  <= 'Z';
-			SP  <= 'Z';
-			RA  <= 'Z';
-			T   <= 'Z';
-			RF  <= 'Z';
+			IH  <= '0';
+			SP  <= '0';
+			RA  <= '0';
+			T   <= '0';
+			RF  <= '0';
 			SP_S <= 'Z';
 end case;
 END PROCESS;

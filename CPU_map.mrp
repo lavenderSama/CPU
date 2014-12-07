@@ -9,34 +9,35 @@ Target Device  : xc3s1200e
 Target Package : fg320
 Target Speed   : -4
 Mapper Version : spartan3e -- $Revision: 1.52 $
-Mapped Date    : Sun Dec 07 07:09:53 2014
+Mapped Date    : Sun Dec 07 12:01:09 2014
 
 Design Summary
 --------------
 Number of errors:      0
-Number of warnings:   21
+Number of warnings:   15
 Logic Utilization:
-  Total Number Slice Registers:         468 out of  17,344    2%
-    Number used as Flip Flops:          447
-    Number used as Latches:              21
-  Number of 4 input LUTs:             1,568 out of  17,344    9%
+  Total Number Slice Registers:         445 out of  17,344    2%
+    Number used as Flip Flops:          440
+    Number used as Latches:               5
+  Number of 4 input LUTs:             1,494 out of  17,344    8%
 Logic Distribution:
-  Number of occupied Slices:            947 out of   8,672   10%
-    Number of Slices containing only related logic:     947 out of     947 100%
-    Number of Slices containing unrelated logic:          0 out of     947   0%
+  Number of occupied Slices:            910 out of   8,672   10%
+    Number of Slices containing only related logic:     910 out of     910 100%
+    Number of Slices containing unrelated logic:          0 out of     910   0%
       *See NOTES below for an explanation of the effects of unrelated logic.
-  Total Number of 4 input LUTs:       1,569 out of  17,344    9%
-    Number used as logic:             1,568
-    Number used as a route-thru:          1
+  Total Number of 4 input LUTs:       1,497 out of  17,344    8%
+    Number used as logic:             1,494
+    Number used as a route-thru:          3
 
   The Slice Logic Distribution report is not meaningful if the design is
   over-mapped for a non-slice resource or if Placement fails.
 
-  Number of bonded IOBs:                127 out of     250   50%
-    IOB Latches:                         70
+  Number of bonded IOBs:                128 out of     250   51%
+    IOB Flip Flops:                      46
+    IOB Latches:                         36
   Number of BUFGMUXs:                     2 out of      24    8%
 
-Average Fanout of Non-Clock Nets:                4.01
+Average Fanout of Non-Clock Nets:                4.04
 
 Peak Memory Usage:  260 MB
 Total REAL time to MAP completion:  2 secs 
@@ -82,47 +83,22 @@ Section 1 - Errors
 Section 2 - Warnings
 --------------------
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   IF_MEM_MEMMgr/DM_unit/RamEN_not0001 is sourced by a combinatorial pin. This
+   IF_MEM_MEMMgr/DM_unit/RamWE_not0001 is sourced by a combinatorial pin. This
    is not good design practice. Use the CE pin to control the loading of data
    into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   IF_MEM_MEMMgr/DM_unit/RamAddr_or0000 is sourced by a combinatorial pin. This
-   is not good design practice. Use the CE pin to control the loading of data
-   into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   IF_MEM_MEMMgr/DM_unit/RamOE_not0001 is sourced by a combinatorial pin. This
-   is not good design practice. Use the CE pin to control the loading of data
-   into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   IF_MEM_MEMMgr/DM_unit/Mtridata_RamData_not0001 is sourced by a combinatorial
-   pin. This is not good design practice. Use the CE pin to control the loading
-   of data into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   IF_MEM_MEMMgr/DM_unit/cur_state_cmp_eq0001 is sourced by a combinatorial pin.
-   This is not good design practice. Use the CE pin to control the loading of
-   data into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   IF_MEM_MEMMgr/DM_unit/wrn_not0001 is sourced by a combinatorial pin. This is
-   not good design practice. Use the CE pin to control the loading of data into
-   the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net Forward_unit/RMWD_not0001
    is sourced by a combinatorial pin. This is not good design practice. Use the
    CE pin to control the loading of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   IF_MEM_MEMMgr/DM_unit/Data_9_or0000 is sourced by a combinatorial pin. This
-   is not good design practice. Use the CE pin to control the loading of data
-   into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net ID_Control_SP_S_in is
-   sourced by a combinatorial pin. This is not good design practice. Use the CE
-   pin to control the loading of data into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   IF_MEM_MEMMgr/DM_unit/Data_7_or0000 is sourced by a combinatorial pin. This
-   is not good design practice. Use the CE pin to control the loading of data
-   into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net
    ID_Controller/Mtridata_RWDATA_not0001 is sourced by a combinatorial pin. This
    is not good design practice. Use the CE pin to control the loading of data
    into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   ID_Controller/Mtrien_RWDATA_not0001 is sourced by a combinatorial pin. This
+   is not good design practice. Use the CE pin to control the loading of data
+   into the flip-flop.
+WARNING:PhysDesignRules:367 - The signal <clk_50_IBUF> is incomplete. The signal
+   does not drive any load pins in the design.
 WARNING:PhysDesignRules:367 - The signal <SW<3>_IBUF> is incomplete. The signal
    does not drive any load pins in the design.
 WARNING:PhysDesignRules:367 - The signal <SW<4>_IBUF> is incomplete. The signal
@@ -147,13 +123,13 @@ WARNING:PhysDesignRules:367 - The signal <SW<11>_IBUF> is incomplete. The signal
 Section 3 - Informational
 -------------------------
 INFO:LIT:243 - Logical network tbre_IBUF has no load.
-INFO:LIT:395 - The above info message is repeated 9 more times for the following
-   (max. 5 shown):
+INFO:LIT:395 - The above info message is repeated 10 more times for the
+   following (max. 5 shown):
+   clk_50_IBUF,
    SW<11>_IBUF,
    SW<10>_IBUF,
    SW<9>_IBUF,
-   SW<8>_IBUF,
-   SW<7>_IBUF
+   SW<8>_IBUF
    To see the details of these info messages, please use the -detail switch.
 INFO:MapLib:562 - No environment variables are currently set.
 INFO:LIT:244 - All of the single ended outputs in this design are using slew
@@ -234,33 +210,47 @@ Section 6 - IOB Properties
 |                                    |                  |           |                      |       |          |      | TFF1         |          |          |
 | Ram1Data<1>                        | IOB              | BIDIR     | LVCMOS25             |       | 12       | SLOW | OFF1         |          | 0 / 0    |
 |                                    |                  |           |                      |       |          |      | TFF1         |          |          |
-| Ram1Data<2>                        | IOB              | BIDIR     | LVCMOS25             |       | 12       | SLOW | OFF1         |          | 0 / 0    |
+| Ram1Data<2>                        | IOB              | BIDIR     | LVCMOS25             |       | 12       | SLOW | IFF1         |          | 0 / 3    |
+|                                    |                  |           |                      |       |          |      | OFF1         |          |          |
 |                                    |                  |           |                      |       |          |      | TFF1         |          |          |
-| Ram1Data<3>                        | IOB              | BIDIR     | LVCMOS25             |       | 12       | SLOW | OFF1         |          | 0 / 0    |
+| Ram1Data<3>                        | IOB              | BIDIR     | LVCMOS25             |       | 12       | SLOW | IFF1         |          | 0 / 3    |
+|                                    |                  |           |                      |       |          |      | OFF1         |          |          |
 |                                    |                  |           |                      |       |          |      | TFF1         |          |          |
-| Ram1Data<4>                        | IOB              | BIDIR     | LVCMOS25             |       | 12       | SLOW | OFF1         |          | 0 / 0    |
+| Ram1Data<4>                        | IOB              | BIDIR     | LVCMOS25             |       | 12       | SLOW | IFF1         |          | 0 / 3    |
+|                                    |                  |           |                      |       |          |      | OFF1         |          |          |
 |                                    |                  |           |                      |       |          |      | TFF1         |          |          |
-| Ram1Data<5>                        | IOB              | BIDIR     | LVCMOS25             |       | 12       | SLOW | OFF1         |          | 0 / 0    |
+| Ram1Data<5>                        | IOB              | BIDIR     | LVCMOS25             |       | 12       | SLOW | IFF1         |          | 0 / 3    |
+|                                    |                  |           |                      |       |          |      | OFF1         |          |          |
 |                                    |                  |           |                      |       |          |      | TFF1         |          |          |
-| Ram1Data<6>                        | IOB              | BIDIR     | LVCMOS25             |       | 12       | SLOW | OFF1         |          | 0 / 0    |
+| Ram1Data<6>                        | IOB              | BIDIR     | LVCMOS25             |       | 12       | SLOW | IFF1         |          | 0 / 3    |
+|                                    |                  |           |                      |       |          |      | OFF1         |          |          |
 |                                    |                  |           |                      |       |          |      | TFF1         |          |          |
-| Ram1Data<7>                        | IOB              | BIDIR     | LVCMOS25             |       | 12       | SLOW | OFF1         |          | 0 / 0    |
+| Ram1Data<7>                        | IOB              | BIDIR     | LVCMOS25             |       | 12       | SLOW | IFF1         |          | 0 / 3    |
+|                                    |                  |           |                      |       |          |      | OFF1         |          |          |
 |                                    |                  |           |                      |       |          |      | TFF1         |          |          |
-| Ram1Data<8>                        | IOB              | BIDIR     | LVCMOS25             |       | 12       | SLOW | OFF1         |          | 0 / 0    |
+| Ram1Data<8>                        | IOB              | BIDIR     | LVCMOS25             |       | 12       | SLOW | IFF1         |          | 0 / 3    |
+|                                    |                  |           |                      |       |          |      | OFF1         |          |          |
 |                                    |                  |           |                      |       |          |      | TFF1         |          |          |
-| Ram1Data<9>                        | IOB              | BIDIR     | LVCMOS25             |       | 12       | SLOW | OFF1         |          | 0 / 0    |
+| Ram1Data<9>                        | IOB              | BIDIR     | LVCMOS25             |       | 12       | SLOW | IFF1         |          | 0 / 3    |
+|                                    |                  |           |                      |       |          |      | OFF1         |          |          |
 |                                    |                  |           |                      |       |          |      | TFF1         |          |          |
-| Ram1Data<10>                       | IOB              | BIDIR     | LVCMOS25             |       | 12       | SLOW | OFF1         |          | 0 / 0    |
+| Ram1Data<10>                       | IOB              | BIDIR     | LVCMOS25             |       | 12       | SLOW | IFF1         |          | 0 / 3    |
+|                                    |                  |           |                      |       |          |      | OFF1         |          |          |
 |                                    |                  |           |                      |       |          |      | TFF1         |          |          |
-| Ram1Data<11>                       | IOB              | BIDIR     | LVCMOS25             |       | 12       | SLOW | OFF1         |          | 0 / 0    |
+| Ram1Data<11>                       | IOB              | BIDIR     | LVCMOS25             |       | 12       | SLOW | IFF1         |          | 0 / 3    |
+|                                    |                  |           |                      |       |          |      | OFF1         |          |          |
 |                                    |                  |           |                      |       |          |      | TFF1         |          |          |
-| Ram1Data<12>                       | IOB              | BIDIR     | LVCMOS25             |       | 12       | SLOW | OFF1         |          | 0 / 0    |
+| Ram1Data<12>                       | IOB              | BIDIR     | LVCMOS25             |       | 12       | SLOW | IFF1         |          | 0 / 3    |
+|                                    |                  |           |                      |       |          |      | OFF1         |          |          |
 |                                    |                  |           |                      |       |          |      | TFF1         |          |          |
-| Ram1Data<13>                       | IOB              | BIDIR     | LVCMOS25             |       | 12       | SLOW | OFF1         |          | 0 / 0    |
+| Ram1Data<13>                       | IOB              | BIDIR     | LVCMOS25             |       | 12       | SLOW | IFF1         |          | 0 / 3    |
+|                                    |                  |           |                      |       |          |      | OFF1         |          |          |
 |                                    |                  |           |                      |       |          |      | TFF1         |          |          |
-| Ram1Data<14>                       | IOB              | BIDIR     | LVCMOS25             |       | 12       | SLOW | OFF1         |          | 0 / 0    |
+| Ram1Data<14>                       | IOB              | BIDIR     | LVCMOS25             |       | 12       | SLOW | IFF1         |          | 0 / 3    |
+|                                    |                  |           |                      |       |          |      | OFF1         |          |          |
 |                                    |                  |           |                      |       |          |      | TFF1         |          |          |
-| Ram1Data<15>                       | IOB              | BIDIR     | LVCMOS25             |       | 12       | SLOW | OFF1         |          | 0 / 0    |
+| Ram1Data<15>                       | IOB              | BIDIR     | LVCMOS25             |       | 12       | SLOW | IFF1         |          | 0 / 3    |
+|                                    |                  |           |                      |       |          |      | OFF1         |          |          |
 |                                    |                  |           |                      |       |          |      | TFF1         |          |          |
 | Ram1EN                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW | OFF1         |          | 0 / 0    |
 | Ram1OE                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW | OFF1         |          | 0 / 0    |
@@ -319,11 +309,12 @@ Section 6 - IOB Properties
 | SW<14>                             | IBUF             | INPUT     | LVCMOS25             |       |          |      |              |          | 0 / 0    |
 | SW<15>                             | IBUF             | INPUT     | LVCMOS25             |       |          |      |              |          | 0 / 0    |
 | clk                                | IBUF             | INPUT     | LVCMOS25             |       |          |      |              |          | 0 / 0    |
-| data_ready                         | IBUF             | INPUT     | LVCMOS25             |       |          |      | IFF1         |          | 0 / 3    |
+| clk_50                             | IBUF             | INPUT     | LVCMOS25             |       |          |      |              |          | 0 / 0    |
+| data_ready                         | IBUF             | INPUT     | LVCMOS25             |       |          |      |              |          | 0 / 0    |
 | rdn                                | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
 | rst                                | IBUF             | INPUT     | LVCMOS25             |       |          |      |              |          | 0 / 0    |
 | tbre                               | IBUF             | INPUT     | LVCMOS25             |       |          |      |              |          | 0 / 0    |
-| tsre                               | IBUF             | INPUT     | LVCMOS25             |       |          |      | IFF1         |          | 0 / 3    |
+| tsre                               | IBUF             | INPUT     | LVCMOS25             |       |          |      |              |          | 0 / 0    |
 | wrn                                | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW | OFF1         |          | 0 / 0    |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------+
 

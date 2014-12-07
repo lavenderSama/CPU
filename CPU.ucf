@@ -146,3 +146,7 @@ NET "SW[12]" LOC = K7;
 NET "SW[13]" LOC = K2;
 NET "SW[14]" LOC = J7;
 NET "SW[15]" LOC = J6;
+
+# PlanAhead Generated physical constraints 
+
+NET "clk_50" LOC = B9;

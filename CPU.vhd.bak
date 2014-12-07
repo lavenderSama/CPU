@@ -5,6 +5,7 @@ USE IEEE.STD_LOGIC_UNSIGNED.ALL;
 
 entity CPU is
 	port(
+				clk_50: in std_logic;
 				clk: in std_logic;
 				rst: in std_logic;
 				Ram1Addr : out  STD_LOGIC_VECTOR (17 downto 0);
@@ -499,8 +500,8 @@ architecture Behavioral of CPU is
            out_rwdata : OUT  STD_LOGIC_VECTOR (15 DOWNTO 0));
 	end component;
 	
-	signal clk_stage: std_logic_vector(2 downto 0):= (others => '0');
-	signal clk_down: std_logic:= '0';
+	signal clk_stage: std_logic_vector(5 downto 0):= (others => '0');
+	signal clk_local, clk_down: std_logic:= '0';
 	
 	signal debug_data: std_logic_vector(15 downto 0);
 begin
@@ -521,17 +522,21 @@ begin
 			when "1000" => L <= ID_Control_RAddr_out&"00"&ID_Control_ALU_out&"0"&EXE_ALU_FLAG_ZERO&"000"&EXE_Control_MEM_out&"000";
 			when "1001" => L <= EXE_Control_RA&"00"&EXE_Control_RB&"00"&ID_Control_A_out&"0"&ID_Control_B_out;
 			when "1010" => L <= ID_Control_Pause&"000"&ID_Control_MEM_out&"000"&ID_Control_PC_out&"0"&EXE_ALU_FLAG_ZERO&"000";
-			when "1011" => L <= EXE_PCAdder_Out;
+			when "1011" => L <= ID_RF_WD;
 			when "1100" => L <= EXE_MWD_in;
+			when "1101" => L <= "0000"&"0000"&"0000"&EXE_RAddr_in&"0";
+			when "1110" => L <= ID_Control_RAddr_in&"00"&ID_Control_ALU_in&"0"&IF_INS_15_0_out(7 downto 0);
+			when "1111" => L <= MEM_Data_in;
 			when others => L <= (others => '0');
 		end case;
 	end process;
 	
-	clk_down <= clk_stage(1);
+	clk_local <= clk;
+	clk_down <= clk_local;
 	
-	process (clk)
+	process (clk_local)
 	begin
-		if (clk'event and clk = '1') then
+		if (clk_local'event and clk_local = '1') then
 			clk_stage <= clk_stage + 1;
 		end if;
 	end process;
@@ -540,16 +545,16 @@ begin
 		(clk_down,	rst, '1', IF_PC_1_in, IF_PC_Data_Out);
 
 	IH_Reg: QReg port map
-		(clk,	rst, ID_Control_IH_out, ID_RY_out, ID_IH_in);
+		(clk_local,	rst, ID_Control_IH_out, ID_RY_out, ID_IH_in);
 
 	SP_Reg: QReg port map
-		(clk,	rst, ID_Control_SP_S_out, EXE_SP_S_Out, ID_SP_in);
+		(clk_local,	rst, ID_Control_SP_S_out, EXE_SP_S_Out, ID_SP_in);
 
 	RA_Reg: QReg port map
-		(clk,	rst, ID_Control_RA_out, EXE_PCAdder_Out, ID_RA_in);
+		(clk_local,	rst, ID_Control_RA_out, EXE_PCAdder_Out, ID_RA_in);
 
 	T_Reg: QReg port map
-		(clk,	rst, ID_Control_T_out, EXE_ALU_FLAG_ZERO_extend, ID_T_in);
+		(clk_local,	rst, ID_Control_T_out, EXE_ALU_FLAG_ZERO_extend, ID_T_in);
 
 	IF_ID_Reg: IFReg port map
 		(clk_down, rst,
@@ -572,13 +577,13 @@ begin
 		 MEM_Control_RWData_out, MEM_Control_RF_out, MEM_ALU_out, MEM_Data_out, MEM_RAddr_out);
 
 	ID_RF: RF port map
-		(clk, rst,
+		(clk_local, rst,
 		 MEM_Control_RF_out, IF_INS_10_8_out, IF_INS_7_5_out, ID_RX_in, ID_RY_in,
 		 MEM_RAddr_out, ID_RF_WD,
 		 SW(2 downto 0), debug_data);
 
 	IF_MEM_MEMMgr: memMgr port map
-		(clk, EXE_Control_MEM_out, Ram1Addr, Ram1Data, Ram1OE, Ram1WE, Ram1EN, wrn, rdn, Ram2Addr, Ram2Data, Ram2OE, Ram2WE, Ram2EN, IF_PC_in, IF_INS_15_0_in, EXE_ALU_out, EXE_MWD_out, MEM_Data_in, data_ready, tbre, tsre);
+		(clk_local, EXE_Control_MEM_out, Ram1Addr, Ram1Data, Ram1OE, Ram1WE, Ram1EN, wrn, rdn, Ram2Addr, Ram2Data, Ram2OE, Ram2WE, Ram2EN, IF_PC_in, IF_INS_15_0_in, EXE_ALU_out, EXE_MWD_out, MEM_Data_in, data_ready, tbre, tsre);
 	
 	IF_PC_Adder: Adder port map
 		(IF_PC_in, X"0001", IF_PC_1_in);
@@ -600,7 +605,7 @@ begin
 		 ID_IM_10_0_in, ID_IM_7_0_sign_in, ID_IM_7_0_zero_in, ID_IM_4_0_in, ID_IM_3_0_in, ID_IM_4_2_in);
 
 	Forward_unit: Foward port map
-		(ID_Control_A_out, ID_Control_B_out, ID_Control_WData_out, ID_Addr_RY_out, ID_Addr_RX_out, EXE_Control_RF_out, MEM_Control_RF_out, EXE_RAddr_out, ID_RF_WD, EXE_Control_RA, EXE_Control_RB, EXE_Control_RMWD);
+		(ID_Control_A_out, ID_Control_B_out, ID_Control_WData_out, ID_Addr_RY_out, ID_Addr_RX_out, EXE_Control_RF_out, MEM_Control_RF_out, EXE_RAddr_out, MEM_RAddr_out, EXE_Control_RA, EXE_Control_RB, EXE_Control_RMWD);
 	
 	Pause_unit: Pause port map
 		(ID_Control_MEM_out, EXE_RAddr_out, IF_INS_10_8_out, IF_INS_7_5_out, IF_INS_15_0_out, ID_Control_Pause);

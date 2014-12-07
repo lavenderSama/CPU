@@ -8,7 +8,7 @@ entity memMgr is
 				clk: in std_logic;
 				clk_stage: in std_logic;
 				rst: in std_logic;
-				MEM: in std_logic; --0 for read; 1 for write
+				MEM: in std_logic_vector(1 downto 0); --11 for write; 10 for read; others for nothing
 				Ram1Addr : out  STD_LOGIC_VECTOR (17 downto 0);
 				Ram1Data : inout  STD_LOGIC_VECTOR (15 downto 0);
 				Ram1OE : out  STD_LOGIC;
@@ -53,7 +53,7 @@ architecture Behavioral of memMgr is
 					clk: in std_logic;
 					clk_stage: in std_logic;
 					en: in std_logic; --0 for disable, 1 for enable
-					MEM: in std_logic; --1 for write; others for read
+					MEM: in std_logic_vector(1 downto 0); --11 for write; 10 for read; others for nothing
 					RamAddr : buffer  STD_LOGIC_VECTOR (17 downto 0);
 					RamData : inout  STD_LOGIC_VECTOR (15 downto 0);
 					RamOE : out  STD_LOGIC;

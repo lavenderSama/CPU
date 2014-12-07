@@ -12,7 +12,7 @@ entity IDReg is
 				Control_A_in: in std_logic_vector(2 downto 0);
 				Control_B_in: in std_logic_vector(3 downto 0);
 				Control_ALU_in: in std_logic_vector(2 downto 0);
-				Control_MEM_in: in std_logic;
+				Control_MEM_in: in std_logic_vector(1 downto 0);
 				Control_WData_in: in std_logic;
 				Control_Raddr_in: in std_logic_vector(1 downto 0);
 				Control_RWData_in: in std_logic_vector(1 downto 0);
@@ -43,7 +43,7 @@ entity IDReg is
 				Control_A_out: out std_logic_vector(2 downto 0);
 				Control_B_out: out std_logic_vector(3 downto 0);
 				Control_ALU_out: out std_logic_vector(2 downto 0);
-				Control_MEM_out: out std_logic;
+				Control_MEM_out: out std_logic_vector(1 downto 0);
 				Control_WData_out: out std_logic;
 				Control_Raddr_out: out std_logic_vector(1 downto 0);
 				Control_RWData_out: out std_logic_vector(1 downto 0);
@@ -81,7 +81,7 @@ begin
 			Control_A_out <= (others => '0');
 			Control_B_out <= (others => '0');
 			Control_ALU_out <= (others => '0');
-			Control_MEM_out <= '0';
+			Control_MEM_out <= (others => '0');
 			Control_WData_out <= '0';
 			Control_RAddr_out <= (others => '0');
 			Control_RWData_out <= (others => '0');

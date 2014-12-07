@@ -44,13 +44,13 @@ case option is
         pc <= normal;
     when "001" =>  --B
         pc <= PCadder;
-    when "010" =>  --BEQZ,BTNEZ
+    when "010" =>  --BEQZ,BTEQZ
         case zero is
             when '0' => pc<=normal;
             when '1' => pc<=PCadder;
 						when others => pc<=normal;
         end case;
-    when "011" =>  --BNEZ,BTEQZ
+    when "011" =>  --BNEZ,BTNEZ
         case zero is
             when '0' => pc<=PCadder;
             when '1' => pc<=normal;

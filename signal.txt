@@ -16,7 +16,7 @@ ID_Control_PC 3
 ID_Control_A 3
 ID_Control_B 4
 ID_Control_ALU 3
-ID_Control_MEM 1
+ID_Control_MEM 2
 ID_Control_WData 1
 ID_Control_Raddr 2
 ID_Control_RWData 2
@@ -53,7 +53,7 @@ ID_Addr_RX 3
 :EXE_SP_S_Out 16
 :EXE_ALU_FLAG_ZERO_extend 16
 :EXE_ALU_FLAG_ZERO 1
-EXE_Control_MEM 1
+EXE_Control_MEM 2
 EXE_Control_RWData 2
 EXE_Control_RF 1
 EXE_ALU 16

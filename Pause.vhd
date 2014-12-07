@@ -4,7 +4,7 @@ USE IEEE.STD_LOGIC_ARITH.ALL;
 USE IEEE.STD_LOGIC_SIGNED.ALL;
 
 ENTITY Pause IS
-    PORT ( MEM      : IN STD_LOGIC;
+    PORT ( MEM      : IN STD_LOGIC_VECTOR(1 downto 0);
            LAST_TO_WRITE: IN STD_LOGIC_VECTOR(2 downto 0);
            NEXT10_8 : IN STD_LOGIC_VECTOR(2 downto 0);
            NEXT7_5  : IN STD_LOGIC_VECTOR(2 downto 0);
@@ -17,7 +17,7 @@ BEGIN
 	process (MEM, LAST_TO_WRITE, NEXT10_8, NEXT7_5, NEXT15_0)
 	begin
     case MEM is
-        when '1' => if (LAST_TO_WRITE = NEXT10_8) then
+        when "11" => if (LAST_TO_WRITE = NEXT10_8) then
                         case NEXT15_0(15 downto 11) is
                             when "01001" => PAUSE_SIGNAL <='1';
                             when "01000" => PAUSE_SIGNAL <='1';
@@ -60,7 +60,7 @@ BEGIN
                     else
                         PAUSE_SIGNAL<='0';
                     end if;
-        when '0' => PAUSE_SIGNAL<='0';
+        when "00"|"01"|"10" => PAUSE_SIGNAL<='0';
 		  when others => PAUSE_SIGNAL<='0';
     end case;
 	end process;

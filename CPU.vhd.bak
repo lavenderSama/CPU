@@ -50,7 +50,7 @@ architecture Behavioral of CPU is
 	signal ID_Control_A_in: std_logic_vector(2 downto 0);
 	signal ID_Control_B_in: std_logic_vector(3 downto 0);
 	signal ID_Control_ALU_in: std_logic_vector(2 downto 0);
-	signal ID_Control_MEM_in: std_logic;
+	signal ID_Control_MEM_in: std_logic_vector(1 downto 0);
 	signal ID_Control_WData_in: std_logic;
 	signal ID_Control_Raddr_in: std_logic_vector(1 downto 0);
 	signal ID_Control_RWData_in: std_logic_vector(1 downto 0);
@@ -87,7 +87,7 @@ architecture Behavioral of CPU is
 	signal EXE_SP_S_Out: std_logic_vector(15 downto 0);
 	signal EXE_ALU_FLAG_ZERO: std_logic;
 	signal EXE_ALU_FLAG_ZERO_extend: std_logic_vector(15 downto 0);
-	signal EXE_Control_MEM_in: std_logic;
+	signal EXE_Control_MEM_in: std_logic_vector(1 downto 0);
 	signal EXE_Control_RWData_in: std_logic_vector(1 downto 0);
 	signal EXE_Control_RF_in: std_logic;
 	signal EXE_ALU_in: std_logic_vector(15 downto 0);
@@ -116,7 +116,7 @@ architecture Behavioral of CPU is
 	signal ID_Control_A_out: std_logic_vector(2 downto 0);
 	signal ID_Control_B_out: std_logic_vector(3 downto 0);
 	signal ID_Control_ALU_out: std_logic_vector(2 downto 0);
-	signal ID_Control_MEM_out: std_logic;
+	signal ID_Control_MEM_out: std_logic_vector(1 downto 0);
 	signal ID_Control_WData_out: std_logic;
 	signal ID_Control_Raddr_out: std_logic_vector(1 downto 0);
 	signal ID_Control_RWData_out: std_logic_vector(1 downto 0);
@@ -143,7 +143,7 @@ architecture Behavioral of CPU is
 	signal ID_Addr_RY_out: std_logic_vector(2 downto 0);
 	signal ID_Addr_RX_out: std_logic_vector(2 downto 0);
 	
-	signal EXE_Control_MEM_out: std_logic;
+	signal EXE_Control_MEM_out: std_logic_vector(1 downto 0);
 	signal EXE_Control_RWData_out: std_logic_vector(1 downto 0);
 	signal EXE_Control_RF_out: std_logic;
 	signal EXE_ALU_out: std_logic_vector(15 downto 0);
@@ -204,7 +204,7 @@ architecture Behavioral of CPU is
 					Control_A_in: in std_logic_vector(2 downto 0);
 					Control_B_in: in std_logic_vector(3 downto 0);
 					Control_ALU_in: in std_logic_vector(2 downto 0);
-					Control_MEM_in: in std_logic;
+					Control_MEM_in: in std_logic_vector(1 downto 0);
 					Control_WData_in: in std_logic;
 					Control_Raddr_in: in std_logic_vector(1 downto 0);
 					Control_RWData_in: in std_logic_vector(1 downto 0);
@@ -235,7 +235,7 @@ architecture Behavioral of CPU is
 					Control_A_out: out std_logic_vector(2 downto 0);
 					Control_B_out: out std_logic_vector(3 downto 0);
 					Control_ALU_out: out std_logic_vector(2 downto 0);
-					Control_MEM_out: out std_logic;
+					Control_MEM_out: out std_logic_vector(1 downto 0);
 					Control_WData_out: out std_logic;
 					Control_Raddr_out: out std_logic_vector(1 downto 0);
 					Control_RWData_out: out std_logic_vector(1 downto 0);
@@ -269,14 +269,14 @@ architecture Behavioral of CPU is
 					clk: in std_logic;
 					rst: in std_logic;
 					
-					Control_MEM_in: in std_logic;
+					Control_MEM_in: in std_logic_vector(1 downto 0);
 					Control_RWData_in: in std_logic_vector(1 downto 0);
 					Control_RF_in: in std_logic;
 					ALU_in: in std_logic_vector(15 downto 0);
 					MWD_in: in std_logic_vector(15 downto 0);
 					RAddr_in: in std_logic_vector(2 downto 0);
 					
-					Control_MEM_out: out std_logic;
+					Control_MEM_out: out std_logic_vector(1 downto 0);
 					Control_RWData_out: out std_logic_vector(1 downto 0);
 					Control_RF_out: out std_logic;
 					ALU_out: out std_logic_vector(15 downto 0);
@@ -328,7 +328,7 @@ architecture Behavioral of CPU is
 					clk: in std_logic;
 					clk_stage: in std_logic;
 					rst: in std_logic;
-					MEM: in std_logic; --0 for read; 1 for write
+					MEM: in std_logic_vector(1 downto 0); --11 for write; 10 for read; others for nothing
 					Ram1Addr : out  STD_LOGIC_VECTOR (17 downto 0);
 					Ram1Data : inout  STD_LOGIC_VECTOR (15 downto 0);
 					Ram1OE : out  STD_LOGIC;
@@ -379,7 +379,7 @@ architecture Behavioral of CPU is
 						A:          OUT STD_LOGIC_VECTOR (2 downto 0);
 						B:          OUT STD_LOGIC_VECTOR (3 downto 0);
 						ALU:        OUT STD_LOGIC_VECTOR (2 downto 0);
-						MEM:        OUT STD_LOGIC;
+						MEM:        OUT STD_LOGIC_VECTOR(1 downto 0);
 						WDATA:      OUT STD_LOGIC;
 						RADDR:      OUT STD_LOGIC_VECTOR (1 downto 0);
 						RWDATA:     OUT STD_LOGIC_VECTor (1 downto 0);
@@ -424,7 +424,7 @@ architecture Behavioral of CPU is
 	end component;
 	
 	component Pause IS
-    PORT ( MEM      : IN STD_LOGIC;
+    PORT ( MEM      : IN STD_LOGIC_VECTOR(1 downto 0);
            LAST_TO_WRITE: IN STD_LOGIC_VECTOR(2 downto 0);
            NEXT10_8 : IN STD_LOGIC_VECTOR(2 downto 0);
            NEXT7_5  : IN STD_LOGIC_VECTOR(2 downto 0);
@@ -516,16 +516,16 @@ begin
 	begin
 		case SW(15 downto 12) is
 			when "0000" => L <= debug_data;
-			when "0001" => L <= IF_PC_Data_Out;
+			when "0001" => L <= ID_T_in;
 			when "0010" => L <= IF_PC_in;
 			when "0011" => L <= IF_INS_15_0_in;
 			when "0100" => L <= EXE_A_MUX_Out;
 			when "0101" => L <= EXE_B_MUX_Out;
-			when "0110" => L <= ID_RF_WD;
+			when "0110" => L <= ID_T_out;
 			when "0111" => L <= MEM_Control_RF_out&"00"&MEM_Control_RWData_out&"00"&EXE_Control_RF_out&"00"&ID_Control_SP_S_out&"00"&MEM_RAddr_out;
-			when "1000" => L <= ID_Control_RAddr_out&"00"&ID_Control_ALU_out&"0"&EXE_ALU_FLAG_ZERO&"000"&EXE_Control_MEM_out&"000";
+			when "1000" => L <= ID_Control_RAddr_out&"00"&ID_Control_ALU_out&"0"&EXE_ALU_FLAG_ZERO&"000"&EXE_Control_MEM_out&"00";
 			when "1001" => L <= EXE_Control_RA&"00"&EXE_Control_RB&"00"&ID_Control_A_out&"0"&ID_Control_B_out;
-			when "1010" => L <= ID_Control_Pause&"000"&ID_Control_MEM_out&"000"&ID_Control_PC_out&"0"&EXE_ALU_FLAG_ZERO&"000";
+			when "1010" => L <= ID_Control_Pause&"000"&ID_Control_MEM_out&"00"&ID_Control_PC_out&"0"&EXE_ALU_FLAG_ZERO&"000";
 			when "1011" => L <= ID_RF_WD;
 			when "1100" => L <= EXE_MWD_in;
 			when "1101" => L <= "0"&rdn&wrn&"0"&"0000"&"0000"&EXE_RAddr_in&"0";
@@ -535,13 +535,14 @@ begin
 		end case;
 	end process;
 	
-	if (clk_50) then
+	process (clk_50)
+	begin
 		if (clk_50'event and clk_50 = '1') then
 			clk_overall <= clk_overall+1;
 		end if;
-	end if;
+	end process;
 	
-	clk_local <= clk_overall(24);
+	clk_local <= clk_overall(0);
 	
 	process (clk_local)
 	begin
@@ -563,6 +564,8 @@ begin
 
 	RA_Reg: QReg port map
 		(clk_local,	rst, ID_Control_RA_out, EXE_PCAdder_Out, ID_RA_in);
+
+	EXE_ALU_FLAG_ZERO_extend <= "000000000000000"&(not EXE_ALU_FLAG_ZERO);
 
 	T_Reg: QReg port map
 		(clk_local,	rst, ID_Control_T_out, EXE_ALU_FLAG_ZERO_extend, ID_T_in);

@@ -28,7 +28,7 @@ entity DM is
 end entity;
 	
 architecture Behavioral of DM is
-	type state is (Start, Write, W_hold, R_ready, R_hold, Read, comWrite1, comWrite2, comRead, Stop);
+	type state is (Start, Write, W_hold, R_ready, R_hold, Read, comWrite1, comWrite2, comRead, comRead2, Stop);
 	signal cur_state, next_state: state:= Start;
 	signal out_data: std_logic_vector(15 downto 0);
 	signal clk_local: std_logic:= '1';
@@ -74,10 +74,19 @@ begin
 	              rdn <= '1';
 	              RamData <= (others => 'Z');
 							when others =>
+								RamEN <= '1';
+	              RamOE <= '1';
+	              RamWE <= '1';
+	              wrn <= '1';
+	              rdn <= '1';
 								next_state <= Start;
 						end case;
 					when "00"&X"BF01" => --read com state
-						Data <= "00000000000000"&'1'&(tsre and tbre);
+						RamEN <= '1';
+	          RamOE <= '1';
+	          RamWE <= '1';
+						RamData <= (others => 'Z');
+						Data <= "00000000000000"&data_ready&(tsre and tbre);
       			next_state <= Start;
 					when others =>
 						Data <= out_data;
@@ -87,13 +96,17 @@ begin
 		        RamAddr <= Address;
 						wrn <= '1';
 						rdn <= '1';
-						if (MEM = '1') then
-							next_state <= Write;
-							RamData <= WriteData;
-						else
-							next_state <= R_ready;
-							RamData <= (others=>'Z');
-						end if;
+						case MEM is
+							when "11" =>
+								next_state <= Write;
+								RamData <= WriteData;
+							when "10" =>
+								next_state <= R_ready;
+								RamData <= (others=>'Z');
+							when others =>
+								RamEN <= '1';
+								next_state <= Start;
+						end case;
 				end case;
 			
 			when Write =>
@@ -169,6 +182,7 @@ begin
         RamWE <= '1';
         wrn <= '1';
         rdn <= '0';
+        RamData <= (others => 'Z');
         Data(7 downto 0) <= RamData(7 downto 0);
         if (clk_local = '0' and clk_stage = '1') then
       		next_state <= Start;

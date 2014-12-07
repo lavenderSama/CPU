@@ -60,6 +60,8 @@ case option is
         pc <= rx;
     when "101" =>  --JRRA
         pc <= ra;
+    when "110" =>  --pause
+    		pc <= OLD_PC;
     when others => pc <= normal;
 end case;
 END PROCESS;

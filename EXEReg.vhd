@@ -8,14 +8,14 @@ entity EXEReg is
 				clk: in std_logic;
 				rst: in std_logic;
 				
-				Control_MEM_in: in std_logic;
+				Control_MEM_in: in std_logic_vector(1 downto 0);
 				Control_RWData_in: in std_logic_vector(1 downto 0);
 				Control_RF_in: in std_logic;
 				ALU_in: in std_logic_vector(15 downto 0);
 				MWD_in: in std_logic_vector(15 downto 0);
 				RAddr_in: in std_logic_vector(2 downto 0);
 				
-				Control_MEM_out: out std_logic;
+				Control_MEM_out: out std_logic_vector(1 downto 0);
 				Control_RWData_out: out std_logic_vector(1 downto 0);
 				Control_RF_out: out std_logic;
 				ALU_out: out std_logic_vector(15 downto 0);
@@ -29,7 +29,7 @@ begin
 	process (clk)
 	begin
 		if (rst = '0') then
-			Control_MEM_out <= '0';
+			Control_MEM_out <= (others => '0');
 			Control_RWData_out <= (others => '0');
 			Control_RF_out <= '0';
 			ALU_out <= (others => '0');

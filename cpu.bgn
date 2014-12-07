@@ -5,7 +5,7 @@ D:\Xilinx\12.3\ISE_DS\ISE\.
    "CPU" is an NCD, version 3.2, device xc3s1200e, package fg320, speed -4
 Opened constraints file CPU.pcf.
 
-Mon Dec 08 01:26:09 2014
+Mon Dec 08 07:34:12 2014
 
 D:\Xilinx\12.3\ISE_DS\ISE\bin\nt64\unwrapped\bitgen.exe -intstyle ise -w -g DebugBitstream:No -g Binary:no -g CRC:Enable -g ConfigRate:1 -g ProgPin:PullUp -g DonePin:PullUp -g TckPin:PullUp -g TdiPin:PullUp -g TdoPin:PullUp -g TmsPin:PullUp -g UnusedPin:PullDown -g UserID:0xFFFFFFFF -g DCMShutdown:Disable -g StartUpClk:CClk -g DONE_cycle:4 -g GTS_cycle:5 -g GWE_cycle:6 -g LCK_cycle:NoWait -g Security:None -g DonePipe:No -g DriveDone:No CPU.ncd 
 
@@ -93,11 +93,7 @@ WARNING:PhysDesignRules:372 - Gated clock. Clock net
    is not good design practice. Use the CE pin to control the loading of data
    into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   IF_MEM_MEMMgr/DM_unit/RamEN_not0001 is sourced by a combinatorial pin. This
-   is not good design practice. Use the CE pin to control the loading of data
-   into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   IF_MEM_MEMMgr/DM_unit/wrn_not0001 is sourced by a combinatorial pin. This is
+   IF_MEM_MEMMgr/DM_unit/wrn_or0000 is sourced by a combinatorial pin. This is
    not good design practice. Use the CE pin to control the loading of data into
    the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
@@ -105,7 +101,7 @@ WARNING:PhysDesignRules:372 - Gated clock. Clock net
    pin. This is not good design practice. Use the CE pin to control the loading
    of data into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   IF_MEM_MEMMgr/DM_unit/rdn_not0001 is sourced by a combinatorial pin. This is
+   IF_MEM_MEMMgr/DM_unit/rdn_or0000 is sourced by a combinatorial pin. This is
    not good design practice. Use the CE pin to control the loading of data into
    the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
@@ -127,8 +123,6 @@ WARNING:PhysDesignRules:372 - Gated clock. Clock net
    IF_MEM_MEMMgr/DM_unit/Data_7_or0000 is sourced by a combinatorial pin. This
    is not good design practice. Use the CE pin to control the loading of data
    into the flip-flop.
-WARNING:PhysDesignRules:367 - The signal <clk_50_IBUF> is incomplete. The signal
-   does not drive any load pins in the design.
 WARNING:PhysDesignRules:367 - The signal <SW<3>_IBUF> is incomplete. The signal
    does not drive any load pins in the design.
 WARNING:PhysDesignRules:367 - The signal <SW<4>_IBUF> is incomplete. The signal
@@ -143,13 +137,13 @@ WARNING:PhysDesignRules:367 - The signal <SW<8>_IBUF> is incomplete. The signal
    does not drive any load pins in the design.
 WARNING:PhysDesignRules:367 - The signal <SW<9>_IBUF> is incomplete. The signal
    does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <data_ready_IBUF> is incomplete. The
-   signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <clk_IBUF> is incomplete. The signal
+   does not drive any load pins in the design.
 WARNING:PhysDesignRules:367 - The signal <SW<10>_IBUF> is incomplete. The signal
    does not drive any load pins in the design.
 WARNING:PhysDesignRules:367 - The signal <SW<11>_IBUF> is incomplete. The signal
    does not drive any load pins in the design.
-DRC detected 0 errors and 21 warnings.  Please see the previously displayed
+DRC detected 0 errors and 19 warnings.  Please see the previously displayed
 individual error or warning messages for more details.
 Creating bit map...
 Saving bit stream in "cpu.bit".

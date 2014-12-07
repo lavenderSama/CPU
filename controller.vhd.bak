@@ -486,7 +486,7 @@ case PAUSE is
             RF  <= '1';
             SP_S<= 'Z';
         when others =>
-            PC <= "ZZZ";
+            PC <= "000";
             A  <= "ZZZ";
             B  <= "ZZZZ";
             ALU <= "ZZZ";
@@ -502,7 +502,7 @@ case PAUSE is
             SP_S <= 'Z';
     end case;
   when '1' =>
-        PC <= "ZZZ";
+        PC <= "000";
         A  <= "ZZZ";
         B  <= "ZZZZ";
         ALU <= "ZZZ";
@@ -510,10 +510,10 @@ case PAUSE is
         WDATA <= 'Z';
         RADDR <= "ZZ";
         RWDATA <= "ZZ";
-        IH  <= 'Z';
-        SP  <= 'Z';
-        RA  <= 'Z';
-        T   <= 'Z';
+        IH  <= '0';
+        SP  <= '0';
+        RA  <= '0';
+        T   <= '0';
         RF  <= '0';
         SP_S <= 'Z';
 	when others =>
@@ -525,10 +525,10 @@ case PAUSE is
 			WDATA <= 'Z';
 			RADDR <= "ZZ";
 			RWDATA <= "ZZ";
-			IH  <= 'Z';
-			SP  <= 'Z';
-			RA  <= 'Z';
-			T   <= 'Z';
+			IH  <= '0';
+			SP  <= '0';
+			RA  <= '0';
+			T   <= '0';
 			RF  <= '0';
 			SP_S <= 'Z';
 end case;

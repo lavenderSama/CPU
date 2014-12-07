@@ -486,7 +486,7 @@ case PAUSE is
             RF  <= '1';
             SP_S<= 'Z';
         when others =>
-            PC <= "ZZZ";
+            PC <= "000";
             A  <= "ZZZ";
             B  <= "ZZZZ";
             ALU <= "ZZZ";
@@ -502,7 +502,7 @@ case PAUSE is
             SP_S <= 'Z';
     end case;
   when '1' =>
-        PC <= "ZZZ";
+        PC <= "110";
         A  <= "ZZZ";
         B  <= "ZZZZ";
         ALU <= "ZZZ";

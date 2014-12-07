@@ -542,7 +542,7 @@ begin
 		end if;
 	end process;
 	
-	clk_local <= clk_overall(23);
+	clk_local <= clk_overall(0);
 	
 	process (clk_local)
 	begin

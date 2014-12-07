@@ -1,8 +1,8 @@
 #-----------------------------------------------------------
 # PlanAhead v12.3
 # Build 101344 by hdbuild on Sat Sep  4 00:26:34 MDT 2010
-# Start of session at: Sun Dec 07 08:00:09 2014
-# Process ID: 5924
+# Start of session at: Sun Dec 07 17:37:13 2014
+# Process ID: 6504
 # Log file: E:/Thinpand/CPU/project/CPU/CPU/planAhead_run_1/planAhead.log
 # Journal file: E:/Thinpand/CPU/project/CPU/CPU/planAhead_run_1/planAhead.jou
 #-----------------------------------------------------------
@@ -12,7 +12,7 @@ INFO: [HD-ArchReader 0] Loading parts and site information from D:\Xilinx\12.3\I
 INFO: [HD-RTPRIM 0] Parsing RTL primitives file 'D:\Xilinx\12.3\ISE_DS\PlanAhead\parts\xilinx\rtl\prims\rtl_prims.xml'
 INFO: [HD-RTPRIM 1] Finished Parsing RTL primitives file 'D:\Xilinx\12.3\ISE_DS\PlanAhead\parts\xilinx\rtl\prims\rtl_prims.xml'
 start_gui -source E:/Thinpand/CPU/project/CPU/CPU/pa.fromNetlist.tcl
-# create_project -name CPU -dir "E:/Thinpand/CPU/project/CPU/CPU/planAhead_run_1" -part xc3s1200efg320-4
+# create_project -name CPU -dir "E:/Thinpand/CPU/project/CPU/CPU/planAhead_run_2" -part xc3s1200efg320-4
 # set_property design_mode GateLvl [get_property srcset [current_run -impl]]
 # set_property edif_top_file "E:/Thinpand/CPU/project/CPU/CPU/CPU.ngc" [ get_property srcset [ current_run ] ]
 # add_files -norecurse { {E:/Thinpand/CPU/project/CPU/CPU} }
@@ -21,8 +21,8 @@ start_gui -source E:/Thinpand/CPU/project/CPU/CPU/pa.fromNetlist.tcl
 # add_files "CPU.ucf" -fileset [get_property constrset [current_run]]
 # open_netlist_design
 INFO: Run is defaulting to constrset part: xc3s1200efg320-4
-INFO: [HD-EDIFIN 0] Parsing Edif File '.\.HDI-PlanAhead-5924-Flying-Garden\ngc2edif\CPU.edif'
-INFO: [HD-EDIFIN 1] Finished Parsing Edif File '.\.HDI-PlanAhead-5924-Flying-Garden\ngc2edif\CPU.edif'
+INFO: [HD-EDIFIN 0] Parsing Edif File '.\.HDI-PlanAhead-6504-Flying-Garden\ngc2edif\CPU.edif'
+INFO: [HD-EDIFIN 1] Finished Parsing Edif File '.\.HDI-PlanAhead-6504-Flying-Garden\ngc2edif\CPU.edif'
 INFO: [HD-ArchReader 18] Reading macro library D:/Xilinx/12.3/ISE_DS/PlanAhead/./parts/xilinx/spartan3e/spartan3e/hd_int_macros.edn
 INFO: [HD-EDIFIN 0] Parsing Edif File 'D:/Xilinx/12.3/ISE_DS/PlanAhead/./parts/xilinx/spartan3e/spartan3e/hd_int_macros.edn'
 INFO: [HD-EDIFIN 1] Finished Parsing Edif File 'D:/Xilinx/12.3/ISE_DS/PlanAhead/./parts/xilinx/spartan3e/spartan3e/hd_int_macros.edn'
@@ -39,8 +39,8 @@ INFO: [HD-UCFReader 1] Finished Parsing UCF File : .\CPU.ucf
 DESIGN RULE CHECK VIOLATION REPORT
    Build: PlanAhead v12.3 by hdbuild
           on  Sat Sep  4 00:26:34 MDT 2010
-  Report: by lavender on host Flying-Garden, pid 5924
-          on Sun Dec 07 08:00:17 2014
+  Report: by lavender on host Flying-Garden, pid 6504
+          on Sun Dec 07 17:37:21 2014
 
 REPORT SUMMARY
             Netlist: netlist
@@ -55,11 +55,6 @@ REPORT SUMMARY
 REPORT DETAILS
 INFO: [HD-LIB 0] Reading timing library D:/Xilinx/12.3/ISE_DS/PlanAhead/parts/xilinx/spartan3e/spartan3e/spartan3e-4.lib .
 INFO: [HD-LIB 1] Done reading timing library D:/Xilinx/12.3/ISE_DS/PlanAhead/parts/xilinx/spartan3e/spartan3e/spartan3e-4.lib .
-startgroup
-set_property loc IPAD38 [get_ports clk_50]
-set_property is_fixed true  [get_ports clk_50]
-endgroup
-save_design
 exit
 INFO: [HD-Application 0] Exiting PlanAhead...
 INFO: [HD-Licensing 2] Releasing license: PlanAhead

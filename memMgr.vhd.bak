@@ -30,7 +30,7 @@ entity memMgr is
 				tbre: in std_logic;
 				tsre: in std_logic;
 				
-				DYP0: out std_logic_vector(6 downto 0)
+				DYP0: in std_logic_vector(6 downto 0)
 			);
 end entity;
 	
@@ -66,9 +66,7 @@ architecture Behavioral of memMgr is
 					Data: out std_logic_vector(15 downto 0):= (others => '0');
 					data_ready: in std_logic;
 					tbre: in std_logic;
-					tsre: in std_logic;
-					
-					DYP0: out std_logic_vector(6 downto 0)
+					tsre: in std_logic
 				);
 	end component;
 	signal PC_18, Address_18: std_logic_vector(17 downto 0):= (others => '0');

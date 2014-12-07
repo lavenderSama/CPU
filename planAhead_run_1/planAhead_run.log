@@ -10,11 +10,11 @@ WARNING:NetListWriters:298 - No output is written to CPU.xncf, ignored.
 Processing design ...
    Preping design's networks ...
    Preping design's macros ...
-WARNING:NetListWriters:306 - Signal bus EXE_ALU/c_mux0003<15 : 5> on block CPU
+WARNING:NetListWriters:306 - Signal bus EXE_ALU/c_mux0003<10 : 5> on block CPU
    is not reconstructed, because there are some missing bus signals.
   finished :Prep
 Writing EDIF netlist file CPU.edif ...
-ngc2edif: Total memory usage is 77328 kilobytes
+ngc2edif: Total memory usage is 77904 kilobytes
 
 INFO: [HD-Licensing 0] Attempting to get a license: PlanAhead
 INFO: [HD-Licensing 1] Got a license: PlanAhead

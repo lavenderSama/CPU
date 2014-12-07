@@ -1,5 +1,5 @@
 //! **************************************************************************
-// Written by: Map M.70d on Sun Dec 07 12:01:11 2014
+// Written by: Map M.70d on Sun Dec 07 20:22:11 2014
 //! **************************************************************************
 
 SCHEMATIC START;
@@ -131,5 +131,6 @@ COMP "SW<15>" LOCATE = SITE "J6" LEVEL 1;
 COMP "Ram2Data<9>" LOCATE = SITE "R10" LEVEL 1;
 COMP "L<0>" LOCATE = SITE "D10" LEVEL 1;
 COMP "L<1>" LOCATE = SITE "E10" LEVEL 1;
+NET "clk_50_BUFGP/IBUFG" BEL "clk_50_BUFGP/BUFG.GCLKMUX" USELOCALCONNECT;
 SCHEMATIC END;
 

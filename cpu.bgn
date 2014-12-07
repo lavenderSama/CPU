@@ -5,7 +5,7 @@ D:\Xilinx\12.3\ISE_DS\ISE\.
    "CPU" is an NCD, version 3.2, device xc3s1200e, package fg320, speed -4
 Opened constraints file CPU.pcf.
 
-Sun Dec 07 12:01:38 2014
+Sun Dec 07 20:22:40 2014
 
 D:\Xilinx\12.3\ISE_DS\ISE\bin\nt64\unwrapped\bitgen.exe -intstyle ise -w -g DebugBitstream:No -g Binary:no -g CRC:Enable -g ConfigRate:1 -g ProgPin:PullUp -g DonePin:PullUp -g TckPin:PullUp -g TdiPin:PullUp -g TdoPin:PullUp -g TmsPin:PullUp -g UnusedPin:PullDown -g UserID:0xFFFFFFFF -g DCMShutdown:Disable -g StartUpClk:CClk -g DONE_cycle:4 -g GTS_cycle:5 -g GWE_cycle:6 -g LCK_cycle:NoWait -g Security:None -g DonePipe:No -g DriveDone:No CPU.ncd 
 
@@ -89,12 +89,36 @@ There were 0 CONFIG constraint(s) processed from CPU.pcf.
 
 Running DRC.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   IF_MEM_MEMMgr/DM_unit/RamWE_not0001 is sourced by a combinatorial pin. This
+   IF_MEM_MEMMgr/DM_unit/RamAddr_not0001 is sourced by a combinatorial pin. This
    is not good design practice. Use the CE pin to control the loading of data
    into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   IF_MEM_MEMMgr/DM_unit/RamEN_not0001 is sourced by a combinatorial pin. This
+   is not good design practice. Use the CE pin to control the loading of data
+   into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   IF_MEM_MEMMgr/DM_unit/RamOE_not0001 is sourced by a combinatorial pin. This
+   is not good design practice. Use the CE pin to control the loading of data
+   into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   IF_MEM_MEMMgr/DM_unit/Mtridata_RamData_not0001 is sourced by a combinatorial
+   pin. This is not good design practice. Use the CE pin to control the loading
+   of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   IF_MEM_MEMMgr/DM_unit/wrn_not0001 is sourced by a combinatorial pin. This is
+   not good design practice. Use the CE pin to control the loading of data into
+   the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net Forward_unit/RMWD_not0001
    is sourced by a combinatorial pin. This is not good design practice. Use the
    CE pin to control the loading of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   IF_MEM_MEMMgr/DM_unit/Data_9_or0000 is sourced by a combinatorial pin. This
+   is not good design practice. Use the CE pin to control the loading of data
+   into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   IF_MEM_MEMMgr/DM_unit/Data_7_or0000 is sourced by a combinatorial pin. This
+   is not good design practice. Use the CE pin to control the loading of data
+   into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
    ID_Controller/Mtridata_RWDATA_not0001 is sourced by a combinatorial pin. This
    is not good design practice. Use the CE pin to control the loading of data
@@ -103,8 +127,6 @@ WARNING:PhysDesignRules:372 - Gated clock. Clock net
    ID_Controller/Mtrien_RWDATA_not0001 is sourced by a combinatorial pin. This
    is not good design practice. Use the CE pin to control the loading of data
    into the flip-flop.
-WARNING:PhysDesignRules:367 - The signal <clk_50_IBUF> is incomplete. The signal
-   does not drive any load pins in the design.
 WARNING:PhysDesignRules:367 - The signal <SW<3>_IBUF> is incomplete. The signal
    does not drive any load pins in the design.
 WARNING:PhysDesignRules:367 - The signal <SW<4>_IBUF> is incomplete. The signal
@@ -119,13 +141,13 @@ WARNING:PhysDesignRules:367 - The signal <SW<8>_IBUF> is incomplete. The signal
    does not drive any load pins in the design.
 WARNING:PhysDesignRules:367 - The signal <SW<9>_IBUF> is incomplete. The signal
    does not drive any load pins in the design.
-WARNING:PhysDesignRules:367 - The signal <tbre_IBUF> is incomplete. The signal
+WARNING:PhysDesignRules:367 - The signal <clk_IBUF> is incomplete. The signal
    does not drive any load pins in the design.
 WARNING:PhysDesignRules:367 - The signal <SW<10>_IBUF> is incomplete. The signal
    does not drive any load pins in the design.
 WARNING:PhysDesignRules:367 - The signal <SW<11>_IBUF> is incomplete. The signal
    does not drive any load pins in the design.
-DRC detected 0 errors and 15 warnings.  Please see the previously displayed
+DRC detected 0 errors and 20 warnings.  Please see the previously displayed
 individual error or warning messages for more details.
 Creating bit map...
 Saving bit stream in "cpu.bit".

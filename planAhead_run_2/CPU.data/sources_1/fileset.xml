@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<DARoots Version="1" Minor="7">
+	<FileSet Name="sources_1" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
+		<Filter Type="EDIFSrcs"/>
+		<File Path="E:/Thinpand/CPU/project/CPU/CPU/CPU.ngc">
+			<FileInfo RelPath="CPU.ngc"/>
+		</File>
+		<Config>
+			<Option Name="DesignMode" Val="GateLvl"/>
+			<Option Name="GateLvlMode" Val="EDIF"/>
+			<Option Name="TopFile" Val="E:/Thinpand/CPU/project/CPU/CPU/CPU.ngc"/>
+		</Config>
+	</FileSet>
+</DARoots>
+

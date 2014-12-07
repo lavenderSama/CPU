@@ -1,13 +1,13 @@
 #-----------------------------------------------------------
 # PlanAhead v12.3
 # Build 101344 by hdbuild on Sat Sep  4 00:26:34 MDT 2010
-# Start of session at: Sun Dec 07 08:00:09 2014
-# Process ID: 5924
+# Start of session at: Sun Dec 07 17:37:13 2014
+# Process ID: 6504
 # Log file: E:/Thinpand/CPU/project/CPU/CPU/planAhead_run_1/planAhead.log
 # Journal file: E:/Thinpand/CPU/project/CPU/CPU/planAhead_run_1/planAhead.jou
 #-----------------------------------------------------------
 start_gui -source E:/Thinpand/CPU/project/CPU/CPU/pa.fromNetlist.tcl
-# create_project -name CPU -dir "E:/Thinpand/CPU/project/CPU/CPU/planAhead_run_1" -part xc3s1200efg320-4
+# create_project -name CPU -dir "E:/Thinpand/CPU/project/CPU/CPU/planAhead_run_2" -part xc3s1200efg320-4
 # set_property design_mode GateLvl [get_property srcset [current_run -impl]]
 # set_property edif_top_file "E:/Thinpand/CPU/project/CPU/CPU/CPU.ngc" [ get_property srcset [ current_run ] ]
 # add_files -norecurse { {E:/Thinpand/CPU/project/CPU/CPU} }
@@ -15,9 +15,4 @@ start_gui -source E:/Thinpand/CPU/project/CPU/CPU/pa.fromNetlist.tcl
 # set_param project.paUcfFile  "CPU.ucf"
 # add_files "CPU.ucf" -fileset [get_property constrset [current_run]]
 # open_netlist_design
-startgroup
-set_property loc IPAD38 [get_ports clk_50]
-set_property is_fixed true  [get_ports clk_50]
-endgroup
-save_design
 exit

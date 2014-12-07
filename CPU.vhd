@@ -13,8 +13,8 @@ entity CPU is
 				Ram1OE : out  STD_LOGIC;
 				Ram1WE : out  STD_LOGIC;
 				Ram1EN : out  STD_LOGIC;
-				wrn : out std_logic := '1';
-        rdn : out std_logic := '1';
+				wrn : inout std_logic := '1';
+        rdn : inout std_logic := '1';
 				Ram2Addr : buffer  STD_LOGIC_VECTOR (17 downto 0);
         Ram2Data : inout  STD_LOGIC_VECTOR (15 downto 0);
 				Ram2OE : out  STD_LOGIC;
@@ -326,6 +326,8 @@ architecture Behavioral of CPU is
 	component memMgr is
 		port(
 					clk: in std_logic;
+					clk_stage: in std_logic;
+					rst: in std_logic;
 					MEM: in std_logic; --0 for read; 1 for write
 					Ram1Addr : out  STD_LOGIC_VECTOR (17 downto 0);
 					Ram1Data : inout  STD_LOGIC_VECTOR (15 downto 0);
@@ -346,7 +348,9 @@ architecture Behavioral of CPU is
 					Data: out std_logic_vector(15 downto 0):= (others => '0');
 					data_ready: in std_logic;
 					tbre: in std_logic;
-					tsre: in std_logic
+					tsre: in std_logic;
+					
+					DYP0: out std_logic_vector(6 downto 0)
 				);
 	end component;
 	
@@ -500,12 +504,12 @@ architecture Behavioral of CPU is
            out_rwdata : OUT  STD_LOGIC_VECTOR (15 DOWNTO 0));
 	end component;
 	
-	signal clk_stage: std_logic_vector(5 downto 0):= (others => '0');
+	signal clk_overall: std_logic_vector(24 downto 0):= (others => '0');
+	signal clk_stage: std_logic_vector(1 downto 0):= (others => '0');
 	signal clk_local, clk_down: std_logic:= '0';
 	
 	signal debug_data: std_logic_vector(15 downto 0);
 begin
-	DYP0 <= (others => '0');
 	DYP1 <= (others => '0');
 	
 	process (SW)
@@ -524,15 +528,21 @@ begin
 			when "1010" => L <= ID_Control_Pause&"000"&ID_Control_MEM_out&"000"&ID_Control_PC_out&"0"&EXE_ALU_FLAG_ZERO&"000";
 			when "1011" => L <= ID_RF_WD;
 			when "1100" => L <= EXE_MWD_in;
-			when "1101" => L <= "0000"&"0000"&"0000"&EXE_RAddr_in&"0";
+			when "1101" => L <= "0"&rdn&wrn&"0"&"0000"&"0000"&EXE_RAddr_in&"0";
 			when "1110" => L <= ID_Control_RAddr_in&"00"&ID_Control_ALU_in&"0"&IF_INS_15_0_out(7 downto 0);
 			when "1111" => L <= MEM_Data_in;
 			when others => L <= (others => '0');
 		end case;
 	end process;
 	
-	clk_local <= clk;
-	clk_down <= clk_stage(0);
+	process (clk_50)
+	begin
+		if (clk_50'event and clk_50 = '1') then
+			clk_overall <= clk_overall+1;
+		end if;
+	end process;
+	
+	clk_local <= clk_overall(23);
 	
 	process (clk_local)
 	begin
@@ -540,7 +550,9 @@ begin
 			clk_stage <= clk_stage + 1;
 		end if;
 	end process;
-
+	
+	clk_down <= clk_stage(1);
+	
 	PC_Reg: QReg port map
 		(clk_down,	rst, '1', IF_PC_1_in, IF_PC_Data_Out);
 
@@ -583,7 +595,7 @@ begin
 		 SW(2 downto 0), debug_data);
 
 	IF_MEM_MEMMgr: memMgr port map
-		(clk_local, EXE_Control_MEM_out, Ram1Addr, Ram1Data, Ram1OE, Ram1WE, Ram1EN, wrn, rdn, Ram2Addr, Ram2Data, Ram2OE, Ram2WE, Ram2EN, IF_PC_in, IF_INS_15_0_in, EXE_ALU_out, EXE_MWD_out, MEM_Data_in, data_ready, tbre, tsre);
+		(clk_local, clk_down, rst, EXE_Control_MEM_out, Ram1Addr, Ram1Data, Ram1OE, Ram1WE, Ram1EN, wrn, rdn, Ram2Addr, Ram2Data, Ram2OE, Ram2WE, Ram2EN, IF_PC_in, IF_INS_15_0_in, EXE_ALU_out, EXE_MWD_out, MEM_Data_in, data_ready, tbre, tsre, DYP0);
 	
 	IF_PC_Adder: Adder port map
 		(IF_PC_in, X"0001", IF_PC_1_in);

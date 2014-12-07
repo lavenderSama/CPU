@@ -1,7 +1,7 @@
 #Release 12.3 - par M.70d (nt64)
 #Copyright (c) 1995-2010 Xilinx, Inc.  All rights reserved.
 
-#Sun Dec 07 21:15:11 2014
+#Mon Dec 08 01:26:02 2014
 
 #
 ## NOTE: This file is designed to be imported into a spreadsheet program
@@ -68,7 +68,7 @@ C10,,,GND,,,,,,,,,,,,
 C11,L<4>,IOB,IO_L09P_0,OUTPUT,LVCMOS25*,0,12,SLOW,NONE**,,,LOCATED,NO,NONE,
 C12,,DIFFMI,IP_L07P_0,UNUSED,,0,,,,,,,,,
 C13,,,VCCO_0,,,0,,,,,2.50,,,,
-C14,rdn,IOB,IO_L03N_0/VREF_0,OUTPUT,LVCMOS25*,0,12,SLOW,NONE**,,,LOCATED,NO,NONE,
+C14,rdn,IOB,IO_L03N_0/VREF_0,OUTPUT,LVCMOS25*,0,12,SLOW,NONE**,,,LOCATED,YES,NONE,
 C15,,IBUF,IP,UNUSED,,0,,,,,,,,,
 C16,,,TDO,,,,,,,,,,,,
 C17,Ram1Addr<0>,IOB,IO_L24N_1/LDC2,OUTPUT,LVCMOS25*,1,12,SLOW,NONE**,,,LOCATED,YES,NONE,

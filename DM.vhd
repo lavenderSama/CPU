@@ -8,7 +8,7 @@ entity DM is
 				clk: in std_logic;
 				clk_stage: in std_logic;
 				en: in std_logic; --0 for disable, 1 for enable
-				MEM: in std_logic; --1 for write; others for read
+				MEM: in std_logic_vector(1 downto 0); --11 for write; 10 for read; others for nothing
 				RamAddr : buffer  STD_LOGIC_VECTOR (17 downto 0);
 				RamData : inout  STD_LOGIC_VECTOR (15 downto 0);
 				RamOE : out  STD_LOGIC;
@@ -56,24 +56,28 @@ begin
 				case Address is
 					when "00"&X"BF00" => --write/read to/from com
 						Data <= out_data;
-						if (MEM = '1') then
-							next_state <= comWrite1 ; --write to com
-							RamData <= WriteData;
-	            RamEN <= '1';
-	            RamOE <= '1';
-	            RamWE <= '1';
-	            wrn <= '1';
-						else
-							next_state <= comRead ; --read from com
-              RamEN <= '1';
-              RamOE <= '1';
-              RamWE <= '1';
-              wrn <= '1';
-              rdn <= '1';
-              RamData <= (others => 'Z');
-						end if;
+						case MEM is
+							when "11" =>
+								next_state <= comWrite1 ; --write to com
+								RamData <= WriteData;
+		            RamEN <= '1';
+		            RamOE <= '1';
+		            RamWE <= '1';
+		            wrn <= '1';
+		            rdn <= '1';
+							when "10" =>
+								next_state <= comRead ; --read from com
+	              RamEN <= '1';
+	              RamOE <= '1';
+	              RamWE <= '1';
+	              wrn <= '1';
+	              rdn <= '1';
+	              RamData <= (others => 'Z');
+							when others =>
+								next_state <= Start;
+						end case;
 					when "00"&X"BF01" => --read com state
-						Data <= "00000000000000"&data_ready&(tsre and tbre);
+						Data <= "00000000000000"&'1'&(tsre and tbre);
       			next_state <= Start;
 					when others =>
 						Data <= out_data;
@@ -83,6 +87,11 @@ begin
 		        RamAddr <= Address;
 						wrn <= '1';
 						rdn <= '1';
+						case MEM is
+							when "11" =>
+							when "10" =>
+							when others =>
+						end case;
 						if (MEM = '1') then
 							next_state <= Write;
 							RamData <= WriteData;
@@ -163,8 +172,14 @@ begin
       	RamEN <= '1';
         RamOE <= '1';
         RamWE <= '1';
+        wrn <= '1';
+        rdn <= '0';
         Data(7 downto 0) <= RamData(7 downto 0);
-        next_state <= Stop;
+        if (clk_local = '0' and clk_stage = '1') then
+      		next_state <= Start;
+      	else
+      		next_state <= comRead;
+      	end if;
       
       when Stop => 
       	wrn <= '1';

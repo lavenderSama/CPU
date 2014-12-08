@@ -17,50 +17,59 @@ BEGIN
 	process (MEM, LAST_TO_WRITE, NEXT10_8, NEXT7_5, NEXT15_0)
 	begin
     case MEM is
-        when "11" => if (LAST_TO_WRITE = NEXT10_8) then
+        when "10" => if (LAST_TO_WRITE = NEXT10_8) then
                         case NEXT15_0(15 downto 11) is
-                            when "01001" => PAUSE_SIGNAL <='1';
-                            when "01000" => PAUSE_SIGNAL <='1';
-                            when "11100" => PAUSE_SIGNAL <='1';
-                            when "11101" => case NEXT15_0(4 downto 0) is
-                                                 when "01011" => PAUSE_SIGNAL <='0';
-                                                 when "01111" => PAUSE_SIGNAL <='0';
-                                                 when others => PAUSE_SIGNAL <='1';
+                            when "01001" => PAUSE_SIGNAL <='1'; --ADDIU
+                            when "01000" => PAUSE_SIGNAL <='1'; --ADDIU3
+                            when "11100" => PAUSE_SIGNAL <='1'; --ADDU,SUBU
+                            when "11101" => case NEXT15_0(4 downto 0) is --AND,CMP,JR,MFPC,OR,JRRA,JALR
+                                                 when "01100" | "01010" | "01101" => PAUSE_SIGNAL <='1';
+                                                 when "00000" => --JR, MFPC, JRRA, JALR
+                                                 	case NEXT15_0(7 downto 5) is
+                                                 		when "000" | "110" => PAUSE_SIGNAL <= '1'; --JR, JALR
+                                                 		when "001" | "010" => PAUSE_SIGNAL <= '0'; --JRRA, MFPC
+                                                 		when others => PAUSE_SIGNAL <= '0';
+                                                 	end case;
+                                                 when "01011" => PAUSE_SIGNAL <= '0'; --NEG
+                                                 when others => PAUSE_SIGNAL <='0';
                                             end case;
-                            when "00100" => PAUSE_SIGNAL <='1';
-                            when "00101" => PAUSE_SIGNAL <='1';
-                            when "10011" => PAUSE_SIGNAL <='1';
-                            when "11110" => case NEXT15_0(4 downto 0) is
-                                                when "00001" => PAUSE_SIGNAL <='1';
-                                                when others => PAUSE_SIGNAL <='0';
-                                            end case;
-                            when "11011" => PAUSE_SIGNAL <='1';
+                            when "00100" => PAUSE_SIGNAL <='1'; --BEQZ
+                            when "00101" => PAUSE_SIGNAL <='1'; --BNEZ
+                            when "11110" =>  --MFIH,MTIH
+                            	case NEXT15_0(0) is
+								                when '0' =>  --MFIH
+								                    PAUSE_SIGNAL <= '0';
+								                when '1' =>  --MTIH
+								                    PAUSE_SIGNAL <='1';
+								                when others => PAUSE_SIGNAL <= '0';
+								              end case;								                    
+                            when "10011" => PAUSE_SIGNAL <='1'; --LW
+                            when "11011" | "11010" => PAUSE_SIGNAL <='1'; --SW, SW_SP
                             when others => PAUSE_SIGNAL <='0';
                         end case;
                     elsif (LAST_TO_WRITE = NEXT7_5) then
                         case NEXT15_0(15 downto 11) is
-                            when "11100" => PAUSE_SIGNAL <= '1';
-                            when "11101" => case NEXT15_0(4 downto 0) is
-                                                when "01100" => PAUSE_SIGNAL <='1';
-                                                when "01010" => PAUSE_SIGNAL <='1';
-                                                when "01011" => PAUSE_SIGNAL <='1';
-                                                when "01111" => PAUSE_SIGNAL <='1';
-                                                when "01101" => PAUSE_SIGNAL <='1';
-                                                when "00100" => PAUSE_SIGNAL <='1';
-                                                when "00010" => PAUSE_SIGNAL <='1';
-                                                when "00111" => PAUSE_SIGNAL <='1';
-                                                when "00110" => PAUSE_SIGNAL <='1';
-                                                when "01110" => PAUSE_SIGNAL <='1';
-                                                when others  => PAUSE_SIGNAL <='0';
+                            when "11100" => PAUSE_SIGNAL <= '1'; --ADDU,SUBU
+                            when "11101" => case NEXT15_0(4 downto 0) is --AND,CMP,JR,MFPC,OR,JRRA,JALR, NEG
+                                              when "01100" | "01010" | "01101" | "01011" => PAUSE_SIGNAL <='1';
+                                              when "00000" => --JR, MFPC, JRRA, JALR
+                                               	PAUSE_SIGNAL <= '0';
+                                              when others  => PAUSE_SIGNAL <='0';
                                             end case;
-                            when "01111" => PAUSE_SIGNAL <= '1';
-                            when "00110" => PAUSE_SIGNAL <= '1';
+                            when "01111" => PAUSE_SIGNAL <= '1'; --MOVE
+                            when "00110" => PAUSE_SIGNAL <= '1'; --SLL,SRA
+                            when "01100" => if (NEXT15_0(10 downto 8) = "100") then --MTSP
+                            									PAUSE_SIGNAL <= '1';
+                            								else
+                            									PAUSE_SIGNAL <= '0';
+                            								end if;
+                            when "11011" => PAUSE_SIGNAL <= '1';
                             when others => PAUSE_SIGNAL <='0';
                         end case;
                     else
                         PAUSE_SIGNAL<='0';
                     end if;
-        when "00"|"01"|"10" => PAUSE_SIGNAL<='0';
+        when "00"|"01"|"11" => PAUSE_SIGNAL<='0';
 		  when others => PAUSE_SIGNAL<='0';
     end case;
 	end process;

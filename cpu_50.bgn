@@ -1,13 +1,13 @@
 Release 12.3 - Bitgen M.70d (nt64)
 Copyright (c) 1995-2010 Xilinx, Inc.  All rights reserved.
 Loading device for application Rf_Device from file '3s1200e.nph' in environment
-d:\Xilinx\12.3\ISE_DS\ISE\.
+D:\Xilinx\12.3\ISE_DS\ISE\.
    "CPU" is an NCD, version 3.2, device xc3s1200e, package fg320, speed -4
 Opened constraints file CPU.pcf.
 
-Mon Dec 08 16:35:42 2014
+Mon Dec 08 09:13:34 2014
 
-d:\Xilinx\12.3\ISE_DS\ISE\bin\nt64\unwrapped\bitgen.exe -intstyle ise -w -g DebugBitstream:No -g Binary:no -g CRC:Enable -g ConfigRate:1 -g ProgPin:PullUp -g DonePin:PullUp -g TckPin:PullUp -g TdiPin:PullUp -g TdoPin:PullUp -g TmsPin:PullUp -g UnusedPin:PullDown -g UserID:0xFFFFFFFF -g DCMShutdown:Disable -g StartUpClk:CClk -g DONE_cycle:4 -g GTS_cycle:5 -g GWE_cycle:6 -g LCK_cycle:NoWait -g Security:None -g DonePipe:No -g DriveDone:No CPU.ncd 
+D:\Xilinx\12.3\ISE_DS\ISE\bin\nt64\unwrapped\bitgen.exe -intstyle ise -w -g DebugBitstream:No -g Binary:no -g CRC:Enable -g ConfigRate:1 -g ProgPin:PullUp -g DonePin:PullUp -g TckPin:PullUp -g TdiPin:PullUp -g TdoPin:PullUp -g TmsPin:PullUp -g UnusedPin:PullDown -g UserID:0xFFFFFFFF -g DCMShutdown:Disable -g StartUpClk:CClk -g DONE_cycle:4 -g GTS_cycle:5 -g GWE_cycle:6 -g LCK_cycle:NoWait -g Security:None -g DonePipe:No -g DriveDone:No CPU.ncd 
 
 Summary of Bitgen Options:
 +----------------------+----------------------+
@@ -107,6 +107,10 @@ WARNING:PhysDesignRules:372 - Gated clock. Clock net
    IF_MEM_MEMMgr/DM_unit/rdn_or0000 is sourced by a combinatorial pin. This is
    not good design practice. Use the CE pin to control the loading of data into
    the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   ID_Controller/Mtridata_RWDATA_not0001 is sourced by a combinatorial pin. This
+   is not good design practice. Use the CE pin to control the loading of data
+   into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net Forward_unit/RMWD_not0001
    is sourced by a combinatorial pin. This is not good design practice. Use the
    CE pin to control the loading of data into the flip-flop.
@@ -116,10 +120,6 @@ WARNING:PhysDesignRules:372 - Gated clock. Clock net
    into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net
    IF_MEM_MEMMgr/DM_unit/Data_9_or0000 is sourced by a combinatorial pin. This
-   is not good design practice. Use the CE pin to control the loading of data
-   into the flip-flop.
-WARNING:PhysDesignRules:372 - Gated clock. Clock net
-   ID_Controller/Mtridata_RWDATA_not0001 is sourced by a combinatorial pin. This
    is not good design practice. Use the CE pin to control the loading of data
    into the flip-flop.
 WARNING:PhysDesignRules:372 - Gated clock. Clock net

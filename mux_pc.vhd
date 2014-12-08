@@ -30,39 +30,45 @@ ENTITY mux_pc IS
            ra : IN STD_LOGIC_VECTOR (15 DOWNTO 0);
            zero : IN STD_LOGIC;
            option : IN  STD_LOGIC_VECTOR (2 DOWNTO 0);
-           pc : OUT  STD_LOGIC_VECTOR (15 DOWNTO 0));
+           pc : OUT  STD_LOGIC_VECTOR (15 DOWNTO 0);
+           pause: in std_logic);
 END mux_pc;
 
 ARCHITECTURE behavioral OF mux_pc IS
 
 BEGIN
 
-PROCESS(normal, PCadder, OLD_PC, rx, ra, zero, option)
+PROCESS(pause, normal, PCadder, OLD_PC, rx, ra, zero, option)
 BEGIN
-case option is
-    when "000" =>  --normal
-        pc <= normal;
-    when "001" =>  --B
-        pc <= PCadder;
-    when "010" =>  --BEQZ,BTEQZ
-        case zero is
-            when '0' => pc<=normal;
-            when '1' => pc<=PCadder;
-						when others => pc<=normal;
-        end case;
-    when "011" =>  --BNEZ,BTNEZ
-        case zero is
-            when '0' => pc<=PCadder;
-            when '1' => pc<=normal;
-						when others => pc<=normal;
-        end case;
-    when "100" =>  --JALR,JR
-        pc <= rx;
-    when "101" =>  --JRRA
-        pc <= ra;
-    when "110" =>  --pause
-    		pc <= OLD_PC;
-    when others => pc <= normal;
-end case;
+	if (pause = '1') then
+		pc <= OLD_PC;
+	else
+		case option is
+		    when "000" =>  --normal
+		        pc <= normal;
+		    when "001" =>  --B
+		        pc <= PCadder;
+		    when "010" =>  --BEQZ,BTEQZ
+		        case zero is
+		            when '0' => pc<=normal;
+		            when '1' => pc<=PCadder;
+								when others => pc<=normal;
+		        end case;
+		    when "011" =>  --BNEZ,BTNEZ
+		        case zero is
+		            when '0' => pc<=PCadder;
+		            when '1' => pc<=normal;
+								when others => pc<=normal;
+		        end case;
+		    when "100" =>  --JALR,JR
+		        pc <= rx;
+		    when "101" =>  --JRRA
+		        pc <= ra;
+		    when "110" =>  --pause
+		    		pc <= normal;
+		    when others => pc <= normal;
+		end case;
+	end if;
+
 END PROCESS;
 END behavioral;

@@ -1,0 +1,19 @@
+
+NET "hs" LOC= D6;
+
+NET "vs" LOC= E6;
+
+NET "ored[0]" LOC = A7;
+NET "ored[1]" LOC = C3;
+NET "ored[2]" LOC = A4;
+
+NET "ogreen[0]" LOC = B4;
+NET "ogreen[1]" LOC = C4;
+NET "ogreen[2]" LOC = C5;
+
+NET "oblue[0]" LOC = D5;
+NET "oblue[1]" LOC = A6;
+NET "oblue[2]" LOC = B6;
+
+NET "reset" LOC=;
+NET "clk_in" LOC=;

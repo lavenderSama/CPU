@@ -81,13 +81,28 @@ case PAUSE is
             T       <= '0';
             RF      <= '1';
             SP_S    <= '0';
-        when "11101"=> --AND,CMP,JR,MFPC,OR,JRRA,JALR
+        when "11101"=> --AND,CMP,JR,MFPC,OR,JRRA,JALR, NEG
             case INSTRUCTION(4 downto 0) is
+            		when "01011" => 
+            			PC <= "000";
+                  A  <= "100";
+                  B  <= "0010";
+                  ALU <= "111";
+                  MEM <= "00";
+                  WDATA <= '0';
+                  RADDR <= "10";
+                  RWDATA <= "00";
+                  IH  <= '0';
+                  SP  <= '0';
+                  RA  <= '0';
+                  T   <= '0';
+                  RF  <= '1';
+                  SP_S <= '0';
                 when "00000" =>   --JR,MFPC,JRRA,JALR
                     case INSTRUCTION(7 downto 5) is
                         when "000" =>  --JR
                             PC <= "100";
-                            A  <= "100";
+                            A  <= "101";
                             B  <= "0001";
                             ALU <= "000";
                             MEM <= "00";
@@ -132,7 +147,7 @@ case PAUSE is
                             SP_S<= '0';
                         when "110" =>  --JALR
                             PC <= "100";
-                            A  <= "100";
+                            A  <= "101";
                             B  <= "0000";
                             ALU <= "000";
                             MEM <="00";
@@ -169,7 +184,7 @@ case PAUSE is
 	                    MEM <="00";
 	                    WDATA <= '0';
 	                    RADDR <= "00";
-	                    RWDATA  <= "ZZ";
+	                    RWDATA  <= "11";
 	                    IH  <= '0';
 	                    SP  <= '0';
 	                    RA  <= '0';
@@ -274,7 +289,7 @@ case PAUSE is
                     MEM <="00";
                     WDATA <= '0';
                     RADDR <= "00";
-                    RWDATA  <= "ZZ";
+                    RWDATA  <= "11";
                      IH  <= '0';
                      SP  <= '0';
                      RA  <= '0';
@@ -283,13 +298,13 @@ case PAUSE is
                      SP_S<= '0';
                 when "100" =>  --MTSP
                      PC <= "000";		--edited by lfw
-                     A  <= "100";
+                     A  <= "110";
                      B  <= "0001";
                      ALU <= "000";
                      MEM <="00";
                      WDATA <= '0';
                      RADDR <= "00";
-                     RWDATA  <= "ZZ";
+                     RWDATA  <= "11";
                      IH  <= '0';
                      SP  <= '1';
                      RA  <= '0';
@@ -389,8 +404,8 @@ case PAUSE is
                     IH <= '0';
                     RF <= '1';
                 when '1' =>  --MTIH
-                    A <= "100";
-                    ALU <= "000";
+                    A <= "101";
+                    ALU <= "011";
                     RADDR <= "00";
                     RWDATA <= "11";
                     IH <= '1';

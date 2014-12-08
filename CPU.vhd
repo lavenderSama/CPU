@@ -441,7 +441,8 @@ architecture Behavioral of CPU is
            ra : IN STD_LOGIC_VECTOR (15 DOWNTO 0);
            zero : IN STD_LOGIC;
            option : IN  STD_LOGIC_VECTOR (2 DOWNTO 0);
-           pc : OUT  STD_LOGIC_VECTOR (15 DOWNTO 0));
+           pc : OUT  STD_LOGIC_VECTOR (15 DOWNTO 0);
+           pause: in std_logic);
 	end component;
 	
 	component A_MUX IS
@@ -520,7 +521,7 @@ begin
 			when "0011" => L <= IF_INS_15_0_in;
 			when "0100" => L <= EXE_A_MUX_Out;
 			when "0101" => L <= EXE_B_MUX_Out;
-			when "0110" => L <= ID_T_out;
+			when "0110" => L <= IF_PC_out;
 			when "0111" => L <= MEM_Control_RF_out&"00"&MEM_Control_RWData_out&"00"&EXE_Control_RF_out&"00"&ID_Control_SP_S_out&"00"&MEM_RAddr_out;
 			when "1000" => L <= ID_Control_RAddr_out&"00"&ID_Control_ALU_out&"0"&EXE_ALU_FLAG_ZERO&"000"&EXE_Control_MEM_out&"00";
 			when "1001" => L <= EXE_Control_RA&"00"&EXE_Control_RB&"00"&ID_Control_A_out&"0"&ID_Control_B_out;
@@ -556,7 +557,7 @@ begin
 		(clk_down,	rst, '1', IF_PC_1_in, IF_PC_Data_Out);
 
 	IH_Reg: QReg port map
-		(clk_local,	rst, ID_Control_IH_out, ID_RY_out, ID_IH_in);
+		(clk_local,	rst, ID_Control_IH_out, EXE_A_MUX_Out, ID_IH_in);
 
 	SP_Reg: QReg port map
 		(clk_local,	rst, ID_Control_SP_S_out, EXE_SP_S_Out, ID_SP_in);
@@ -621,10 +622,10 @@ begin
 		(ID_Control_A_out, ID_Control_B_out, ID_Control_WData_out, ID_Addr_RY_out, ID_Addr_RX_out, EXE_Control_RF_out, MEM_Control_RF_out, EXE_RAddr_out, MEM_RAddr_out, EXE_Control_RA, EXE_Control_RB, EXE_Control_RMWD);
 	
 	Pause_unit: Pause port map
-		(ID_Control_MEM_out, EXE_RAddr_out, IF_INS_10_8_out, IF_INS_7_5_out, IF_INS_15_0_out, ID_Control_Pause);
+		(ID_Control_MEM_out, EXE_RAddr_in, IF_INS_10_8_out, IF_INS_7_5_out, IF_INS_15_0_out, ID_Control_Pause);
 
 	IF_PC_MUX: mux_pc port map
-		(IF_PC_Data_Out, EXE_PCAdder_Out, IF_PC_out, ID_RX_out, ID_RA_out, EXE_ALU_FLAG_ZERO, ID_Control_PC_out, IF_PC_in);
+		(IF_PC_Data_Out, EXE_PCAdder_Out, IF_PC_out, ID_RX_out, ID_RA_out, EXE_ALU_FLAG_ZERO, ID_Control_PC_out, IF_PC_in, ID_Control_Pause);
 
 	EXE_A_MUX: A_MUX port map
 		(ID_PC_1_out, ID_IH_out, ID_SP_out, ID_T_out, ID_RX_out, ID_RY_out, EXE_ALU_out, ID_RF_WD, EXE_A_MUX_Out, ID_Control_A_out, EXE_Control_RA);
@@ -639,7 +640,7 @@ begin
 		(ID_RX_out, ID_RY_out, EXE_ALU_out, ID_RF_WD, ID_Control_WData_out, EXE_MWD_in, EXE_Control_RMWD);
 	
 	EXE_SP_S_MUX: mux_sp_s port map
-		(EXE_SPAdder_Out, ID_RY_out, ID_Control_SP_out, EXE_SP_S_Out);
+		(EXE_SPAdder_Out, EXE_A_MUX_Out, ID_Control_SP_out, EXE_SP_S_Out);
 	
 	WB_RWData: mux_rwdata port map
 		(MEM_ALU_out, MEM_Data_out, MEM_Control_RWData_out, ID_RF_WD);

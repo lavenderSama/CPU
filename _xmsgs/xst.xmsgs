@@ -11,11 +11,11 @@
 <msg type="info" file="Xst" num="1739" delta="old" >HDL ADVISOR - &quot;<arg fmt="%s" index="1">E:/Thinpand/CPU/project/CPU/CPU/CPU.vhd</arg>&quot; line <arg fmt="%d" index="2">18</arg>: declaration of a buffer port will make it difficult for you to validate this design by simulation. It is preferable to declare it as output.
 </msg>
 
-<msg type="info" file="Xst" num="1561" delta="old" >&quot;<arg fmt="%s" index="1">E:/Thinpand/CPU/project/CPU/CPU/CPU.vhd</arg>&quot; line <arg fmt="%d" index="2">532</arg>: Mux is complete : default of case is discarded
+<msg type="info" file="Xst" num="1561" delta="old" >&quot;<arg fmt="%s" index="1">E:/Thinpand/CPU/project/CPU/CPU/CPU.vhd</arg>&quot; line <arg fmt="%d" index="2">533</arg>: Mux is complete : default of case is discarded
 </msg>
 
-<msg type="warning" file="Xst" num="819" delta="old" >&quot;<arg fmt="%s" index="1">E:/Thinpand/CPU/project/CPU/CPU/CPU.vhd</arg>&quot; line <arg fmt="%d" index="2">514</arg>: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
-<arg fmt="%s" index="3">&lt;debug_data&gt;, &lt;ID_T_in&gt;, &lt;IF_PC_in&gt;, &lt;IF_INS_15_0_in&gt;, &lt;EXE_A_MUX_Out&gt;, &lt;EXE_B_MUX_Out&gt;, &lt;ID_T_out&gt;, &lt;MEM_Control_RF_out&gt;, &lt;MEM_Control_RWData_out&gt;, &lt;EXE_Control_RF_out&gt;, &lt;ID_Control_SP_S_out&gt;, &lt;MEM_RAddr_out&gt;, &lt;ID_Control_Raddr_out&gt;, &lt;ID_Control_ALU_out&gt;, &lt;EXE_ALU_FLAG_ZERO&gt;, &lt;EXE_Control_MEM_out&gt;, &lt;EXE_Control_RA&gt;, &lt;EXE_Control_RB&gt;, &lt;ID_Control_A_out&gt;, &lt;ID_Control_B_out&gt;, &lt;ID_Control_Pause&gt;, &lt;ID_Control_MEM_out&gt;, &lt;ID_Control_PC_out&gt;, &lt;ID_RF_WD&gt;, &lt;EXE_MWD_in&gt;, &lt;rdn&gt;, &lt;wrn&gt;, &lt;EXE_RAddr_in&gt;, &lt;ID_Control_Raddr_in&gt;, &lt;ID_Control_ALU_in&gt;, &lt;IF_INS_15_0_out&gt;, &lt;MEM_Data_in&gt;</arg>
+<msg type="warning" file="Xst" num="819" delta="old" >&quot;<arg fmt="%s" index="1">E:/Thinpand/CPU/project/CPU/CPU/CPU.vhd</arg>&quot; line <arg fmt="%d" index="2">515</arg>: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+<arg fmt="%s" index="3">&lt;debug_data&gt;, &lt;ID_T_in&gt;, &lt;IF_PC_in&gt;, &lt;IF_INS_15_0_in&gt;, &lt;EXE_A_MUX_Out&gt;, &lt;EXE_B_MUX_Out&gt;, &lt;IF_PC_out&gt;, &lt;MEM_Control_RF_out&gt;, &lt;MEM_Control_RWData_out&gt;, &lt;EXE_Control_RF_out&gt;, &lt;ID_Control_SP_S_out&gt;, &lt;MEM_RAddr_out&gt;, &lt;ID_Control_Raddr_out&gt;, &lt;ID_Control_ALU_out&gt;, &lt;EXE_ALU_FLAG_ZERO&gt;, &lt;EXE_Control_MEM_out&gt;, &lt;EXE_Control_RA&gt;, &lt;EXE_Control_RB&gt;, &lt;ID_Control_A_out&gt;, &lt;ID_Control_B_out&gt;, &lt;ID_Control_Pause&gt;, &lt;ID_Control_MEM_out&gt;, &lt;ID_Control_PC_out&gt;, &lt;ID_RF_WD&gt;, &lt;EXE_MWD_in&gt;, &lt;rdn&gt;, &lt;wrn&gt;, &lt;EXE_RAddr_in&gt;, &lt;ID_Control_Raddr_in&gt;, &lt;ID_Control_ALU_in&gt;, &lt;IF_INS_15_0_out&gt;, &lt;MEM_Data_in&gt;</arg>
 </msg>
 
 <msg type="info" file="Xst" num="1739" delta="old" >HDL ADVISOR - &quot;<arg fmt="%s" index="1">E:/Thinpand/CPU/project/CPU/CPU/CPU.vhd</arg>&quot; line <arg fmt="%d" index="2">19</arg>: declaration of a buffer port will make it difficult for you to validate this design by simulation. It is preferable to declare it as output.
@@ -24,7 +24,7 @@
 <msg type="info" file="Xst" num="1739" delta="old" >HDL ADVISOR - &quot;<arg fmt="%s" index="1">E:/Thinpand/CPU/project/CPU/CPU/CPU.vhd</arg>&quot; line <arg fmt="%d" index="2">29</arg>: declaration of a buffer port will make it difficult for you to validate this design by simulation. It is preferable to declare it as output.
 </msg>
 
-<msg type="warning" file="Xst" num="752" delta="old" >&quot;<arg fmt="%s" index="1">E:/Thinpand/CPU/project/CPU/CPU/CPU.vhd</arg>&quot; line <arg fmt="%d" index="2">644</arg>: Unconnected input port &apos;<arg fmt="%s" index="3">in_raddr</arg>&apos; of component &apos;<arg fmt="%s" index="4">mux_rwdata</arg>&apos; is tied to default value.
+<msg type="warning" file="Xst" num="752" delta="old" >&quot;<arg fmt="%s" index="1">E:/Thinpand/CPU/project/CPU/CPU/CPU.vhd</arg>&quot; line <arg fmt="%d" index="2">645</arg>: Unconnected input port &apos;<arg fmt="%s" index="3">in_raddr</arg>&apos; of component &apos;<arg fmt="%s" index="4">mux_rwdata</arg>&apos; is tied to default value.
 </msg>
 
 <msg type="warning" file="Xst" num="819" delta="old" >&quot;<arg fmt="%s" index="1">E:/Thinpand/CPU/project/CPU/CPU/IFReg.vhd</arg>&quot; line <arg fmt="%d" index="2">37</arg>: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
@@ -88,10 +88,10 @@
 <msg type="info" file="Xst" num="1561" delta="old" >&quot;<arg fmt="%s" index="1">E:/Thinpand/CPU/project/CPU/CPU/ALU.vhd</arg>&quot; line <arg fmt="%d" index="2">72</arg>: Mux is complete : default of case is discarded
 </msg>
 
-<msg type="info" file="Xst" num="1561" delta="old" >&quot;<arg fmt="%s" index="1">E:/Thinpand/CPU/project/CPU/CPU/controller.vhd</arg>&quot; line <arg fmt="%d" index="2">397</arg>: Mux is complete : default of case is discarded
+<msg type="info" file="Xst" num="1561" delta="old" >&quot;<arg fmt="%s" index="1">E:/Thinpand/CPU/project/CPU/CPU/controller.vhd</arg>&quot; line <arg fmt="%d" index="2">412</arg>: Mux is complete : default of case is discarded
 </msg>
 
-<msg type="info" file="Xst" num="1561" delta="old" >&quot;<arg fmt="%s" index="1">E:/Thinpand/CPU/project/CPU/CPU/controller.vhd</arg>&quot; line <arg fmt="%d" index="2">518</arg>: Mux is complete : default of case is discarded
+<msg type="info" file="Xst" num="1561" delta="old" >&quot;<arg fmt="%s" index="1">E:/Thinpand/CPU/project/CPU/CPU/controller.vhd</arg>&quot; line <arg fmt="%d" index="2">533</arg>: Mux is complete : default of case is discarded
 </msg>
 
 <msg type="info" file="Xst" num="1561" delta="old" >&quot;<arg fmt="%s" index="1">E:/Thinpand/CPU/project/CPU/CPU/Foward.vhd</arg>&quot; line <arg fmt="%d" index="2">45</arg>: Mux is complete : default of case is discarded
@@ -107,10 +107,13 @@
 <arg fmt="%s" index="3">&lt;RAddr2&gt;, &lt;WDATA&gt;, &lt;RAddr1&gt;</arg>
 </msg>
 
-<msg type="info" file="Xst" num="1561" delta="old" >&quot;<arg fmt="%s" index="1">E:/Thinpand/CPU/project/CPU/CPU/mux_pc.vhd</arg>&quot; line <arg fmt="%d" index="2">50</arg>: Mux is complete : default of case is discarded
+<msg type="info" file="Xst" num="1561" delta="old" >&quot;<arg fmt="%s" index="1">E:/Thinpand/CPU/project/CPU/CPU/Pause.vhd</arg>&quot; line <arg fmt="%d" index="2">43</arg>: Mux is complete : default of case is discarded
 </msg>
 
-<msg type="info" file="Xst" num="1561" delta="old" >&quot;<arg fmt="%s" index="1">E:/Thinpand/CPU/project/CPU/CPU/mux_pc.vhd</arg>&quot; line <arg fmt="%d" index="2">56</arg>: Mux is complete : default of case is discarded
+<msg type="info" file="Xst" num="1561" delta="old" >&quot;<arg fmt="%s" index="1">E:/Thinpand/CPU/project/CPU/CPU/mux_pc.vhd</arg>&quot; line <arg fmt="%d" index="2">54</arg>: Mux is complete : default of case is discarded
+</msg>
+
+<msg type="info" file="Xst" num="1561" delta="old" >&quot;<arg fmt="%s" index="1">E:/Thinpand/CPU/project/CPU/CPU/mux_pc.vhd</arg>&quot; line <arg fmt="%d" index="2">60</arg>: Mux is complete : default of case is discarded
 </msg>
 
 <msg type="warning" file="Xst" num="819" delta="old" >&quot;<arg fmt="%s" index="1">E:/Thinpand/CPU/project/CPU/CPU/A_MUX.vhd</arg>&quot; line <arg fmt="%d" index="2">23</arg>: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
@@ -137,9 +140,6 @@
 </msg>
 
 <msg type="info" file="Xst" num="2371" delta="old" >HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
-</msg>
-
-<msg type="warning" file="Xst" num="647" delta="old" >Input &lt;<arg fmt="%s" index="1">NEXT15_0&lt;10:5&gt;</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 </msg>
 
 <msg type="warning" file="Xst" num="647" delta="old" >Input &lt;<arg fmt="%s" index="1">in_raddr</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
@@ -328,7 +328,7 @@
 <msg type="info" file="Xst" num="2371" delta="old" >HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
 </msg>
 
-<msg type="warning" file="Xst" num="647" delta="old" >Input &lt;<arg fmt="%s" index="1">clk</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+<msg type="warning" file="Xst" num="647" delta="new" >Input &lt;<arg fmt="%s" index="1">clk</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 </msg>
 
 <msg type="warning" file="Xst" num="647" delta="old" >Input &lt;<arg fmt="%s" index="1">SW&lt;11:3&gt;</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.

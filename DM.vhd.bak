@@ -85,7 +85,8 @@ begin
 						RamEN <= '1';
 	          RamOE <= '1';
 	          RamWE <= '1';
-						RamData <= (others => 'Z');
+	          wrn <= '1';
+	          rdn <= '1';
 						Data <= "00000000000000"&data_ready&(tsre and tbre);
       			next_state <= Start;
 					when others =>
@@ -146,20 +147,11 @@ begin
 				RamData <= (others=>'Z');
 				Data <= RamData;
 				RamOE <= '0';
-				next_state <= R_hold;
-			when R_hold =>
-				wrn <= '1';
-				rdn <= '1';
-				RamWE <= '1';
-				RamEN <= '0';
-				RamOE <= '0';
-				RamAddr <= Address;
-				RamData <= (others=>'Z');
-				Data <= RamData;
+				next_state <= Read;
 				if (clk_local = '0' and clk_stage = '1') then
       		next_state <= Start;
       	else
-      		next_state <= R_hold;
+      		next_state <= Read;
       	end if;
 			
       when comWrite1 =>

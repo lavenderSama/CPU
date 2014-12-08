@@ -30,7 +30,8 @@ entity memMgr is
 				tbre: in std_logic;
 				tsre: in std_logic;
 				
-				DYP0: out std_logic_vector(6 downto 0)
+				DYP0: out std_logic_vector(6 downto 0);
+				DYP1: out std_logic_vector(6 downto 0)
 			);
 end entity;
 	
@@ -39,13 +40,19 @@ architecture Behavioral of memMgr is
 		port(
 					clk: in std_logic;
 					en: in std_logic; --0 for disable, 1 for enable
+					MEM:in std_logic_vector(1 downto 0); --11 for write, others for read
 					RamAddr : buffer  STD_LOGIC_VECTOR (17 downto 0);
 	        RamData : inout  STD_LOGIC_VECTOR (15 downto 0);
 					RamOE : out  STD_LOGIC;
 					RamWE : out  STD_LOGIC;
 					RamEN : out  STD_LOGIC;
 					PC:in std_logic_vector(17 downto 0);
-					INS:out std_logic_vector(15 downto 0)
+					INS:out std_logic_vector(15 downto 0);
+					Address:in std_logic_vector(17 downto 0);
+					Data:in std_logic_vector(15 downto 0);
+					UIns:out std_logic_vector(15 downto 0);
+					
+					DYP:out std_logic_vector(6 downto 0)
 				);
 	end component;
 	component DM is
@@ -53,7 +60,7 @@ architecture Behavioral of memMgr is
 					clk: in std_logic;
 					clk_stage: in std_logic;
 					en: in std_logic; --0 for disable, 1 for enable
-					MEM: in std_logic; --1 for write; others for read
+					MEM: in std_logic_vector(1 downto 0); --11 for write; 10 for read; others for nothing
 					RamAddr : buffer  STD_LOGIC_VECTOR (17 downto 0);
 					RamData : inout  STD_LOGIC_VECTOR (15 downto 0);
 					RamOE : out  STD_LOGIC;
@@ -72,11 +79,22 @@ architecture Behavioral of memMgr is
 				);
 	end component;
 	signal PC_18, Address_18: std_logic_vector(17 downto 0):= (others => '0');
+	signal idata, ddata: std_logic_vector(15 downto 0):= (others => '0');
 begin
 	PC_18 <= "00"&PC;
 	Address_18 <= "00"&Address;
+	
+	process (Address)
+	begin
+		if (CONV_INTEGER(Address) > 16383 and CONV_INTEGER(Address) < 32768) then
+			Data <= idata;
+		else
+			Data <= ddata;
+		end if;
+	end process;
+	
 	IM_unit: IM port map
-		(clk, rst, Ram2Addr, Ram2Data, Ram2OE, Ram2WE, Ram2EN, PC_18, INS);
+		(clk, rst, MEM, Ram2Addr, Ram2Data, Ram2OE, Ram2WE, Ram2EN, PC_18, INS, Address_18, WriteData, idata, DYP1);
 	DM_unit: DM port map
-		(clk, clk_stage, rst, MEM, Ram1Addr, Ram1Data, Ram1OE, Ram1WE, Ram1EN, wrn, rdn, Address_18, WriteData, Data, data_ready, tbre, tsre, DYP0);
+		(clk, clk_stage, rst, MEM, Ram1Addr, Ram1Data, Ram1OE, Ram1WE, Ram1EN, wrn, rdn, Address_18, WriteData, ddata, data_ready, tbre, tsre, DYP0);
 end architecture;

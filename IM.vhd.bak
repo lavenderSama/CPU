@@ -26,6 +26,7 @@ end entity;
 architecture Behavioral of IM is
 	type state is (Start, Read, ReadUI, Write, Start2);
 	signal cur_state, next_state: state:= Start;
+	signal Address_low, Address_high: std_logic_vector(17 downto 0):= (others => '0');
 begin
 	process (en, clk)
 	begin

@@ -350,7 +350,8 @@ architecture Behavioral of CPU is
 					tbre: in std_logic;
 					tsre: in std_logic;
 					
-					DYP0: out std_logic_vector(6 downto 0)
+					DYP0: out std_logic_vector(6 downto 0);
+					DYP1: out std_logic_vector(6 downto 0)
 				);
 	end component;
 	
@@ -510,8 +511,6 @@ architecture Behavioral of CPU is
 	
 	signal debug_data: std_logic_vector(15 downto 0);
 begin
-	DYP1 <= (others => '0');
-	
 	process (SW)
 	begin
 		case SW(15 downto 12) is
@@ -597,7 +596,7 @@ begin
 		 SW(2 downto 0), debug_data);
 
 	IF_MEM_MEMMgr: memMgr port map
-		(clk_local, clk_down, rst, EXE_Control_MEM_out, Ram1Addr, Ram1Data, Ram1OE, Ram1WE, Ram1EN, wrn, rdn, Ram2Addr, Ram2Data, Ram2OE, Ram2WE, Ram2EN, IF_PC_in, IF_INS_15_0_in, EXE_ALU_out, EXE_MWD_out, MEM_Data_in, data_ready, tbre, tsre, DYP0);
+		(clk_local, clk_down, rst, EXE_Control_MEM_out, Ram1Addr, Ram1Data, Ram1OE, Ram1WE, Ram1EN, wrn, rdn, Ram2Addr, Ram2Data, Ram2OE, Ram2WE, Ram2EN, IF_PC_in, IF_INS_15_0_in, EXE_ALU_out, EXE_MWD_out, MEM_Data_in, data_ready, tbre, tsre, DYP0, DYP1);
 	
 	IF_PC_Adder: Adder port map
 		(IF_PC_in, X"0001", IF_PC_1_in);

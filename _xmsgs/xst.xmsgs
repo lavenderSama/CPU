@@ -5,16 +5,16 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
-<msg type="warning" file="HDLParsers" num="3555" delta="old" >&quot;<arg fmt="%s" index="1">E:/Thinpand/CPU/project/CPU/CPU/memMgr.vhd</arg>&quot; Line <arg fmt="%d" index="2">81</arg>. Warning for LRM section 1.1.1.2 violation about connectivity rules. Parameter <arg fmt="%s" index="3">Ram1Addr</arg> of mode <arg fmt="%s" index="4">out</arg> should not be associated with a formal <arg fmt="%s" index="5">port</arg> of mode <arg fmt="%s" index="6">buffer</arg>.
+<msg type="warning" file="HDLParsers" num="3555" delta="old" >&quot;<arg fmt="%s" index="1">E:/Thinpand/CPU/project/CPU/CPU/memMgr.vhd</arg>&quot; Line <arg fmt="%d" index="2">99</arg>. Warning for LRM section 1.1.1.2 violation about connectivity rules. Parameter <arg fmt="%s" index="3">Ram1Addr</arg> of mode <arg fmt="%s" index="4">out</arg> should not be associated with a formal <arg fmt="%s" index="5">port</arg> of mode <arg fmt="%s" index="6">buffer</arg>.
 </msg>
 
 <msg type="info" file="Xst" num="1739" delta="old" >HDL ADVISOR - &quot;<arg fmt="%s" index="1">E:/Thinpand/CPU/project/CPU/CPU/CPU.vhd</arg>&quot; line <arg fmt="%d" index="2">18</arg>: declaration of a buffer port will make it difficult for you to validate this design by simulation. It is preferable to declare it as output.
 </msg>
 
-<msg type="info" file="Xst" num="1561" delta="old" >&quot;<arg fmt="%s" index="1">E:/Thinpand/CPU/project/CPU/CPU/CPU.vhd</arg>&quot; line <arg fmt="%d" index="2">533</arg>: Mux is complete : default of case is discarded
+<msg type="info" file="Xst" num="1561" delta="old" >&quot;<arg fmt="%s" index="1">E:/Thinpand/CPU/project/CPU/CPU/CPU.vhd</arg>&quot; line <arg fmt="%d" index="2">532</arg>: Mux is complete : default of case is discarded
 </msg>
 
-<msg type="warning" file="Xst" num="819" delta="old" >&quot;<arg fmt="%s" index="1">E:/Thinpand/CPU/project/CPU/CPU/CPU.vhd</arg>&quot; line <arg fmt="%d" index="2">515</arg>: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+<msg type="warning" file="Xst" num="819" delta="old" >&quot;<arg fmt="%s" index="1">E:/Thinpand/CPU/project/CPU/CPU/CPU.vhd</arg>&quot; line <arg fmt="%d" index="2">514</arg>: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
 <arg fmt="%s" index="3">&lt;debug_data&gt;, &lt;ID_T_in&gt;, &lt;IF_PC_in&gt;, &lt;IF_INS_15_0_in&gt;, &lt;EXE_A_MUX_Out&gt;, &lt;EXE_B_MUX_Out&gt;, &lt;ID_T_out&gt;, &lt;MEM_Control_RF_out&gt;, &lt;MEM_Control_RWData_out&gt;, &lt;EXE_Control_RF_out&gt;, &lt;ID_Control_SP_S_out&gt;, &lt;MEM_RAddr_out&gt;, &lt;ID_Control_Raddr_out&gt;, &lt;ID_Control_ALU_out&gt;, &lt;EXE_ALU_FLAG_ZERO&gt;, &lt;EXE_Control_MEM_out&gt;, &lt;EXE_Control_RA&gt;, &lt;EXE_Control_RB&gt;, &lt;ID_Control_A_out&gt;, &lt;ID_Control_B_out&gt;, &lt;ID_Control_Pause&gt;, &lt;ID_Control_MEM_out&gt;, &lt;ID_Control_PC_out&gt;, &lt;ID_RF_WD&gt;, &lt;EXE_MWD_in&gt;, &lt;rdn&gt;, &lt;wrn&gt;, &lt;EXE_RAddr_in&gt;, &lt;ID_Control_Raddr_in&gt;, &lt;ID_Control_ALU_in&gt;, &lt;IF_INS_15_0_out&gt;, &lt;MEM_Data_in&gt;</arg>
 </msg>
 
@@ -24,7 +24,7 @@
 <msg type="info" file="Xst" num="1739" delta="old" >HDL ADVISOR - &quot;<arg fmt="%s" index="1">E:/Thinpand/CPU/project/CPU/CPU/CPU.vhd</arg>&quot; line <arg fmt="%d" index="2">29</arg>: declaration of a buffer port will make it difficult for you to validate this design by simulation. It is preferable to declare it as output.
 </msg>
 
-<msg type="warning" file="Xst" num="752" delta="old" >&quot;<arg fmt="%s" index="1">E:/Thinpand/CPU/project/CPU/CPU/CPU.vhd</arg>&quot; line <arg fmt="%d" index="2">645</arg>: Unconnected input port &apos;<arg fmt="%s" index="3">in_raddr</arg>&apos; of component &apos;<arg fmt="%s" index="4">mux_rwdata</arg>&apos; is tied to default value.
+<msg type="warning" file="Xst" num="752" delta="old" >&quot;<arg fmt="%s" index="1">E:/Thinpand/CPU/project/CPU/CPU/CPU.vhd</arg>&quot; line <arg fmt="%d" index="2">644</arg>: Unconnected input port &apos;<arg fmt="%s" index="3">in_raddr</arg>&apos; of component &apos;<arg fmt="%s" index="4">mux_rwdata</arg>&apos; is tied to default value.
 </msg>
 
 <msg type="warning" file="Xst" num="819" delta="old" >&quot;<arg fmt="%s" index="1">E:/Thinpand/CPU/project/CPU/CPU/IFReg.vhd</arg>&quot; line <arg fmt="%d" index="2">37</arg>: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
@@ -64,23 +64,21 @@
 <arg fmt="%s" index="3">&lt;R0&gt;, &lt;R1&gt;, &lt;R2&gt;, &lt;R3&gt;, &lt;R4&gt;, &lt;R5&gt;, &lt;R6&gt;, &lt;R7&gt;</arg>
 </msg>
 
-<msg type="info" file="Xst" num="1739" delta="old" >HDL ADVISOR - &quot;<arg fmt="%s" index="1">E:/Thinpand/CPU/project/CPU/CPU/memMgr.vhd</arg>&quot; line <arg fmt="%d" index="2">10</arg>: declaration of a buffer port will make it difficult for you to validate this design by simulation. It is preferable to declare it as output.
+<msg type="warning" file="Xst" num="819" delta="old" >&quot;<arg fmt="%s" index="1">E:/Thinpand/CPU/project/CPU/CPU/memMgr.vhd</arg>&quot; line <arg fmt="%d" index="2">87</arg>: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+<arg fmt="%s" index="3">&lt;idata&gt;, &lt;ddata&gt;</arg>
+</msg>
+
+<msg type="info" file="Xst" num="1739" delta="old" >HDL ADVISOR - &quot;<arg fmt="%s" index="1">E:/Thinpand/CPU/project/CPU/CPU/memMgr.vhd</arg>&quot; line <arg fmt="%d" index="2">11</arg>: declaration of a buffer port will make it difficult for you to validate this design by simulation. It is preferable to declare it as output.
 </msg>
 
 <msg type="info" file="Xst" num="1739" delta="old" >HDL ADVISOR - &quot;<arg fmt="%s" index="1">E:/Thinpand/CPU/project/CPU/CPU/memMgr.vhd</arg>&quot; line <arg fmt="%d" index="2">12</arg>: declaration of a buffer port will make it difficult for you to validate this design by simulation. It is preferable to declare it as output.
 </msg>
 
-<msg type="warning" file="Xst" num="819" delta="old" >&quot;<arg fmt="%s" index="1">E:/Thinpand/CPU/project/CPU/CPU/IM.vhd</arg>&quot; line <arg fmt="%d" index="2">33</arg>: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
-<arg fmt="%s" index="3">&lt;PC&gt;</arg>
-</msg>
-
-<msg type="info" file="Xst" num="2679" delta="old" >Register &lt;<arg fmt="%s" index="1">RamWE</arg>&gt; in unit &lt;<arg fmt="%s" index="2">IM</arg>&gt; has a constant value of <arg fmt="%s" index="3">1</arg> during circuit operation. The register is replaced by logic.
+<msg type="warning" file="Xst" num="819" delta="old" >&quot;<arg fmt="%s" index="1">E:/Thinpand/CPU/project/CPU/CPU/IM.vhd</arg>&quot; line <arg fmt="%d" index="2">39</arg>: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+<arg fmt="%s" index="3">&lt;MEM&gt;, &lt;Data&gt;, &lt;Address&gt;, &lt;PC&gt;</arg>
 </msg>
 
 <msg type="info" file="Xst" num="2679" delta="old" >Register &lt;<arg fmt="%s" index="1">RamEN</arg>&gt; in unit &lt;<arg fmt="%s" index="2">IM</arg>&gt; has a constant value of <arg fmt="%s" index="3">0</arg> during circuit operation. The register is replaced by logic.
-</msg>
-
-<msg type="info" file="Xst" num="2679" delta="old" >Register &lt;<arg fmt="%s" index="1">RamData</arg>&gt; in unit &lt;<arg fmt="%s" index="2">IM</arg>&gt; has a constant value of <arg fmt="%s" index="3">ZZZZZZZZZZZZZZZZ</arg> during circuit operation. The register is replaced by logic.
 </msg>
 
 <msg type="warning" file="Xst" num="819" delta="old" >&quot;<arg fmt="%s" index="1">E:/Thinpand/CPU/project/CPU/CPU/DM.vhd</arg>&quot; line <arg fmt="%d" index="2">52</arg>: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
@@ -123,9 +121,6 @@
 <arg fmt="%s" index="3">&lt;rmwd&gt;</arg>
 </msg>
 
-<msg type="info" file="Xst" num="2561" delta="old" >Always blocking tristate driving signal &lt;<arg fmt="%s" index="1">RamData</arg>&gt; in unit &lt;<arg fmt="%s" index="2">IM</arg>&gt; is removed.
-</msg>
-
 <msg type="info" file="Xst" num="1608" delta="old" >Relative priorities of control signals on register &lt;<arg fmt="%s" index="1">Mtridata_RWDATA</arg>&gt; differ from those commonly found in the selected device family. This will result in additional logic around the register.
 </msg>
 
@@ -150,7 +145,37 @@
 <msg type="warning" file="Xst" num="647" delta="old" >Input &lt;<arg fmt="%s" index="1">in_raddr</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 </msg>
 
+<msg type="warning" file="Xst" num="736" delta="old" >Found <arg fmt="%d" index="1">16</arg>-bit latch for signal &lt;<arg fmt="%s" index="2">Mtridata_RamData</arg>&gt; created at line <arg fmt="%d" index="3">49</arg>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+</msg>
+
 <msg type="warning" file="Xst" num="737" delta="old" >Found <arg fmt="%d" index="1">16</arg>-bit latch for signal &lt;<arg fmt="%s" index="2">INS</arg>&gt;. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+</msg>
+
+<msg type="warning" file="Xst" num="737" delta="old" >Found <arg fmt="%d" index="1">16</arg>-bit latch for signal &lt;<arg fmt="%s" index="2">UIns</arg>&gt;. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+</msg>
+
+<msg type="warning" file="Xst" num="736" delta="old" >Found <arg fmt="%d" index="1">1</arg>-bit latch for signal &lt;<arg fmt="%s" index="2">Mtrien_RamData</arg>&gt; created at line <arg fmt="%d" index="3">49</arg>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+</msg>
+
+<msg type="info" file="Xst" num="2371" delta="old" >HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
+</msg>
+
+<msg type="warning" file="Xst" num="737" delta="old" >Found <arg fmt="%d" index="1">1</arg>-bit latch for signal &lt;<arg fmt="%s" index="2">RamOE</arg>&gt;. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+</msg>
+
+<msg type="info" file="Xst" num="2371" delta="old" >HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
+</msg>
+
+<msg type="warning" file="Xst" num="737" delta="old" >Found <arg fmt="%d" index="1">18</arg>-bit latch for signal &lt;<arg fmt="%s" index="2">RamAddr</arg>&gt;. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+</msg>
+
+<msg type="info" file="Xst" num="2371" delta="old" >HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
+</msg>
+
+<msg type="warning" file="Xst" num="737" delta="old" >Found <arg fmt="%d" index="1">1</arg>-bit latch for signal &lt;<arg fmt="%s" index="2">RamWE</arg>&gt;. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+</msg>
+
+<msg type="info" file="Xst" num="2371" delta="old" >HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
 </msg>
 
 <msg type="warning" file="Xst" num="653" delta="old" >Signal &lt;<arg fmt="%s" index="1">out_data</arg>&gt; is used but never assigned. This sourceless signal will be automatically connected to value <arg fmt="%s" index="2">0000000000000000</arg>.
@@ -315,9 +340,6 @@
 <msg type="info" file="Xst" num="1767" delta="old" >HDL ADVISOR - Resource sharing has identified that some arithmetic operations in this design can share the same physical resources for reduced device utilization. For improved clock frequency you may try to disable resource sharing.
 </msg>
 
-<msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">T_out_6</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ID_EXE_Reg</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
 <msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">T_out_7</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ID_EXE_Reg</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
@@ -367,6 +389,12 @@
 </msg>
 
 <msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">IM_7_0_zero_out_15</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ID_EXE_Reg</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">0</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">16</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">0</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">17</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
 <msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">0</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">16</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
@@ -433,6 +461,9 @@
 </msg>
 
 <msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">T_out_5</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ID_EXE_Reg</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">T_out_6</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ID_EXE_Reg</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
 <msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">INS_4_0_out_0</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">IFReg</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">4 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;INS_3_0_out_0&gt; &lt;INS_15_0_out_0&gt; &lt;INS_10_0_out_0&gt; &lt;INS_7_0_out_0&gt; </arg>
@@ -516,57 +547,120 @@
 <msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">IM_7_0_zero_out_8</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">IDReg</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
+<msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">IF_MEM_MEMMgr/DM_unit/RamAddr_16</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">CPU</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
 <msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">IF_MEM_MEMMgr/DM_unit/RamAddr_17</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">CPU</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">IF_MEM_MEMMgr/DM_unit/RamAddr_16</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">CPU</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">IF_MEM_MEMMgr/IM_unit/RamAddr_16</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">CPU</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">IF_MEM_MEMMgr/IM_unit/RamAddr_17</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">CPU</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
 <msg type="warning" file="Xst" num="2042" delta="old" >Unit <arg fmt="%s" index="1">controller</arg>: <arg fmt="%d" index="2">2</arg> internal tristates are replaced by logic (pull-up <arg fmt="%s" index="3">yes</arg>): </msg>
 
+<msg type="warning" file="Xst" num="1294" delta="old" >Latch &lt;<arg fmt="%s" index="1">IF_MEM_MEMMgr/IM_unit/RamWE</arg>&gt; is equivalent to a wire in block &lt;<arg fmt="%s" index="2">CPU</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="1294" delta="old" >Latch &lt;<arg fmt="%s" index="1">IF_MEM_MEMMgr/IM_unit/RamOE</arg>&gt; is equivalent to a wire in block &lt;<arg fmt="%s" index="2">CPU</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="1294" delta="old" >Latch &lt;<arg fmt="%s" index="1">IF_MEM_MEMMgr/IM_unit/Mtrien_RamData</arg>&gt; is equivalent to a wire in block &lt;<arg fmt="%s" index="2">CPU</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="1294" delta="old" >Latch &lt;<arg fmt="%s" index="1">IF_MEM_MEMMgr/IM_unit/RamAddr_0</arg>&gt; is equivalent to a wire in block &lt;<arg fmt="%s" index="2">CPU</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="1294" delta="old" >Latch &lt;<arg fmt="%s" index="1">IF_MEM_MEMMgr/IM_unit/RamAddr_1</arg>&gt; is equivalent to a wire in block &lt;<arg fmt="%s" index="2">CPU</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="1294" delta="old" >Latch &lt;<arg fmt="%s" index="1">IF_MEM_MEMMgr/IM_unit/RamAddr_2</arg>&gt; is equivalent to a wire in block &lt;<arg fmt="%s" index="2">CPU</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="1294" delta="old" >Latch &lt;<arg fmt="%s" index="1">IF_MEM_MEMMgr/IM_unit/RamAddr_3</arg>&gt; is equivalent to a wire in block &lt;<arg fmt="%s" index="2">CPU</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="1294" delta="old" >Latch &lt;<arg fmt="%s" index="1">IF_MEM_MEMMgr/IM_unit/RamAddr_4</arg>&gt; is equivalent to a wire in block &lt;<arg fmt="%s" index="2">CPU</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="1294" delta="old" >Latch &lt;<arg fmt="%s" index="1">IF_MEM_MEMMgr/IM_unit/RamAddr_5</arg>&gt; is equivalent to a wire in block &lt;<arg fmt="%s" index="2">CPU</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="1294" delta="old" >Latch &lt;<arg fmt="%s" index="1">IF_MEM_MEMMgr/IM_unit/RamAddr_6</arg>&gt; is equivalent to a wire in block &lt;<arg fmt="%s" index="2">CPU</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="1294" delta="old" >Latch &lt;<arg fmt="%s" index="1">IF_MEM_MEMMgr/IM_unit/RamAddr_7</arg>&gt; is equivalent to a wire in block &lt;<arg fmt="%s" index="2">CPU</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="1294" delta="old" >Latch &lt;<arg fmt="%s" index="1">IF_MEM_MEMMgr/IM_unit/RamAddr_8</arg>&gt; is equivalent to a wire in block &lt;<arg fmt="%s" index="2">CPU</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="1294" delta="old" >Latch &lt;<arg fmt="%s" index="1">IF_MEM_MEMMgr/IM_unit/RamAddr_9</arg>&gt; is equivalent to a wire in block &lt;<arg fmt="%s" index="2">CPU</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="1294" delta="old" >Latch &lt;<arg fmt="%s" index="1">IF_MEM_MEMMgr/IM_unit/RamAddr_10</arg>&gt; is equivalent to a wire in block &lt;<arg fmt="%s" index="2">CPU</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="1294" delta="old" >Latch &lt;<arg fmt="%s" index="1">IF_MEM_MEMMgr/IM_unit/RamAddr_11</arg>&gt; is equivalent to a wire in block &lt;<arg fmt="%s" index="2">CPU</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="1294" delta="old" >Latch &lt;<arg fmt="%s" index="1">IF_MEM_MEMMgr/IM_unit/RamAddr_12</arg>&gt; is equivalent to a wire in block &lt;<arg fmt="%s" index="2">CPU</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="1294" delta="old" >Latch &lt;<arg fmt="%s" index="1">IF_MEM_MEMMgr/IM_unit/RamAddr_13</arg>&gt; is equivalent to a wire in block &lt;<arg fmt="%s" index="2">CPU</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="1294" delta="old" >Latch &lt;<arg fmt="%s" index="1">IF_MEM_MEMMgr/IM_unit/RamAddr_14</arg>&gt; is equivalent to a wire in block &lt;<arg fmt="%s" index="2">CPU</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="1294" delta="old" >Latch &lt;<arg fmt="%s" index="1">IF_MEM_MEMMgr/IM_unit/RamAddr_15</arg>&gt; is equivalent to a wire in block &lt;<arg fmt="%s" index="2">CPU</arg>&gt;.
+</msg>
+
 <msg type="warning" file="Xst" num="1293" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">T_Reg/data_1</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">CPU</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">T_Reg/data_2</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">CPU</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">T_Reg/data_2</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">CPU</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">T_Reg/data_3</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">CPU</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">T_Reg/data_3</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">CPU</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">T_Reg/data_4</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">CPU</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">T_Reg/data_4</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">CPU</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">T_Reg/data_5</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">CPU</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">T_Reg/data_5</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">CPU</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">T_Reg/data_6</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">CPU</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">T_Reg/data_6</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">CPU</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">T_Reg/data_7</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">CPU</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">T_Reg/data_7</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">CPU</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">T_Reg/data_8</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">CPU</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">T_Reg/data_8</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">CPU</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">T_Reg/data_9</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">CPU</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">T_Reg/data_9</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">CPU</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">T_Reg/data_10</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">CPU</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">T_Reg/data_10</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">CPU</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">T_Reg/data_11</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">CPU</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">T_Reg/data_11</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">CPU</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">T_Reg/data_12</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">CPU</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">T_Reg/data_12</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">CPU</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">T_Reg/data_13</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">CPU</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">T_Reg/data_13</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">CPU</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">T_Reg/data_14</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">CPU</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">T_Reg/data_14</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">CPU</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">T_Reg/data_15</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">CPU</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">T_Reg/data_15</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">CPU</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
 <msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">ID_EXE_Reg/T_out_1</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">CPU</arg>&gt;. This FF/Latch will be trimmed during the optimization process.

@@ -28,7 +28,7 @@ entity DM is
 end entity;
 	
 architecture Behavioral of DM is
-	type state is (Start, Write, W_hold, R_ready, R_hold, Read, comWrite1, comWrite2, comRead, comRead2, Stop);
+	type state is (Start, Write, W_hold, R_ready, Read, comWrite1, comWrite2, comRead, comRead2, Stop);
 	signal cur_state, next_state: state:= Start;
 	signal out_data: std_logic_vector(15 downto 0);
 	signal clk_local: std_logic:= '1';
@@ -147,20 +147,11 @@ begin
 				RamData <= (others=>'Z');
 				Data <= RamData;
 				RamOE <= '0';
-				next_state <= R_hold;
-			when R_hold =>
-				wrn <= '1';
-				rdn <= '1';
-				RamWE <= '1';
-				RamEN <= '0';
-				RamOE <= '0';
-				RamAddr <= Address;
-				RamData <= (others=>'Z');
-				Data <= RamData;
+				next_state <= Read;
 				if (clk_local = '0' and clk_stage = '1') then
       		next_state <= Start;
       	else
-      		next_state <= R_hold;
+      		next_state <= Read;
       	end if;
 			
       when comWrite1 =>
